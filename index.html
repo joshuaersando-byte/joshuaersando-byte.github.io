@@ -658,6 +658,164 @@ body {
   }
 }
 
+
+/* ===== FINAL EMPLOYER-READY OVERRIDES ===== */
+:root{
+  --bg:#0a1019;
+  --soft:#101827;
+  --card:#141d2b;
+  --blue:#8fb6da;
+  --blue2:#d5e3ef;
+  --cream:#f5f6f7;
+  --text:#dce3e9;
+  --muted:#97a4b2;
+  --line:rgba(220,230,238,.11);
+}
+
+body{
+  background:
+    radial-gradient(circle at 82% 14%,rgba(143,182,218,.08),transparent 26%),
+    radial-gradient(circle at 12% 76%,rgba(255,255,255,.035),transparent 24%),
+    var(--bg) !important;
+  color:var(--text) !important;
+}
+
+section{padding:56px 0 !important}
+.hero{min-height:76vh !important;padding:70px 0 55px !important}
+.container{width:92% !important;max-width:1120px !important}
+section h2{margin-bottom:16px !important}
+.eyebrow{margin-bottom:9px !important}
+.grid2{gap:40px !important}
+.grid3{gap:14px !important}
+
+.contact{
+  padding:28px !important;
+  background:linear-gradient(135deg,rgba(245,246,247,.045),rgba(143,182,218,.055)) !important;
+  border:1px solid rgba(220,230,238,.13) !important;
+}
+.contact-actions{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:10px !important;
+  margin:22px auto 12px !important;
+  max-width:900px !important;
+}
+.contact-card{
+  cursor:pointer !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  padding:15px !important;
+  min-width:0 !important;
+  text-decoration:none !important;
+  border:1px solid rgba(220,230,238,.12) !important;
+  border-radius:12px !important;
+  background:rgba(245,246,247,.025) !important;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease !important;
+}
+.contact-card:hover{
+  transform:translateY(-5px) !important;
+  border-color:rgba(143,182,218,.45) !important;
+  background:rgba(143,182,218,.07) !important;
+  box-shadow:0 16px 36px rgba(0,0,0,.2) !important;
+}
+.contact-card small{
+  display:block !important;
+  color:var(--muted) !important;
+  font-size:10px !important;
+  letter-spacing:.65px !important;
+  text-transform:uppercase !important;
+  margin-bottom:3px !important;
+}
+.contact-card strong{
+  display:block !important;
+  color:var(--cream) !important;
+  font-size:12px !important;
+  word-break:break-word !important;
+}
+.contact-icon{
+  width:36px !important;height:36px !important;flex:0 0 36px !important;
+  display:grid !important;place-items:center !important;
+  border-radius:10px !important;
+  color:var(--blue2) !important;
+  background:rgba(143,182,218,.08) !important;
+  border:1px solid rgba(143,182,218,.15) !important;
+}
+.contact-note{color:var(--muted) !important;font-size:11px !important;margin-top:12px !important}
+
+.card,.service,.experience-item,.education-card{
+  background:rgba(245,246,247,.025) !important;
+  border-color:rgba(220,230,238,.11) !important;
+}
+.tool,.skill,.tag{
+  background:rgba(245,246,247,.035) !important;
+  border-color:rgba(220,230,238,.12) !important;
+}
+.primary,.cta{
+  background:linear-gradient(135deg,#d7e5f1,#91b8dc) !important;
+  color:#0b111a !important;
+}
+
+@media(max-width:760px){
+  section{padding:44px 0 !important}
+  .hero{min-height:auto !important;padding:52px 0 42px !important}
+  .container{width:calc(100% - 30px) !important}
+  .grid2,.grid3{grid-template-columns:1fr !important;gap:20px !important}
+  .hero h1{font-size:clamp(40px,12vw,62px) !important;line-height:.98 !important}
+  section h2{font-size:clamp(32px,9vw,48px) !important;line-height:1.05 !important}
+  .contact{padding:20px !important}
+  .contact-actions{grid-template-columns:1fr !important}
+  .contact-card{min-height:60px !important}
+  .shots{grid-template-columns:1fr !important}
+}
+@media(max-width:480px){
+  .hero h1{font-size:42px !important}
+  .links a:not(.cta){display:none !important}
+  .btn{width:100% !important;text-align:center !important}
+}
+
+
+/* Profile photo */
+.portfolio-profile-photo{
+  width:220px;
+  margin:0 auto 26px;
+  text-align:center;
+  position:relative;
+}
+.portfolio-profile-photo img{
+  display:block;
+  width:220px;
+  height:270px;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:18px;
+  border:1px solid rgba(220,230,238,.16);
+  box-shadow:0 18px 45px rgba(0,0,0,.24);
+}
+.portfolio-profile-caption{
+  margin-top:9px;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.7px;
+}
+@media (min-width:761px){
+  #about .portfolio-profile-photo{
+    float:left;
+    margin:0 42px 18px 0;
+  }
+}
+@media (max-width:760px){
+  .portfolio-profile-photo{
+    width:170px;
+    margin:0 auto 22px;
+    float:none !important;
+  }
+  .portfolio-profile-photo img{
+    width:170px;
+    height:210px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -702,6 +860,11 @@ body {
 
 <section id="about">
 <div class="container">
+<div class="portfolio-profile-photo">
+  <img src="images/profile.png" alt="Joshua Paul Ersando — Shopify Store Builder and E-commerce VA" loading="lazy">
+  <div class="portfolio-profile-caption">Joshua Paul Ersando</div>
+</div>
+
 <div class="eyebrow">About Me</div>
 <h2>Psychology meets e-commerce.</h2>
 <div class="about">
@@ -1297,43 +1460,7 @@ body {
 
 <footer><div class="container footer"><span>© 2026 Joshua Paul</span><span>Shopify Store Builder · Web Designer</span></div></footer>
 
-<section id="contact" class="reveal">
-  <div class="container">
-    <div class="contact">
-      <div class="eyebrow">LET'S WORK TOGETHER</div>
-      <h2>Let's build something great.</h2>
-      <p>Have a Shopify, e-commerce, web design, or support project in mind? Get in touch through whichever channel is easiest for you.</p>
 
-      <div class="contact-actions">
-        <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=joshua.ersando@gmail.com" target="_blank" rel="noopener noreferrer">
-          <span class="contact-icon">✉</span>
-          <span>
-            <small>Email</small>
-            <strong>joshua.ersando@gmail.com</strong>
-          </span>
-        </a>
-
-        <a class="contact-card" href="https://wa.me/639942508537?text=Hi%20Joshua%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer">
-          <span class="contact-icon">◌</span>
-          <span>
-            <small>WhatsApp</small>
-            <strong>+63 994 250 8537</strong>
-          </span>
-        </a>
-
-        <a class="contact-card" href="viber://chat?number=%2B639942508537">
-          <span class="contact-icon">✦</span>
-          <span>
-            <small>Viber</small>
-            <strong>0994 250 8537</strong>
-          </span>
-        </a>
-      </div>
-
-      <div class="contact-note">Available for Shopify store building, e-commerce support, web design, and long-term opportunities.</div>
-    </div>
-  </div>
-</section>
 
 
 <div class="lightbox" id="lightbox">
@@ -1395,5 +1522,44 @@ document.addEventListener("pointermove", (e) => {
 });
 
 </script>
+
+<section id="contact" class="reveal">
+  <div class="container">
+    <div class="contact">
+      <div class="eyebrow">LET'S WORK TOGETHER</div>
+      <h2>Let's build something great.</h2>
+      <p>Have a Shopify, e-commerce, web design, or support project in mind? Get in touch through whichever channel is easiest for you.</p>
+
+      <div class="contact-actions">
+        <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=joshua.ersando@gmail.com" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">✉</span>
+          <span>
+            <small>Email · Open Gmail</small>
+            <strong>joshua.ersando@gmail.com</strong>
+          </span>
+        </a>
+
+        <a class="contact-card" href="https://wa.me/639942508537?text=Hi%20Joshua%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">◌</span>
+          <span>
+            <small>WhatsApp · Start Chat</small>
+            <strong>+63 994 250 8537</strong>
+          </span>
+        </a>
+
+        <a class="contact-card" href="viber://chat?number=%2B639942508537">
+          <span class="contact-icon">✦</span>
+          <span>
+            <small>Viber · Start Chat</small>
+            <strong>0994 250 8537</strong>
+          </span>
+        </a>
+      </div>
+
+      <div class="contact-note">Available for Shopify store building, e-commerce support, web design, and long-term opportunities.</div>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
