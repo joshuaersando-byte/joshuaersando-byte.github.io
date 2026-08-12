@@ -107,6 +107,147 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 .gallery,.services{grid-template-columns:1fr}.shot img{height:auto;max-height:none}
 .footer{flex-direction:column}.lightbox{padding:15px}.prev{left:10px}.next{right:10px}
 }
+
+/* ===== Subtle professional motion ===== */
+html { scroll-behavior: smooth; }
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    left: -180px;
+    top: 18vh;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(127,167,216,.09), transparent 68%);
+    pointer-events: none;
+    z-index: -1;
+    animation: ambientFloat 12s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 360px;
+    height: 360px;
+    right: -150px;
+    bottom: 8vh;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(127,167,216,.07), transparent 68%);
+    pointer-events: none;
+    z-index: -1;
+    animation: ambientFloat 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes ambientFloat {
+    from { transform: translate3d(0, -20px, 0) scale(1); }
+    to   { transform: translate3d(25px, 25px, 0) scale(1.08); }
+}
+
+@keyframes heroIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero .eyebrow { animation: heroIn .7s ease-out both; }
+.hero h1 { animation: heroIn .8s .08s ease-out both; }
+.hero > .container > .grid2 > div:first-child > p {
+    animation: heroIn .8s .16s ease-out both;
+}
+.hero .buttons { animation: heroIn .8s .24s ease-out both; }
+.hero-card { animation: heroIn .9s .18s ease-out both; }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.links a {
+    position: relative;
+    transition: color .25s ease;
+}
+.links a:not(.cta)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -7px;
+    height: 1px;
+    background: var(--blue);
+    transition: right .25s ease;
+}
+.links a:not(.cta):hover::after { right: 0; }
+
+.btn {
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.btn:hover {
+    transform: translateY(-3px);
+}
+.primary:hover {
+    box-shadow: 0 12px 30px rgba(127,167,216,.20);
+}
+
+.service, .experience-item, .education-card, .hero-card, .tool {
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.service:hover, .experience-item:hover, .education-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(127,167,216,.30);
+    box-shadow: 0 18px 45px rgba(0,0,0,.16);
+}
+.tool:hover {
+    transform: translateY(-3px);
+    border-color: rgba(127,167,216,.35);
+    color: var(--blue2);
+}
+
+.skill, .tag {
+    transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.skill:hover, .tag:hover {
+    transform: translateY(-2px);
+    border-color: rgba(127,167,216,.32);
+    background: rgba(127,167,216,.08);
+}
+
+.shot {
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .3s ease, box-shadow .35s ease;
+}
+.shot:hover {
+    transform: translateY(-7px) scale(1.012);
+    border-color: rgba(127,167,216,.38);
+    box-shadow: 0 18px 40px rgba(0,0,0,.22);
+}
+.shot img {
+    transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.shot:hover img {
+    transform: scale(1.035);
+}
+
+.lightbox img {
+    animation: imagePop .3s ease-out;
+}
+@keyframes imagePop {
+    from { opacity: 0; transform: scale(.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -118,6 +259,7 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 <li><a href="#about">About</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#work">Work</a></li>
+<li><a href="#magnuslab">MagnusLAB</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a class="cta" href="#contact">Let's Work Together</a></li>
@@ -170,7 +312,7 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 </section>
 
 
-<section id="experience">
+<section id="experience" class="reveal">
 <div class="container">
 <div class="eyebrow">Experience</div>
 <h2>Hands-on e-commerce experience.</h2>
@@ -237,14 +379,14 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 </div>
 </section>
 
-<section id="work" class="featured">
+<section id="work" class="featured reveal">
 <div class="container">
 <div class="project-head">
 <div><div class="eyebrow">Featured Work</div><h2>Sleevelle</h2></div>
-<div class="nda">CLIENT PROJECT · NDA<br>Selected work shown for portfolio purposes</div>
+<div class="nda">CLIENT PROJECT · NDA<br>Selected screenshots shown for portfolio purposes · NDA protected</div>
 </div>
 <div class="project-copy">
-<div><h3>Shopify Store Design & Development</h3><p>A complete Shopify storefront project involving homepage development, product-page design, responsive layouts, content sections, social proof, FAQs, product storytelling, and conversion-focused presentation.</p><div class="tags"><span class="tag">Shopify</span><span class="tag">Liquid</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></div></div>
+<div><h3>Shopify Store Design & Development</h3><p>A complete Shopify storefront project involving homepage development, product-page design, responsive layouts, content sections, social proof, FAQs, product storytelling, and conversion-focused presentation. Client live links are not provided because the projects are covered by confidentiality agreements; the portfolio focuses on screenshots of the public-facing work.</p><div class="tags"><span class="tag">Shopify</span><span class="tag">Liquid</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></div></div>
 <div><h3>My Contribution</h3><ul class="list"><li>Shopify storefront customization</li><li>Homepage section development</li><li>Product page development</li><li>Desktop and mobile optimization</li><li>Content and information structure</li><li>Conversion-focused page sections</li><li>Theme customization and troubleshooting</li></ul></div>
 </div>
 
@@ -493,7 +635,221 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 </div>
 </section>
 
-<section id="services">
+
+<section class="featured reveal" id="magnuslab">
+<div class="container">
+<div class="project-head">
+<div><div class="eyebrow">Featured Work · 02</div><h2>MagnusLAB</h2></div>
+<div class="nda">CLIENT PROJECT · NDA<br>Selected screenshots shown for portfolio purposes · No live link provided</div>
+</div>
+<div class="project-copy">
+<div>
+<h3>Shopify Store Design & Development</h3>
+<p>A second Shopify storefront project demonstrating responsive homepage and product-page design, storefront customization, product presentation, and mobile optimization. The portfolio focuses on screenshots of the public-facing work rather than client links or internal Shopify materials.</p>
+<div class="tags">
+<span class="tag">Shopify</span><span class="tag">Responsive Design</span><span class="tag">Product Pages</span><span class="tag">Mobile Optimization</span><span class="tag">E-commerce Design</span>
+</div>
+</div>
+<div>
+<h3>Project Focus</h3>
+<ul class="list">
+<li>Shopify storefront customization</li>
+<li>Homepage development</li>
+<li>Product page development</li>
+<li>Desktop and mobile optimization</li>
+<li>Product presentation and page structure</li>
+<li>Responsive e-commerce design</li>
+<li>Theme layout and visual consistency</li>
+</ul>
+</div>
+</div>
+
+        <div class="gallery-group">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">MagnusLAB</span>
+                    <h3>Homepage — Desktop</h3>
+                </div>
+                <span class="count">4 screens</span>
+            </div>
+            <div class="gallery">
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.png" data-title="MagnusLAB — Homepage — Desktop — 1">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.png" alt="MagnusLAB homepage — desktop screenshot 1" loading="lazy">
+                    <span class="shot-label">01</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.png" data-title="MagnusLAB — Homepage — Desktop — 2">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.png" alt="MagnusLAB homepage — desktop screenshot 2" loading="lazy">
+                    <span class="shot-label">02</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.png" data-title="MagnusLAB — Homepage — Desktop — 3">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.png" alt="MagnusLAB homepage — desktop screenshot 3" loading="lazy">
+                    <span class="shot-label">03</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.png" data-title="MagnusLAB — Homepage — Desktop — 4">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.png" alt="MagnusLAB homepage — desktop screenshot 4" loading="lazy">
+                    <span class="shot-label">04</span>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="gallery-group">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">MagnusLAB</span>
+                    <h3>Homepage — Mobile</h3>
+                </div>
+                <span class="count">4 screens</span>
+            </div>
+            <div class="gallery">
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.png" data-title="MagnusLAB — Homepage — Mobile — 1">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.png" alt="MagnusLAB homepage — mobile screenshot 1" loading="lazy">
+                    <span class="shot-label">01</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.png" data-title="MagnusLAB — Homepage — Mobile — 2">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.png" alt="MagnusLAB homepage — mobile screenshot 2" loading="lazy">
+                    <span class="shot-label">02</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.png" data-title="MagnusLAB — Homepage — Mobile — 3">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.png" alt="MagnusLAB homepage — mobile screenshot 3" loading="lazy">
+                    <span class="shot-label">03</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.png" data-title="MagnusLAB — Homepage — Mobile — 4">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.png" alt="MagnusLAB homepage — mobile screenshot 4" loading="lazy">
+                    <span class="shot-label">04</span>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="gallery-group">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">MagnusLAB</span>
+                    <h3>Product Page — Desktop</h3>
+                </div>
+                <span class="count">7 screens</span>
+            </div>
+            <div class="gallery">
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-01.png" data-title="MagnusLAB — Product Page — Desktop — 1">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-01.png" alt="MagnusLAB product page — desktop screenshot 1" loading="lazy">
+                    <span class="shot-label">01</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-02.png" data-title="MagnusLAB — Product Page — Desktop — 2">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-02.png" alt="MagnusLAB product page — desktop screenshot 2" loading="lazy">
+                    <span class="shot-label">02</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-03.png" data-title="MagnusLAB — Product Page — Desktop — 3">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-03.png" alt="MagnusLAB product page — desktop screenshot 3" loading="lazy">
+                    <span class="shot-label">03</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-04.png" data-title="MagnusLAB — Product Page — Desktop — 4">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-04.png" alt="MagnusLAB product page — desktop screenshot 4" loading="lazy">
+                    <span class="shot-label">04</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-05.png" data-title="MagnusLAB — Product Page — Desktop — 5">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-05.png" alt="MagnusLAB product page — desktop screenshot 5" loading="lazy">
+                    <span class="shot-label">05</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-06.png" data-title="MagnusLAB — Product Page — Desktop — 6">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-06.png" alt="MagnusLAB product page — desktop screenshot 6" loading="lazy">
+                    <span class="shot-label">06</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-07.png" data-title="MagnusLAB — Product Page — Desktop — 7">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-07.png" alt="MagnusLAB product page — desktop screenshot 7" loading="lazy">
+                    <span class="shot-label">07</span>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="gallery-group">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">MagnusLAB</span>
+                    <h3>Product Page — Mobile</h3>
+                </div>
+                <span class="count">11 screens</span>
+            </div>
+            <div class="gallery">
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-01.png" data-title="MagnusLAB — Product Page — Mobile — 1">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-01.png" alt="MagnusLAB product page — mobile screenshot 1" loading="lazy">
+                    <span class="shot-label">01</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-02.png" data-title="MagnusLAB — Product Page — Mobile — 2">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-02.png" alt="MagnusLAB product page — mobile screenshot 2" loading="lazy">
+                    <span class="shot-label">02</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-03.png" data-title="MagnusLAB — Product Page — Mobile — 3">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-03.png" alt="MagnusLAB product page — mobile screenshot 3" loading="lazy">
+                    <span class="shot-label">03</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-04.png" data-title="MagnusLAB — Product Page — Mobile — 4">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-04.png" alt="MagnusLAB product page — mobile screenshot 4" loading="lazy">
+                    <span class="shot-label">04</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-05.png" data-title="MagnusLAB — Product Page — Mobile — 5">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-05.png" alt="MagnusLAB product page — mobile screenshot 5" loading="lazy">
+                    <span class="shot-label">05</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-06.png" data-title="MagnusLAB — Product Page — Mobile — 6">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-06.png" alt="MagnusLAB product page — mobile screenshot 6" loading="lazy">
+                    <span class="shot-label">06</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-07.png" data-title="MagnusLAB — Product Page — Mobile — 7">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-07.png" alt="MagnusLAB product page — mobile screenshot 7" loading="lazy">
+                    <span class="shot-label">07</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-08.png" data-title="MagnusLAB — Product Page — Mobile — 8">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-08.png" alt="MagnusLAB product page — mobile screenshot 8" loading="lazy">
+                    <span class="shot-label">08</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-09.png" data-title="MagnusLAB — Product Page — Mobile — 9">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-09.png" alt="MagnusLAB product page — mobile screenshot 9" loading="lazy">
+                    <span class="shot-label">09</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-10.png" data-title="MagnusLAB — Product Page — Mobile — 10">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-10.png" alt="MagnusLAB product page — mobile screenshot 10" loading="lazy">
+                    <span class="shot-label">10</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-11.png" data-title="MagnusLAB — Product Page — Mobile — 11">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-11.png" alt="MagnusLAB product page — mobile screenshot 11" loading="lazy">
+                    <span class="shot-label">11</span>
+                </button>
+
+            </div>
+        </div>
+
+</div>
+</section>
+
+<section id="services" class="reveal">
 <div class="container">
 <div class="eyebrow">What I Do</div><h2>Shopify, e-commerce, and operational support.</h2>
 <p class="intro">I can support both the storefront and the work around it — from Shopify builds and product pages to content, localization, spreadsheets, and day-to-day e-commerce operations.</p>
@@ -503,14 +859,32 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 </div>
 </section>
 
-<section id="skills">
+<section id="skills" class="reveal">
 <div class="container">
 <div class="eyebrow">Tools & Technologies</div><h2>What I work with.</h2>
-<div class="tools"><span class="tool">Shopify</span><span class="tool">Liquid</span><span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">JavaScript</span><span class="tool">Canva</span><span class="tool"></span><span class="tool">ChatGPT</span><span class="tool">Claude</span></div>
+
+<div class="tools">
+<span class="tool">Shopify</span>
+<span class="tool">Liquid</span>
+<span class="tool">HTML</span>
+<span class="tool">CSS</span>
+<span class="tool">JavaScript</span>
+<span class="tool">Canva</span>
+<span class="tool">Meta Ads Manager</span>
+<span class="tool">Google Gemini</span>
+<span class="tool">Google Flow</span>
+<span class="tool">CapCut</span>
+<span class="tool">HeyGen</span>
+<span class="tool">Grok</span>
+<span class="tool">ElevenLabs</span>
+<span class="tool">Vmake</span>
+<span class="tool">ChatGPT</span>
+<span class="tool">Claude</span>
+</div>
 </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="reveal">
 <div class="container">
 <div class="contact">
 <div class="eyebrow">Let's Work Together</div>
@@ -558,6 +932,19 @@ document.addEventListener("keydown",e=>{
  if(e.key==="ArrowLeft")move(-1);
  if(e.key==="ArrowRight")move(1);
 });
+
+const revealItems = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+revealItems.forEach(item => revealObserver.observe(item));
+
 </script>
 </body>
 </html>
