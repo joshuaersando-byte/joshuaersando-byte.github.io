@@ -6,7 +6,24 @@
 
     <title>Joshua Paul | Shopify Store Builder</title>
 
+    <meta name="description" content="Joshua Paul — Shopify Store Builder and Web Designer specializing in thoughtful, user-focused e-commerce experiences.">
+
     <style>
+
+        :root {
+            --bg: #0b1112;
+            --bg-soft: #10191a;
+            --card: #121d1e;
+            --card-hover: #162324;
+            --sage: #9bbf9a;
+            --sage-light: #b7d4b2;
+            --cream: #f1eee5;
+            --text: #d7ddd8;
+            --muted: #899692;
+            --border: rgba(155, 191, 154, 0.16);
+            --border-light: rgba(255,255,255,0.08);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,31 +35,42 @@
         }
 
         body {
+            background: var(--bg);
+            color: var(--text);
             font-family: Arial, Helvetica, sans-serif;
-            background: #0b0d10;
-            color: #ffffff;
             line-height: 1.6;
         }
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
         .container {
-            width: 90%;
-            max-width: 1100px;
+            width: min(1120px, 90%);
             margin: auto;
         }
 
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(11, 13, 16, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #22262c;
+            z-index: 1000;
+            background: rgba(11, 17, 18, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border-light);
         }
 
-        .nav-container {
-            height: 70px;
+        .nav-inner {
+            height: 76px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -51,409 +79,732 @@
         .logo {
             font-size: 20px;
             font-weight: 700;
+            color: var(--cream);
         }
 
         .logo span {
-            color: #95bf47;
+            color: var(--sage);
         }
 
-        nav ul {
-            list-style: none;
+        .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 32px;
+            list-style: none;
         }
 
-        nav a {
-            color: #b8bec7;
-            text-decoration: none;
+        .nav-links a {
+            color: var(--muted);
             font-size: 14px;
-            transition: 0.2s;
+            transition: 0.25s;
         }
 
-        nav a:hover {
-            color: #95bf47;
+        .nav-links a:hover {
+            color: var(--sage-light);
         }
 
-        /* HERO */
+        .nav-button {
+            padding: 10px 17px;
+            border-radius: 30px;
+            background: var(--sage);
+            color: #0b1112 !important;
+            font-weight: 700;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            min-height: 90vh;
+            min-height: 88vh;
             display: flex;
             align-items: center;
-            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-content {
-            max-width: 800px;
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            right: -250px;
+            top: -100px;
+            background: radial-gradient(
+                circle,
+                rgba(155,191,154,0.12),
+                transparent 65%
+            );
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
         }
 
         .eyebrow {
-            color: #95bf47;
-            font-size: 14px;
+            color: var(--sage);
+            font-size: 13px;
+            letter-spacing: 2.5px;
             font-weight: 700;
-            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         h1 {
-            font-size: clamp(48px, 8vw, 88px);
-            line-height: 1;
-            letter-spacing: -4px;
-            margin-bottom: 30px;
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--cream);
+            font-size: clamp(48px, 6vw, 78px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin-bottom: 28px;
         }
 
-        .hero h1 span {
-            color: #95bf47;
+        h1 span {
+            color: var(--sage);
         }
 
         .hero-description {
-            color: #a9afb8;
-            font-size: 19px;
-            max-width: 650px;
-            margin-bottom: 35px;
+            color: var(--muted);
+            max-width: 620px;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 32px;
         }
 
         .buttons {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .button {
-            display: inline-block;
-            padding: 14px 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 22px;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
             font-size: 14px;
-            transition: 0.2s;
+            font-weight: 700;
+            transition: 0.25s;
         }
 
         .button-primary {
-            background: #95bf47;
-            color: #0b0d10;
+            background: var(--sage);
+            color: #0b1112;
         }
 
         .button-primary:hover {
+            background: var(--sage-light);
             transform: translateY(-2px);
         }
 
         .button-secondary {
-            border: 1px solid #343941;
-            color: white;
+            border: 1px solid var(--border-light);
+            color: var(--cream);
         }
 
         .button-secondary:hover {
-            border-color: #95bf47;
+            border-color: var(--sage);
         }
 
-        /* SECTIONS */
+        /* HERO SIDE */
+
+        .hero-card {
+            padding: 34px;
+            background: linear-gradient(
+                145deg,
+                rgba(155,191,154,0.08),
+                rgba(255,255,255,0.02)
+            );
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        .hero-card-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .hero-card h3 {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            color: var(--cream);
+            margin-bottom: 12px;
+        }
+
+        .hero-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .principles {
+            margin-top: 25px;
+            display: grid;
+            gap: 14px;
+        }
+
+        .principle {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            margin-top: 8px;
+            border-radius: 50%;
+            background: var(--sage);
+            flex-shrink: 0;
+        }
+
+        .principle strong {
+            color: var(--cream);
+            font-size: 14px;
+        }
+
+        .principle p {
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
-            padding: 100px 0;
-            border-top: 1px solid #1c2025;
+            padding: 105px 0;
+            border-top: 1px solid var(--border-light);
         }
 
         .section-label {
-            color: #95bf47;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            color: var(--sage);
             text-transform: uppercase;
-            margin-bottom: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            margin-bottom: 12px;
         }
 
         h2 {
-            font-size: 42px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(35px, 4vw, 50px);
+            color: var(--cream);
+            line-height: 1.1;
             letter-spacing: -1.5px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .section-intro {
-            color: #9da3ad;
-            max-width: 650px;
+            max-width: 680px;
+            color: var(--muted);
             margin-bottom: 50px;
         }
 
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 70px;
         }
 
         .about-text p {
-            color: #a9afb8;
+            color: var(--muted);
             margin-bottom: 18px;
+            line-height: 1.85;
         }
 
-        .skills {
+        .about-highlight {
+            border-left: 2px solid var(--sage);
+            padding-left: 20px;
+            color: var(--cream) !important;
+        }
+
+        .skills-wrap {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 9px;
             align-content: flex-start;
         }
 
         .skill {
-            padding: 10px 15px;
-            border: 1px solid #30353c;
+            padding: 9px 13px;
             border-radius: 6px;
-            color: #d8dce1;
-            font-size: 14px;
+            border: 1px solid var(--border);
+            background: rgba(155,191,154,0.035);
+            color: var(--text);
+            font-size: 13px;
         }
 
-        /* PROJECTS */
+        /* =========================
+           FEATURED PROJECT
+        ========================= */
 
-        .projects {
+        .featured {
+            background: var(--bg-soft);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .nda {
+            color: var(--sage);
+            font-size: 12px;
+            text-align: right;
+        }
+
+        .project-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .project {
-            background: #111419;
-            border: 1px solid #242930;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: 0.25s;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            border-color: #95bf47;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
         }
 
         .project-image {
-            height: 240px;
-            background: #191d22;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666d76;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            background: #182122;
+            transition: 0.3s;
+        }
+
+        .project-image:hover {
+            transform: translateY(-4px);
+            border-color: var(--border);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .project-info {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .project-info h3 {
+            font-family: Georgia, serif;
+            color: var(--cream);
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .project-info p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .project-list {
+            list-style: none;
+            display: grid;
+            gap: 9px;
+        }
+
+        .project-list li {
+            color: var(--muted);
             font-size: 14px;
         }
 
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-content h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .project-content p {
-            color: #949ba5;
-            font-size: 14px;
-            margin-bottom: 18px;
+        .project-list li::before {
+            content: "✓";
+            color: var(--sage);
+            margin-right: 10px;
         }
 
         .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 7px;
+            gap: 8px;
+            margin-top: 20px;
         }
 
         .tag {
-            background: #1b2025;
-            color: #b9c0c8;
-            padding: 5px 9px;
-            border-radius: 4px;
             font-size: 12px;
+            padding: 6px 10px;
+            background: rgba(155,191,154,0.07);
+            color: var(--sage-light);
+            border-radius: 5px;
         }
 
-        .nda {
-            margin-top: 15px;
-            color: #95bf47;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        /* SERVICES */
+        /* =========================
+           SERVICES
+        ========================= */
 
         .services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 15px;
         }
 
         .service {
             padding: 30px;
-            background: #111419;
-            border: 1px solid #242930;
-            border-radius: 10px;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            background: var(--card);
+            transition: 0.25s;
+        }
+
+        .service:hover {
+            background: var(--card-hover);
+            border-color: var(--border);
+            transform: translateY(-3px);
+        }
+
+        .service-number {
+            color: var(--sage);
+            font-size: 12px;
+            margin-bottom: 30px;
         }
 
         .service h3 {
+            color: var(--cream);
             margin-bottom: 10px;
         }
 
         .service p {
-            color: #949ba5;
+            color: var(--muted);
             font-size: 14px;
+            line-height: 1.7;
         }
 
-        /* CONTACT */
+        /* =========================
+           TOOLS
+        ========================= */
+
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tool {
+            padding: 16px 22px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            color: var(--cream);
+            background: var(--card);
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact-box {
-            background: #111419;
-            border: 1px solid #242930;
-            border-radius: 15px;
-            padding: 50px;
             text-align: center;
+            padding: 70px 30px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(155,191,154,0.08),
+                    transparent 55%
+                ),
+                var(--card);
         }
 
         .contact-box p {
-            color: #9da3ad;
-            max-width: 550px;
+            max-width: 580px;
             margin: 0 auto 30px;
+            color: var(--muted);
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             padding: 30px 0;
-            border-top: 1px solid #1c2025;
-            color: #656c75;
-            font-size: 13px;
+            border-top: 1px solid var(--border-light);
+            color: #687572;
+            font-size: 12px;
         }
 
-        /* MOBILE */
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-        @media (max-width: 750px) {
+        /* =========================
+           MOBILE
+        ========================= */
 
-            nav ul {
+        @media (max-width: 800px) {
+
+            .nav-links {
                 display: none;
             }
 
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .project-info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                gap: 45px;
+            }
+
             h1 {
-                font-size: 52px;
+                font-size: 51px;
                 letter-spacing: -2px;
             }
 
-            .hero {
-                min-height: 80vh;
+            .project-header {
+                display: block;
             }
 
-            .about-grid,
-            .projects,
+            .nda {
+                text-align: left;
+                margin-top: 15px;
+            }
+
+            .project-grid,
             .services {
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 70px 0;
+            .project-image img {
+                height: auto;
             }
 
-            .contact-box {
-                padding: 30px 20px;
+            section {
+                padding: 75px 0;
+            }
+
+            .footer-inner {
+                flex-direction: column;
             }
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
 
-    <nav>
-        <div class="container nav-container">
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-            <div class="logo">
-                Joshua<span>.</span>
+<nav>
+
+    <div class="container nav-inner">
+
+        <div class="logo">
+            Joshua<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#work">Work</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#contact" class="nav-button">
+                    Let's Work Together
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                Shopify Store Builder & Web Designer
             </div>
 
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <h1>
+                I build Shopify stores that
+                <span>connect, convert,</span>
+                and create impact.
+            </h1>
+
+            <p class="hero-description">
+                I help brands build clean, user-focused Shopify stores
+                designed to build trust, guide decisions, and create
+                meaningful shopping experiences.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#work" class="button button-primary">
+                    View My Work →
+                </a>
+
+                <a href="#contact" class="button button-secondary">
+                    Contact Me
+                </a>
+
+            </div>
 
         </div>
-    </nav>
 
 
-    <!-- HERO -->
+        <div class="hero-card">
 
-    <header class="hero">
-        <div class="container">
+            <div class="hero-card-icon">
+                ◇
+            </div>
 
-            <div class="hero-content">
+            <h3>
+                Design with people in mind.
+            </h3>
 
-                <div class="eyebrow">
-                    Shopify Store Builder
+            <p>
+                My background in psychology gives me an additional
+                perspective when thinking about how users perceive,
+                navigate, and interact with digital experiences.
+            </p>
+
+            <div class="principles">
+
+                <div class="principle">
+                    <div class="dot"></div>
+
+                    <div>
+                        <strong>Empathy-driven</strong>
+                        <p>
+                            Understand the customer before designing
+                            the experience.
+                        </p>
+                    </div>
                 </div>
 
-                <h1>
-                    I build Shopify stores that <span>look good.</span>
-                </h1>
+                <div class="principle">
+                    <div class="dot"></div>
 
-                <p class="hero-description">
-                    Shopify web designer specializing in store builds,
-                    theme customization, product pages, landing pages,
-                    and e-commerce design.
+                    <div>
+                        <strong>Purpose-oriented</strong>
+                        <p>
+                            Every section should have a reason to exist.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="principle">
+                    <div class="dot"></div>
+
+                    <div>
+                        <strong>Detail-focused</strong>
+                        <p>
+                            Small details can influence trust and usability.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            About Me
+        </div>
+
+        <h2>
+            Psychology meets e-commerce.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I'm Joshua, a Psychology graduate and Shopify web
+                    designer with hands-on experience building and
+                    customizing e-commerce stores.
                 </p>
 
-                <div class="buttons">
+                <p>
+                    My psychology background has helped me develop an
+                    interest in human behavior, decision-making, and
+                    how people interact with information.
+                </p>
 
-                    <a href="#work" class="button button-primary">
-                        View My Work
-                    </a>
-
-                    <a href="#contact" class="button button-secondary">
-                        Contact Me
-                    </a>
-
-                </div>
+                <p class="about-highlight">
+                    I bring that perspective into web design by thinking
+                    beyond how a store looks — focusing on clarity,
+                    trust, usability, and the customer's journey.
+                </p>
 
             </div>
 
-        </div>
-    </header>
 
+            <div>
 
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <div class="container">
-
-            <div class="section-label">
-                About Me
-            </div>
-
-            <h2>
-                Shopify-focused web designer.
-            </h2>
-
-            <div class="about-grid">
-
-                <div class="about-text">
-
-                    <p>
-                        I'm Joshua, a Shopify web designer with hands-on
-                        experience building and customizing Shopify stores,
-                        product pages, and landing pages.
-                    </p>
-
-                    <p>
-                        I enjoy turning instructions and designs into
-                        clean, professional, and mobile-friendly
-                        e-commerce experiences.
-                    </p>
-
-                    <p>
-                        I'm comfortable working independently, following
-                        SOPs, learning new tools quickly, and troubleshooting
-                        issues when something doesn't work as expected.
-                    </p>
-
+                <div class="section-label">
+                    Core Skills
                 </div>
 
-                <div class="skills">
+                <div class="skills-wrap">
 
                     <div class="skill">Shopify</div>
                     <div class="skill">Liquid</div>
@@ -465,6 +816,10 @@
                     <div class="skill">Landing Pages</div>
                     <div class="skill">Mobile Optimization</div>
                     <div class="skill">E-commerce Design</div>
+                    <div class="skill">UI/UX Awareness</div>
+                    <div class="skill">Store Setup</div>
+                    <div class="skill">Collections</div>
+                    <div class="skill">Troubleshooting</div>
 
                 </div>
 
@@ -472,306 +827,406 @@
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
-    <!-- WORK -->
 
-    <section id="work">
+<!-- =========================
+     FEATURED WORK
+========================= -->
 
-        <div class="container">
+<section id="work" class="featured">
 
-            <div class="section-label">
-                Selected Work
-            </div>
+    <div class="container">
 
-            <h2>
-                Shopify projects.
-            </h2>
+        <div class="project-header">
 
-            <p class="section-intro">
-                A selection of Shopify work I've contributed to.
-                Client information and store URLs are withheld due
-                to NDA and confidentiality agreements.
-            </p>
-
-
-            <div class="projects">
-
-
-                <!-- PROJECT 1 -->
-
-                <div class="project">
-
-                    <div class="project-image">
-                        Project Screenshot
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>
-                            Shopify Store Build
-                        </h3>
-
-                        <p>
-                            Built and customized Shopify store pages,
-                            organized products and collections, and
-                            created a clean customer-facing experience.
-                        </p>
-
-                        <div class="tags">
-                            <span class="tag">Shopify</span>
-                            <span class="tag">Liquid</span>
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                        </div>
-
-                        <div class="nda">
-                            CLIENT PROJECT · NDA
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 2 -->
-
-                <div class="project">
-
-                    <div class="project-image">
-                        Project Screenshot
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>
-                            Product Page Design
-                        </h3>
-
-                        <p>
-                            Designed and customized product pages with
-                            a focus on structure, visual hierarchy,
-                            usability, and mobile responsiveness.
-                        </p>
-
-                        <div class="tags">
-                            <span class="tag">Shopify</span>
-                            <span class="tag">Product Pages</span>
-                            <span class="tag">UX</span>
-                            <span class="tag">Mobile</span>
-                        </div>
-
-                        <div class="nda">
-                            CLIENT PROJECT · NDA
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 3 -->
-
-                <div class="project">
-
-                    <div class="project-image">
-                        Project Screenshot
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>
-                            Landing Page
-                        </h3>
-
-                        <p>
-                            Created Shopify landing page sections
-                            designed to present products clearly and
-                            guide customers toward conversion.
-                        </p>
-
-                        <div class="tags">
-                            <span class="tag">Shopify</span>
-                            <span class="tag">Landing Page</span>
-                            <span class="tag">Liquid</span>
-                            <span class="tag">CSS</span>
-                        </div>
-
-                        <div class="nda">
-                            CLIENT PROJECT · NDA
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 4 -->
-
-                <div class="project">
-
-                    <div class="project-image">
-                        Project Screenshot
-                    </div>
-
-                    <div class="project-content">
-
-                        <h3>
-                            Theme Customization
-                        </h3>
-
-                        <p>
-                            Customized Shopify theme sections and
-                            resolved layout and code-related issues
-                            to improve the overall store experience.
-                        </p>
-
-                        <div class="tags">
-                            <span class="tag">Shopify</span>
-                            <span class="tag">Liquid</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Debugging</span>
-                        </div>
-
-                        <div class="nda">
-                            CLIENT PROJECT · NDA
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section id="skills">
-
-        <div class="container">
-
-            <div class="section-label">
-                What I Do
-            </div>
-
-            <h2>
-                How I can help.
-            </h2>
-
-            <p class="section-intro">
-                From a blank Shopify store to a polished,
-                customer-ready e-commerce website.
-            </p>
-
-
-            <div class="services">
-
-                <div class="service">
-                    <h3>Store Building</h3>
-                    <p>
-                        Build Shopify stores from scratch,
-                        organize pages, products, collections,
-                        and navigation.
-                    </p>
-                </div>
-
-                <div class="service">
-                    <h3>Theme Customization</h3>
-                    <p>
-                        Customize Shopify themes using Liquid,
-                        HTML, CSS, and JavaScript.
-                    </p>
-                </div>
-
-                <div class="service">
-                    <h3>Product Pages</h3>
-                    <p>
-                        Create clean and structured product
-                        pages designed for usability and conversion.
-                    </p>
-                </div>
-
-                <div class="service">
-                    <h3>Mobile Optimization</h3>
-                    <p>
-                        Make sure Shopify stores look clean and
-                        function properly across mobile devices.
-                    </p>
-                </div>
-
-                <div class="service">
-                    <h3>Store Setup</h3>
-                    <p>
-                        Set up collections, navigation, pages,
-                        images, and basic Shopify settings.
-                    </p>
-                </div>
-
-                <div class="service">
-                    <h3>Troubleshooting</h3>
-                    <p>
-                        Identify and fix layout, theme, and
-                        custom code issues within Shopify.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-        <div class="container">
-
-            <div class="contact-box">
+            <div>
 
                 <div class="section-label">
-                    Let's Work Together
+                    Featured Work
                 </div>
 
                 <h2>
-                    Have a Shopify project?
+                    Sleevelle
                 </h2>
 
-                <p>
-                    I'm open to Shopify store building,
-                    web design, and long-term opportunities.
-                </p>
+            </div>
 
-                <a
-                    href="mailto:YOUR-EMAIL@example.com"
-                    class="button button-primary">
-                    Get In Touch
-                </a>
+            <div class="nda">
+                CLIENT PROJECT · NDA<br>
+                Selected screenshots shown for portfolio purposes
+            </div>
+
+        </div>
+
+
+        <p class="section-intro">
+            Shopify storefront work involving homepage development,
+            product page design, responsive layouts, content sections,
+            and conversion-focused e-commerce presentation.
+        </p>
+
+
+        <div class="project-grid">
+
+
+            <!-- IMPORTANT:
+                 These filenames must match the images
+                 you upload to GitHub.
+            -->
+
+            <div class="project-image">
+
+                <img
+                    src="images/sleevelle-home-desktop-1.png"
+                    alt="Sleevelle Shopify homepage desktop"
+                >
+
+            </div>
+
+
+            <div class="project-image">
+
+                <img
+                    src="images/sleevelle-product-desktop-1.png"
+                    alt="Sleevelle Shopify product page desktop"
+                >
+
+            </div>
+
+
+            <div class="project-image">
+
+                <img
+                    src="images/sleevelle-home-mobile-1.png"
+                    alt="Sleevelle Shopify homepage mobile"
+                >
+
+            </div>
+
+
+            <div class="project-image">
+
+                <img
+                    src="images/sleevelle-product-mobile-1.png"
+                    alt="Sleevelle Shopify product page mobile"
+                >
 
             </div>
 
         </div>
 
-    </section>
+
+        <div class="project-info">
+
+            <div>
+
+                <h3>
+                    Shopify Store Development
+                </h3>
+
+                <p>
+                    Worked on the design and development of a complete
+                    Shopify storefront, including homepage sections,
+                    product presentation, responsive layouts, and
+                    supporting content sections.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Shopify</span>
+                    <span class="tag">Liquid</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Responsive Design</span>
+
+                </div>
+
+            </div>
 
 
-    <!-- FOOTER -->
+            <div>
 
-    <footer>
+                <h3>
+                    My Contribution
+                </h3>
 
-        <div class="container">
+                <ul class="project-list">
 
-            © 2026 Joshua Paul. Shopify Store Builder & Web Designer.
+                    <li>
+                        Shopify storefront customization
+                    </li>
+
+                    <li>
+                        Homepage section development
+                    </li>
+
+                    <li>
+                        Product page development
+                    </li>
+
+                    <li>
+                        Desktop and mobile optimization
+                    </li>
+
+                    <li>
+                        Content and information structure
+                    </li>
+
+                    <li>
+                        Conversion-focused page sections
+                    </li>
+
+                    <li>
+                        Theme customization and troubleshooting
+                    </li>
+
+                </ul>
+
+            </div>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-label">
+            What I Do
+        </div>
+
+        <h2>
+            Shopify, from build to polish.
+        </h2>
+
+        <p class="section-intro">
+            I can take a Shopify store from a blank theme to a
+            structured, professional, customer-ready experience.
+        </p>
+
+
+        <div class="services">
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <h3>
+                    Store Building
+                </h3>
+
+                <p>
+                    Build Shopify stores from scratch with clean
+                    structure, navigation, collections, pages,
+                    and product organization.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <h3>
+                    Theme Customization
+                </h3>
+
+                <p>
+                    Customize Shopify themes using Liquid, HTML,
+                    CSS, and JavaScript to create unique layouts.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <h3>
+                    Product Pages
+                </h3>
+
+                <p>
+                    Build product pages that clearly communicate
+                    value while maintaining a clean user experience.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <h3>
+                    Mobile Optimization
+                </h3>
+
+                <p>
+                    Make sure storefronts remain clean, responsive,
+                    and usable across different screen sizes.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    05
+                </div>
+
+                <h3>
+                    Store Setup
+                </h3>
+
+                <p>
+                    Set up products, collections, navigation,
+                    pages, images, and basic store structure.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    06
+                </div>
+
+                <h3>
+                    Troubleshooting
+                </h3>
+
+                <p>
+                    Identify layout and code issues and work through
+                    theme problems to keep stores functioning properly.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TOOLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            Tools & Technologies
+        </div>
+
+        <h2>
+            What I work with.
+        </h2>
+
+        <div class="tools">
+
+            <div class="tool">Shopify</div>
+            <div class="tool">Liquid</div>
+            <div class="tool">HTML</div>
+            <div class="tool">CSS</div>
+            <div class="tool">JavaScript</div>
+            <div class="tool">Canva</div>
+            <div class="tool">Figma</div>
+            <div class="tool">ChatGPT</div>
+            <div class="tool">Claude</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-label">
+                Let's Work Together
+            </div>
+
+            <h2>
+                Have a Shopify project in mind?
+            </h2>
+
+            <p>
+                I'm open to long-term Shopify store building,
+                web design, and e-commerce opportunities.
+            </p>
+
+            <!-- CHANGE THIS EMAIL -->
+
+            <a
+                href="mailto:YOUR-EMAIL@example.com"
+                class="button button-primary">
+                Get In Touch →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 Joshua Paul
+        </div>
+
+        <div>
+            Shopify Store Builder · Web Designer
+        </div>
+
+    </div>
+
+</footer>
+
 
 </body>
 </html>
