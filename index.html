@@ -1,1232 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Joshua Paul | Shopify Store Builder</title>
-
-    <meta name="description" content="Joshua Paul — Shopify Store Builder and Web Designer specializing in thoughtful, user-focused e-commerce experiences.">
-
-    <style>
-
-        :root {
-            --bg: #0b1112;
-            --bg-soft: #10191a;
-            --card: #121d1e;
-            --card-hover: #162324;
-            --sage: #9bbf9a;
-            --sage-light: #b7d4b2;
-            --cream: #f1eee5;
-            --text: #d7ddd8;
-            --muted: #899692;
-            --border: rgba(155, 191, 154, 0.16);
-            --border-light: rgba(255,255,255,0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: min(1120px, 90%);
-            margin: auto;
-        }
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(11, 17, 18, 0.88);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .nav-inner {
-            height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--cream);
-        }
-
-        .logo span {
-            color: var(--sage);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: 14px;
-            transition: 0.25s;
-        }
-
-        .nav-links a:hover {
-            color: var(--sage-light);
-        }
-
-        .nav-button {
-            padding: 10px 17px;
-            border-radius: 30px;
-            background: var(--sage);
-            color: #0b1112 !important;
-            font-weight: 700;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            right: -250px;
-            top: -100px;
-            background: radial-gradient(
-                circle,
-                rgba(155,191,154,0.12),
-                transparent 65%
-            );
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            color: var(--sage);
-            font-size: 13px;
-            letter-spacing: 2.5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-        }
-
-        h1 {
-            font-family: Georgia, "Times New Roman", serif;
-            color: var(--cream);
-            font-size: clamp(48px, 6vw, 78px);
-            line-height: 1.02;
-            letter-spacing: -3px;
-            margin-bottom: 28px;
-        }
-
-        h1 span {
-            color: var(--sage);
-        }
-
-        .hero-description {
-            color: var(--muted);
-            max-width: 620px;
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 32px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 22px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            transition: 0.25s;
-        }
-
-        .button-primary {
-            background: var(--sage);
-            color: #0b1112;
-        }
-
-        .button-primary:hover {
-            background: var(--sage-light);
-            transform: translateY(-2px);
-        }
-
-        .button-secondary {
-            border: 1px solid var(--border-light);
-            color: var(--cream);
-        }
-
-        .button-secondary:hover {
-            border-color: var(--sage);
-        }
-
-        /* HERO SIDE */
-
-        .hero-card {
-            padding: 34px;
-            background: linear-gradient(
-                145deg,
-                rgba(155,191,154,0.08),
-                rgba(255,255,255,0.02)
-            );
-            border: 1px solid var(--border);
-            border-radius: 20px;
-        }
-
-        .hero-card-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--sage);
-            font-size: 24px;
-            margin-bottom: 25px;
-        }
-
-        .hero-card h3 {
-            font-family: Georgia, serif;
-            font-size: 25px;
-            color: var(--cream);
-            margin-bottom: 12px;
-        }
-
-        .hero-card p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .principles {
-            margin-top: 25px;
-            display: grid;
-            gap: 14px;
-        }
-
-        .principle {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            margin-top: 8px;
-            border-radius: 50%;
-            background: var(--sage);
-            flex-shrink: 0;
-        }
-
-        .principle strong {
-            color: var(--cream);
-            font-size: 14px;
-        }
-
-        .principle p {
-            font-size: 13px;
-            margin-top: 2px;
-        }
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            padding: 105px 0;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .section-label {
-            color: var(--sage);
-            text-transform: uppercase;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            margin-bottom: 12px;
-        }
-
-        h2 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(35px, 4vw, 50px);
-            color: var(--cream);
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 18px;
-        }
-
-        .section-intro {
-            max-width: 680px;
-            color: var(--muted);
-            margin-bottom: 50px;
-        }
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-        }
-
-        .about-text p {
-            color: var(--muted);
-            margin-bottom: 18px;
-            line-height: 1.85;
-        }
-
-        .about-highlight {
-            border-left: 2px solid var(--sage);
-            padding-left: 20px;
-            color: var(--cream) !important;
-        }
-
-        .skills-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-            align-content: flex-start;
-        }
-
-        .skill {
-            padding: 9px 13px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            background: rgba(155,191,154,0.035);
-            color: var(--text);
-            font-size: 13px;
-        }
-
-        /* =========================
-           FEATURED PROJECT
-        ========================= */
-
-        .featured {
-            background: var(--bg-soft);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .nda {
-            color: var(--sage);
-            font-size: 12px;
-            text-align: right;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .project-image {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            background: #182122;
-            transition: 0.3s;
-        }
-
-        .project-image:hover {
-            transform: translateY(-4px);
-            border-color: var(--border);
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 430px;
-            object-fit: cover;
-            object-position: top;
-        }
-
-        .project-info {
-            margin-top: 35px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .project-info h3 {
-            font-family: Georgia, serif;
-            color: var(--cream);
-            font-size: 25px;
-            margin-bottom: 12px;
-        }
-
-        .project-info p {
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .project-list {
-            list-style: none;
-            display: grid;
-            gap: 9px;
-        }
-
-        .project-list li {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .project-list li::before {
-            content: "✓";
-            color: var(--sage);
-            margin-right: 10px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 20px;
-        }
-
-        .tag {
-            font-size: 12px;
-            padding: 6px 10px;
-            background: rgba(155,191,154,0.07);
-            color: var(--sage-light);
-            border-radius: 5px;
-        }
-
-        /* =========================
-           SERVICES
-        ========================= */
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .service {
-            padding: 30px;
-            border: 1px solid var(--border-light);
-            border-radius: 12px;
-            background: var(--card);
-            transition: 0.25s;
-        }
-
-        .service:hover {
-            background: var(--card-hover);
-            border-color: var(--border);
-            transform: translateY(-3px);
-        }
-
-        .service-number {
-            color: var(--sage);
-            font-size: 12px;
-            margin-bottom: 30px;
-        }
-
-        .service h3 {
-            color: var(--cream);
-            margin-bottom: 10px;
-        }
-
-        .service p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        /* =========================
-           TOOLS
-        ========================= */
-
-        .tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .tool {
-            padding: 16px 22px;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            color: var(--cream);
-            background: var(--card);
-        }
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-box {
-            text-align: center;
-            padding: 70px 30px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(155,191,154,0.08),
-                    transparent 55%
-                ),
-                var(--card);
-        }
-
-        .contact-box p {
-            max-width: 580px;
-            margin: 0 auto 30px;
-            color: var(--muted);
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 30px 0;
-            border-top: 1px solid var(--border-light);
-            color: #687572;
-            font-size: 12px;
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 80px 0;
-            }
-
-            .hero-grid,
-            .about-grid,
-            .project-info {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-grid {
-                gap: 45px;
-            }
-
-            h1 {
-                font-size: 51px;
-                letter-spacing: -2px;
-            }
-
-            .project-header {
-                display: block;
-            }
-
-            .nda {
-                text-align: left;
-                margin-top: 15px;
-            }
-
-            .project-grid,
-            .services {
-                grid-template-columns: 1fr;
-            }
-
-            .project-image img {
-                height: auto;
-            }
-
-            section {
-                padding: 75px 0;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joshua Paul | Shopify Store Builder</title>
+<meta name="description" content="Joshua Paul — Shopify Store Builder and Web Designer.">
+<style>
+:root{
+--bg:#0b1112;--soft:#10191a;--card:#121d1e;--sage:#9bbf9a;--sage2:#b7d4b2;
+--cream:#f1eee5;--text:#d7ddd8;--muted:#899692;--border:rgba(155,191,154,.16);
+--line:rgba(255,255,255,.08)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1120px,90%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(11,17,18,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:20px;color:var(--cream)}.logo span{color:var(--sage)}
+.links{display:flex;gap:28px;list-style:none;align-items:center}.links a{font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--sage2)}
+.cta{background:var(--sage);color:#0b1112!important;padding:10px 16px;border-radius:24px;font-weight:700}
+.hero{padding:115px 0 105px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:650px;height:650px;right:-280px;top:-180px;background:radial-gradient(circle,rgba(155,191,154,.12),transparent 65%);pointer-events:none}
+.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:65px;align-items:center}
+.eyebrow{color:var(--sage);font-size:12px;letter-spacing:2.3px;text-transform:uppercase;font-weight:700}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--cream)}
+h1{font-size:clamp(48px,6vw,76px);line-height:1.03;letter-spacing:-3px;margin:20px 0 27px}
+h1 span{color:var(--sage)}
+.hero p,.intro,.about p,.project-copy p{color:var(--muted);line-height:1.85}
+.hero p{font-size:18px;max-width:650px;margin-bottom:30px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 21px;border-radius:8px;font-size:14px;font-weight:700}
+.primary{background:var(--sage);color:#0b1112}.secondary{border:1px solid var(--line);color:var(--cream)}
+.hero-card{background:linear-gradient(145deg,rgba(155,191,154,.08),rgba(255,255,255,.02));border:1px solid var(--border);padding:32px;border-radius:20px}
+.hero-card h3{font-size:26px;margin:14px 0 10px}.hero-card p{font-size:14px}
+.principles{margin-top:22px;display:grid;gap:14px}.principle{display:flex;gap:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--sage);margin-top:8px;flex:none}
+.principle strong{color:var(--cream);font-size:14px}.principle p{font-size:13px}
+section{padding:100px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(36px,4vw,50px);line-height:1.1;letter-spacing:-1.5px;margin:12px 0 18px}
+.intro{max-width:680px;margin-bottom:45px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.about p{margin-bottom:17px}
+.highlight{border-left:2px solid var(--sage);padding-left:18px;color:var(--cream)!important}
+.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.skill,.tag{border:1px solid var(--border);background:rgba(155,191,154,.04);padding:8px 12px;border-radius:6px;font-size:13px}
+.featured{background:var(--soft)}
+.project-head{display:flex;justify-content:space-between;align-items:end;gap:20px}
+.nda{color:var(--sage);font-size:12px;text-align:right}
+.project-copy{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-bottom:55px}
+.project-copy h3{font-size:26px;margin-bottom:10px}
+.list{list-style:none;display:grid;gap:8px}.list li{color:var(--muted);font-size:14px}
+.list li:before{content:"✓";color:var(--sage);margin-right:9px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.gallery-group{margin-top:62px}
+.gallery-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
+.gallery-heading h3{font-size:27px;margin-top:4px}
+.count{color:var(--muted);font-size:12px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.shot{position:relative;border:1px solid var(--line);background:#172021;border-radius:10px;overflow:hidden;cursor:pointer;padding:0;transition:.25s;text-align:left}
+.shot:hover{transform:translateY(-4px);border-color:var(--border)}
+.shot img{width:100%;height:250px;object-fit:cover;object-position:top;display:block}
+.shot-label{position:absolute;left:9px;bottom:9px;background:rgba(11,17,18,.82);color:var(--cream);font-size:11px;padding:4px 7px;border-radius:4px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.service{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:28px}
+.service .num{color:var(--sage);font-size:12px;margin-bottom:28px}
+.service h3{font-family:Arial,sans-serif;font-size:17px;margin-bottom:9px}.service p{color:var(--muted);font-size:14px}
+.tools{display:flex;flex-wrap:wrap;gap:10px}.tool{padding:14px 18px;background:var(--card);border:1px solid var(--line);border-radius:8px;color:var(--cream)}
+.contact{text-align:center;padding:65px 25px;border:1px solid var(--border);border-radius:20px;background:radial-gradient(circle at 50% 0%,rgba(155,191,154,.08),transparent 55%),var(--card)}
+.contact p{max-width:580px;margin:0 auto 28px;color:var(--muted)}
+footer{padding:28px 0;border-top:1px solid var(--line);color:#687572;font-size:12px}
+.footer{display:flex;justify-content:space-between;gap:20px}
+.lightbox{position:fixed;inset:0;background:rgba(3,7,8,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:35px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:8px}
+.close,.prev,.next{position:fixed;border:1px solid var(--line);background:rgba(18,29,30,.9);color:var(--cream);cursor:pointer;border-radius:50%;width:44px;height:44px}
+.close{top:20px;right:20px;font-size:22px}.prev{left:20px;top:50%;font-size:20px}.next{right:20px;top:50%;font-size:20px}
+.lightbox-title{position:fixed;bottom:15px;left:0;right:0;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:850px){
+.links{display:none}.grid2,.about,.project-copy{grid-template-columns:1fr}.hero{padding:80px 0}
+.gallery{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:1fr 1fr}
+.project-head{display:block}.nda{text-align:left;margin-top:14px}
+}
+@media(max-width:560px){
+h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
+.gallery,.services{grid-template-columns:1fr}.shot img{height:auto;max-height:none}
+.footer{flex-direction:column}.lightbox{padding:15px}.prev{left:10px}.next{right:10px}
+}
+</style>
 </head>
-
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <nav>
-
-    <div class="container nav-inner">
-
-        <div class="logo">
-            Joshua<span>.</span>
-        </div>
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#work">Work</a>
-            </li>
-
-            <li>
-                <a href="#services">Services</a>
-            </li>
-
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li>
-                <a href="#contact" class="nav-button">
-                    Let's Work Together
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
+<div class="container nav">
+<div class="logo">Joshua<span>.</span></div>
+<ul class="links">
+<li><a href="#about">About</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a class="cta" href="#contact">Let's Work Together</a></li>
+</ul>
+</div>
 </nav>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
 <header class="hero">
-
-    <div class="container hero-grid">
-
-        <div>
-
-            <div class="eyebrow">
-                Shopify Store Builder & Web Designer
-            </div>
-
-            <h1>
-                I build Shopify stores that
-                <span>connect, convert,</span>
-                and create impact.
-            </h1>
-
-            <p class="hero-description">
-                I help brands build clean, user-focused Shopify stores
-                designed to build trust, guide decisions, and create
-                meaningful shopping experiences.
-            </p>
-
-            <div class="buttons">
-
-                <a href="#work" class="button button-primary">
-                    View My Work →
-                </a>
-
-                <a href="#contact" class="button button-secondary">
-                    Contact Me
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-card">
-
-            <div class="hero-card-icon">
-                ◇
-            </div>
-
-            <h3>
-                Design with people in mind.
-            </h3>
-
-            <p>
-                My background in psychology gives me an additional
-                perspective when thinking about how users perceive,
-                navigate, and interact with digital experiences.
-            </p>
-
-            <div class="principles">
-
-                <div class="principle">
-                    <div class="dot"></div>
-
-                    <div>
-                        <strong>Empathy-driven</strong>
-                        <p>
-                            Understand the customer before designing
-                            the experience.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="principle">
-                    <div class="dot"></div>
-
-                    <div>
-                        <strong>Purpose-oriented</strong>
-                        <p>
-                            Every section should have a reason to exist.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="principle">
-                    <div class="dot"></div>
-
-                    <div>
-                        <strong>Detail-focused</strong>
-                        <p>
-                            Small details can influence trust and usability.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="container grid2">
+<div>
+<div class="eyebrow">Shopify Store Builder & Web Designer</div>
+<h1>I build Shopify stores that <span>connect, convert,</span> and create impact.</h1>
+<p>I help brands build clean, user-focused Shopify stores designed to build trust, guide decisions, and create meaningful shopping experiences.</p>
+<div class="buttons">
+<a class="btn primary" href="#work">View My Work →</a>
+<a class="btn secondary" href="#contact">Contact Me</a>
+</div>
+</div>
+<div class="hero-card">
+<div class="eyebrow">Design Philosophy</div>
+<h3>Design with people in mind.</h3>
+<p>My background in psychology gives me an additional perspective when thinking about how users perceive, navigate, and interact with digital experiences.</p>
+<div class="principles">
+<div class="principle"><span class="dot"></span><div><strong>Empathy-driven</strong><p>Understand the customer before designing the experience.</p></div></div>
+<div class="principle"><span class="dot"></span><div><strong>Purpose-oriented</strong><p>Every section should have a reason to exist.</p></div></div>
+<div class="principle"><span class="dot"></span><div><strong>Detail-focused</strong><p>Small details can influence trust and usability.</p></div></div>
+</div>
+</div>
+</div>
 </header>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
-
 <section id="about">
-
-    <div class="container">
-
-        <div class="section-label">
-            About Me
-        </div>
-
-        <h2>
-            Psychology meets e-commerce.
-        </h2>
-
-        <div class="about-grid">
-
-            <div class="about-text">
-
-                <p>
-                    I'm Joshua, a Psychology graduate and Shopify web
-                    designer with hands-on experience building and
-                    customizing e-commerce stores.
-                </p>
-
-                <p>
-                    My psychology background has helped me develop an
-                    interest in human behavior, decision-making, and
-                    how people interact with information.
-                </p>
-
-                <p class="about-highlight">
-                    I bring that perspective into web design by thinking
-                    beyond how a store looks — focusing on clarity,
-                    trust, usability, and the customer's journey.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <div class="section-label">
-                    Core Skills
-                </div>
-
-                <div class="skills-wrap">
-
-                    <div class="skill">Shopify</div>
-                    <div class="skill">Liquid</div>
-                    <div class="skill">HTML</div>
-                    <div class="skill">CSS</div>
-                    <div class="skill">JavaScript</div>
-                    <div class="skill">Theme Customization</div>
-                    <div class="skill">Product Pages</div>
-                    <div class="skill">Landing Pages</div>
-                    <div class="skill">Mobile Optimization</div>
-                    <div class="skill">E-commerce Design</div>
-                    <div class="skill">UI/UX Awareness</div>
-                    <div class="skill">Store Setup</div>
-                    <div class="skill">Collections</div>
-                    <div class="skill">Troubleshooting</div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="container">
+<div class="eyebrow">About Me</div>
+<h2>Psychology meets e-commerce.</h2>
+<div class="about">
+<div>
+<p>I'm Joshua, a Psychology graduate and Shopify web designer with hands-on experience building and customizing e-commerce stores.</p>
+<p>My psychology background has helped me develop an interest in human behavior, decision-making, and how people interact with information.</p>
+<p class="highlight">I bring that perspective into web design by thinking beyond how a store looks — focusing on clarity, trust, usability, and the customer's journey.</p>
+</div>
+<div>
+<div class="eyebrow">Core Skills</div>
+<div class="skills">
+<span class="skill">Shopify</span><span class="skill">Liquid</span><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">Theme Customization</span><span class="skill">Product Pages</span><span class="skill">Landing Pages</span><span class="skill">Mobile Optimization</span><span class="skill">E-commerce Design</span><span class="skill">UI/UX Awareness</span><span class="skill">Store Setup</span><span class="skill">Collections</span><span class="skill">Troubleshooting</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-<!-- =========================
-     FEATURED WORK
-========================= -->
 
 <section id="work" class="featured">
+<div class="container">
+<div class="project-head">
+<div><div class="eyebrow">Featured Work</div><h2>Sleevelle</h2></div>
+<div class="nda">CLIENT PROJECT · NDA<br>Selected work shown for portfolio purposes</div>
+</div>
+<div class="project-copy">
+<div><h3>Shopify Store Design & Development</h3><p>A complete Shopify storefront project involving homepage development, product-page design, responsive layouts, content sections, social proof, FAQs, product storytelling, and conversion-focused presentation.</p><div class="tags"><span class="tag">Shopify</span><span class="tag">Liquid</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></div></div>
+<div><h3>My Contribution</h3><ul class="list"><li>Shopify storefront customization</li><li>Homepage section development</li><li>Product page development</li><li>Desktop and mobile optimization</li><li>Content and information structure</li><li>Conversion-focused page sections</li><li>Theme customization and troubleshooting</li></ul></div>
+</div>
 
-    <div class="container">
-
-        <div class="project-header">
-
-            <div>
-
-                <div class="section-label">
-                    Featured Work
+        <div class="gallery-group">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">Sleevelle</span>
+                    <h3>Homepage — Desktop</h3>
                 </div>
+                <span class="count">8 screens</span>
+            </div>
+            <div class="gallery">
 
-                <h2>
-                    Sleevelle
-                </h2>
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-01.png" data-title="Homepage — Desktop — 1">
+                    <img src="images/sleevelle/homepage-desktop-01.png" alt="Sleevelle homepage — desktop screenshot 1" loading="lazy">
+                    <span class="shot-label">01</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-02.png" data-title="Homepage — Desktop — 2">
+                    <img src="images/sleevelle/homepage-desktop-02.png" alt="Sleevelle homepage — desktop screenshot 2" loading="lazy">
+                    <span class="shot-label">02</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-03.png" data-title="Homepage — Desktop — 3">
+                    <img src="images/sleevelle/homepage-desktop-03.png" alt="Sleevelle homepage — desktop screenshot 3" loading="lazy">
+                    <span class="shot-label">03</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-04.png" data-title="Homepage — Desktop — 4">
+                    <img src="images/sleevelle/homepage-desktop-04.png" alt="Sleevelle homepage — desktop screenshot 4" loading="lazy">
+                    <span class="shot-label">04</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-05.png" data-title="Homepage — Desktop — 5">
+                    <img src="images/sleevelle/homepage-desktop-05.png" alt="Sleevelle homepage — desktop screenshot 5" loading="lazy">
+                    <span class="shot-label">05</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-06.png" data-title="Homepage — Desktop — 6">
+                    <img src="images/sleevelle/homepage-desktop-06.png" alt="Sleevelle homepage — desktop screenshot 6" loading="lazy">
+                    <span class="shot-label">06</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-07.png" data-title="Homepage — Desktop — 7">
+                    <img src="images/sleevelle/homepage-desktop-07.png" alt="Sleevelle homepage — desktop screenshot 7" loading="lazy">
+                    <span class="shot-label">07</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-08.png" data-title="Homepage — Desktop — 8">
+                    <img src="images/sleevelle/homepage-desktop-08.png" alt="Sleevelle homepage — desktop screenshot 8" loading="lazy">
+                    <span class="shot-label">08</span>
+                </button>
 
             </div>
-
-            <div class="nda">
-                CLIENT PROJECT · NDA<br>
-                Selected screenshots shown for portfolio purposes
-            </div>
-
         </div>
 
-
-        <p class="section-intro">
-            Shopify storefront work involving homepage development,
-            product page design, responsive layouts, content sections,
-            and conversion-focused e-commerce presentation.
-        </p>
-
-
-        <div class="project-grid">
-
-
-            <!-- IMPORTANT:
-                 These filenames must match the images
-                 you upload to GitHub.
-            -->
-
-            <div class="project-image">
-
-                <img
-                    src="images/sleevelle-home-desktop-1.png"
-                    alt="Sleevelle Shopify homepage desktop"
-                >
-
-            </div>
-
-
-            <div class="project-image">
-
-                <img
-                    src="images/sleevelle-product-desktop-1.png"
-                    alt="Sleevelle Shopify product page desktop"
-                >
-
-            </div>
-
-
-            <div class="project-image">
-
-                <img
-                    src="images/sleevelle-home-mobile-1.png"
-                    alt="Sleevelle Shopify homepage mobile"
-                >
-
-            </div>
-
-
-            <div class="project-image">
-
-                <img
-                    src="images/sleevelle-product-mobile-1.png"
-                    alt="Sleevelle Shopify product page mobile"
-                >
-
-            </div>
-
-        </div>
-
-
-        <div class="project-info">
-
-            <div>
-
-                <h3>
-                    Shopify Store Development
-                </h3>
-
-                <p>
-                    Worked on the design and development of a complete
-                    Shopify storefront, including homepage sections,
-                    product presentation, responsive layouts, and
-                    supporting content sections.
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">Shopify</span>
-                    <span class="tag">Liquid</span>
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">Responsive Design</span>
-
+        <div class="gallery-group">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">Sleevelle</span>
+                    <h3>Homepage — Mobile</h3>
                 </div>
+                <span class="count">7 screens</span>
+            </div>
+            <div class="gallery">
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-01.png" data-title="Homepage — Mobile — 1">
+                    <img src="images/sleevelle/homepage-mobile-01.png" alt="Sleevelle homepage — mobile screenshot 1" loading="lazy">
+                    <span class="shot-label">01</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-02.png" data-title="Homepage — Mobile — 2">
+                    <img src="images/sleevelle/homepage-mobile-02.png" alt="Sleevelle homepage — mobile screenshot 2" loading="lazy">
+                    <span class="shot-label">02</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-03.png" data-title="Homepage — Mobile — 3">
+                    <img src="images/sleevelle/homepage-mobile-03.png" alt="Sleevelle homepage — mobile screenshot 3" loading="lazy">
+                    <span class="shot-label">03</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-04.png" data-title="Homepage — Mobile — 4">
+                    <img src="images/sleevelle/homepage-mobile-04.png" alt="Sleevelle homepage — mobile screenshot 4" loading="lazy">
+                    <span class="shot-label">04</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-05.png" data-title="Homepage — Mobile — 5">
+                    <img src="images/sleevelle/homepage-mobile-05.png" alt="Sleevelle homepage — mobile screenshot 5" loading="lazy">
+                    <span class="shot-label">05</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-06.png" data-title="Homepage — Mobile — 6">
+                    <img src="images/sleevelle/homepage-mobile-06.png" alt="Sleevelle homepage — mobile screenshot 6" loading="lazy">
+                    <span class="shot-label">06</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-07.png" data-title="Homepage — Mobile — 7">
+                    <img src="images/sleevelle/homepage-mobile-07.png" alt="Sleevelle homepage — mobile screenshot 7" loading="lazy">
+                    <span class="shot-label">07</span>
+                </button>
 
             </div>
-
-
-            <div>
-
-                <h3>
-                    My Contribution
-                </h3>
-
-                <ul class="project-list">
-
-                    <li>
-                        Shopify storefront customization
-                    </li>
-
-                    <li>
-                        Homepage section development
-                    </li>
-
-                    <li>
-                        Product page development
-                    </li>
-
-                    <li>
-                        Desktop and mobile optimization
-                    </li>
-
-                    <li>
-                        Content and information structure
-                    </li>
-
-                    <li>
-                        Conversion-focused page sections
-                    </li>
-
-                    <li>
-                        Theme customization and troubleshooting
-                    </li>
-
-                </ul>
-
-            </div>
-
         </div>
 
-    </div>
+        <div class="gallery-group">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">Sleevelle</span>
+                    <h3>Product Page — Desktop</h3>
+                </div>
+                <span class="count">10 screens</span>
+            </div>
+            <div class="gallery">
 
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-01.png" data-title="Product Page — Desktop — 1">
+                    <img src="images/sleevelle/product-desktop-01.png" alt="Sleevelle product page — desktop screenshot 1" loading="lazy">
+                    <span class="shot-label">01</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-02.png" data-title="Product Page — Desktop — 2">
+                    <img src="images/sleevelle/product-desktop-02.png" alt="Sleevelle product page — desktop screenshot 2" loading="lazy">
+                    <span class="shot-label">02</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-03.png" data-title="Product Page — Desktop — 3">
+                    <img src="images/sleevelle/product-desktop-03.png" alt="Sleevelle product page — desktop screenshot 3" loading="lazy">
+                    <span class="shot-label">03</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-04.png" data-title="Product Page — Desktop — 4">
+                    <img src="images/sleevelle/product-desktop-04.png" alt="Sleevelle product page — desktop screenshot 4" loading="lazy">
+                    <span class="shot-label">04</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-05.png" data-title="Product Page — Desktop — 5">
+                    <img src="images/sleevelle/product-desktop-05.png" alt="Sleevelle product page — desktop screenshot 5" loading="lazy">
+                    <span class="shot-label">05</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-06.png" data-title="Product Page — Desktop — 6">
+                    <img src="images/sleevelle/product-desktop-06.png" alt="Sleevelle product page — desktop screenshot 6" loading="lazy">
+                    <span class="shot-label">06</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-07.png" data-title="Product Page — Desktop — 7">
+                    <img src="images/sleevelle/product-desktop-07.png" alt="Sleevelle product page — desktop screenshot 7" loading="lazy">
+                    <span class="shot-label">07</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-08.png" data-title="Product Page — Desktop — 8">
+                    <img src="images/sleevelle/product-desktop-08.png" alt="Sleevelle product page — desktop screenshot 8" loading="lazy">
+                    <span class="shot-label">08</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-09.png" data-title="Product Page — Desktop — 9">
+                    <img src="images/sleevelle/product-desktop-09.png" alt="Sleevelle product page — desktop screenshot 9" loading="lazy">
+                    <span class="shot-label">09</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-10.png" data-title="Product Page — Desktop — 10">
+                    <img src="images/sleevelle/product-desktop-10.png" alt="Sleevelle product page — desktop screenshot 10" loading="lazy">
+                    <span class="shot-label">10</span>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="gallery-group">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">Sleevelle</span>
+                    <h3>Product Page — Mobile</h3>
+                </div>
+                <span class="count">13 screens</span>
+            </div>
+            <div class="gallery">
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-01.png" data-title="Product Page — Mobile — 1">
+                    <img src="images/sleevelle/product-mobile-01.png" alt="Sleevelle product page — mobile screenshot 1" loading="lazy">
+                    <span class="shot-label">01</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-02.png" data-title="Product Page — Mobile — 2">
+                    <img src="images/sleevelle/product-mobile-02.png" alt="Sleevelle product page — mobile screenshot 2" loading="lazy">
+                    <span class="shot-label">02</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-03.png" data-title="Product Page — Mobile — 3">
+                    <img src="images/sleevelle/product-mobile-03.png" alt="Sleevelle product page — mobile screenshot 3" loading="lazy">
+                    <span class="shot-label">03</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-04.png" data-title="Product Page — Mobile — 4">
+                    <img src="images/sleevelle/product-mobile-04.png" alt="Sleevelle product page — mobile screenshot 4" loading="lazy">
+                    <span class="shot-label">04</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-05.png" data-title="Product Page — Mobile — 5">
+                    <img src="images/sleevelle/product-mobile-05.png" alt="Sleevelle product page — mobile screenshot 5" loading="lazy">
+                    <span class="shot-label">05</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-06.png" data-title="Product Page — Mobile — 6">
+                    <img src="images/sleevelle/product-mobile-06.png" alt="Sleevelle product page — mobile screenshot 6" loading="lazy">
+                    <span class="shot-label">06</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-07.png" data-title="Product Page — Mobile — 7">
+                    <img src="images/sleevelle/product-mobile-07.png" alt="Sleevelle product page — mobile screenshot 7" loading="lazy">
+                    <span class="shot-label">07</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-08.png" data-title="Product Page — Mobile — 8">
+                    <img src="images/sleevelle/product-mobile-08.png" alt="Sleevelle product page — mobile screenshot 8" loading="lazy">
+                    <span class="shot-label">08</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-09.png" data-title="Product Page — Mobile — 9">
+                    <img src="images/sleevelle/product-mobile-09.png" alt="Sleevelle product page — mobile screenshot 9" loading="lazy">
+                    <span class="shot-label">09</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-10.png" data-title="Product Page — Mobile — 10">
+                    <img src="images/sleevelle/product-mobile-10.png" alt="Sleevelle product page — mobile screenshot 10" loading="lazy">
+                    <span class="shot-label">10</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-11.png" data-title="Product Page — Mobile — 11">
+                    <img src="images/sleevelle/product-mobile-11.png" alt="Sleevelle product page — mobile screenshot 11" loading="lazy">
+                    <span class="shot-label">11</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-12.png" data-title="Product Page — Mobile — 12">
+                    <img src="images/sleevelle/product-mobile-12.png" alt="Sleevelle product page — mobile screenshot 12" loading="lazy">
+                    <span class="shot-label">12</span>
+                </button>
+
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-13.png" data-title="Product Page — Mobile — 13">
+                    <img src="images/sleevelle/product-mobile-13.png" alt="Sleevelle product page — mobile screenshot 13" loading="lazy">
+                    <span class="shot-label">13</span>
+                </button>
+
+            </div>
+        </div>
+
+</div>
 </section>
-
-
-<!-- =========================
-     SERVICES
-========================= -->
 
 <section id="services">
-
-    <div class="container">
-
-        <div class="section-label">
-            What I Do
-        </div>
-
-        <h2>
-            Shopify, from build to polish.
-        </h2>
-
-        <p class="section-intro">
-            I can take a Shopify store from a blank theme to a
-            structured, professional, customer-ready experience.
-        </p>
-
-
-        <div class="services">
-
-
-            <div class="service">
-
-                <div class="service-number">
-                    01
-                </div>
-
-                <h3>
-                    Store Building
-                </h3>
-
-                <p>
-                    Build Shopify stores from scratch with clean
-                    structure, navigation, collections, pages,
-                    and product organization.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-number">
-                    02
-                </div>
-
-                <h3>
-                    Theme Customization
-                </h3>
-
-                <p>
-                    Customize Shopify themes using Liquid, HTML,
-                    CSS, and JavaScript to create unique layouts.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-number">
-                    03
-                </div>
-
-                <h3>
-                    Product Pages
-                </h3>
-
-                <p>
-                    Build product pages that clearly communicate
-                    value while maintaining a clean user experience.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-number">
-                    04
-                </div>
-
-                <h3>
-                    Mobile Optimization
-                </h3>
-
-                <p>
-                    Make sure storefronts remain clean, responsive,
-                    and usable across different screen sizes.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-number">
-                    05
-                </div>
-
-                <h3>
-                    Store Setup
-                </h3>
-
-                <p>
-                    Set up products, collections, navigation,
-                    pages, images, and basic store structure.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-number">
-                    06
-                </div>
-
-                <h3>
-                    Troubleshooting
-                </h3>
-
-                <p>
-                    Identify layout and code issues and work through
-                    theme problems to keep stores functioning properly.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="container">
+<div class="eyebrow">What I Do</div><h2>Shopify, from build to polish.</h2>
+<p class="intro">I can take a Shopify store from a blank theme to a structured, professional, customer-ready experience.</p>
+<div class="services">
+<div class="service"><div class="num">01</div><h3>Store Building</h3><p>Build Shopify stores from scratch with clean structure, navigation, collections, pages, and product organization.</p></div><div class="service"><div class="num">02</div><h3>Theme Customization</h3><p>Customize Shopify themes using Liquid, HTML, CSS, and JavaScript to create unique layouts.</p></div><div class="service"><div class="num">03</div><h3>Product Pages</h3><p>Build product pages that clearly communicate value while maintaining a clean user experience.</p></div><div class="service"><div class="num">04</div><h3>Mobile Optimization</h3><p>Make sure storefronts remain clean, responsive, and usable across different screen sizes.</p></div><div class="service"><div class="num">05</div><h3>Store Setup</h3><p>Set up products, collections, navigation, pages, images, and basic store structure.</p></div><div class="service"><div class="num">06</div><h3>Troubleshooting</h3><p>Identify layout and code issues and work through theme problems to keep stores functioning properly.</p></div>
+</div>
+</div>
 </section>
-
-
-<!-- =========================
-     TOOLS
-========================= -->
 
 <section id="skills">
-
-    <div class="container">
-
-        <div class="section-label">
-            Tools & Technologies
-        </div>
-
-        <h2>
-            What I work with.
-        </h2>
-
-        <div class="tools">
-
-            <div class="tool">Shopify</div>
-            <div class="tool">Liquid</div>
-            <div class="tool">HTML</div>
-            <div class="tool">CSS</div>
-            <div class="tool">JavaScript</div>
-            <div class="tool">Canva</div>
-            <div class="tool">Figma</div>
-            <div class="tool">ChatGPT</div>
-            <div class="tool">Claude</div>
-
-        </div>
-
-    </div>
-
+<div class="container">
+<div class="eyebrow">Tools & Technologies</div><h2>What I work with.</h2>
+<div class="tools"><span class="tool">Shopify</span><span class="tool">Liquid</span><span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">JavaScript</span><span class="tool">Canva</span><span class="tool">Figma</span><span class="tool">ChatGPT</span><span class="tool">Claude</span></div>
+</div>
 </section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
 
 <section id="contact">
-
-    <div class="container">
-
-        <div class="contact-box">
-
-            <div class="section-label">
-                Let's Work Together
-            </div>
-
-            <h2>
-                Have a Shopify project in mind?
-            </h2>
-
-            <p>
-                I'm open to long-term Shopify store building,
-                web design, and e-commerce opportunities.
-            </p>
-
-            <!-- CHANGE THIS EMAIL -->
-
-            <a
-                href="mailto:YOUR-EMAIL@example.com"
-                class="button button-primary">
-                Get In Touch →
-            </a>
-
-        </div>
-
-    </div>
-
+<div class="container">
+<div class="contact">
+<div class="eyebrow">Let's Work Together</div>
+<h2>Have a Shopify project in mind?</h2>
+<p>I'm open to long-term Shopify store building, web design, and e-commerce opportunities.</p>
+<a class="btn primary" href="mailto:YOUR-EMAIL@example.com">Get In Touch →</a>
+</div>
+</div>
 </section>
 
+<footer><div class="container footer"><span>© 2026 Joshua Paul</span><span>Shopify Store Builder · Web Designer</span></div></footer>
 
-<!-- =========================
-     FOOTER
-========================= -->
+<div class="lightbox" id="lightbox">
+<button class="close" aria-label="Close">×</button>
+<button class="prev" aria-label="Previous">‹</button>
+<img id="lightboxImg" src="" alt="">
+<button class="next" aria-label="Next">›</button>
+<div class="lightbox-title" id="lightboxTitle"></div>
+</div>
 
-<footer>
-
-    <div class="container footer-inner">
-
-        <div>
-            © 2026 Joshua Paul
-        </div>
-
-        <div>
-            Shopify Store Builder · Web Designer
-        </div>
-
-    </div>
-
-</footer>
-
-
+<script>
+const shots=[...document.querySelectorAll(".shot")];
+const box=document.getElementById("lightbox");
+const img=document.getElementById("lightboxImg");
+const title=document.getElementById("lightboxTitle");
+let current=0;
+function openShot(i){
+ current=i;
+ img.src=shots[i].dataset.full;
+ img.alt=shots[i].dataset.title;
+ title.textContent=shots[i].dataset.title+" · "+(i+1)+" / "+shots.length;
+ box.classList.add("open");
+ document.body.style.overflow="hidden";
+}
+function closeShot(){box.classList.remove("open");document.body.style.overflow="";}
+function move(n){current=(current+n+shots.length)%shots.length;openShot(current)}
+shots.forEach((s,i)=>s.addEventListener("click",()=>openShot(i)));
+document.querySelector(".close").onclick=closeShot;
+document.querySelector(".prev").onclick=()=>move(-1);
+document.querySelector(".next").onclick=()=>move(1);
+box.addEventListener("click",e=>{if(e.target===box)closeShot()});
+document.addEventListener("keydown",e=>{
+ if(!box.classList.contains("open"))return;
+ if(e.key==="Escape")closeShot();
+ if(e.key==="ArrowLeft")move(-1);
+ if(e.key==="ArrowRight")move(1);
+});
+</script>
 </body>
 </html>
