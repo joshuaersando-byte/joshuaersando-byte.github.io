@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joshua Paul | Shopify Store Builder</title>
-<meta name="description" content="Joshua Paul — Shopify Store Builder and Web Designer.">
+<title>Joshua Paul | Shopify Store Builder & Web Designer</title>
+<meta name="description" content="Joshua Paul — Shopify Store Builder and Web Designer with experience in Shopify product pages, e-commerce, UGC sourcing, customer support, and responsive storefront design.">
 <style>
 :root{
---bg:#0b1112;--soft:#10191a;--card:#121d1e;--sage:#9bbf9a;--sage2:#b7d4b2;
---cream:#f1eee5;--text:#d7ddd8;--muted:#899692;--border:rgba(155,191,154,.16);
---line:rgba(255,255,255,.08)
+--bg:#0b1220;--soft:#101a2b;--card:#121d2e;--blue:#7fa7d8;--blue2:#a9c2e2;
+--cream:#f3f6fa;--text:#d9e2ec;--muted:#8f9eae;--border:rgba(127,167,216,.20);
+--line:rgba(220,232,245,.09)
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -17,28 +17,28 @@ body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-ser
 a{color:inherit;text-decoration:none}
 button{font:inherit}
 .container{width:min(1120px,90%);margin:auto}
-nav{position:sticky;top:0;z-index:20;background:rgba(11,17,18,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.90);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .nav{height:74px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:800;font-size:20px;color:var(--cream)}.logo span{color:var(--sage)}
+.logo{font-weight:800;font-size:20px;color:var(--cream)}.logo span{color:var(--blue)}
 .links{display:flex;gap:28px;list-style:none;align-items:center}.links a{font-size:14px;color:var(--muted)}
-.links a:hover{color:var(--sage2)}
-.cta{background:var(--sage);color:#0b1112!important;padding:10px 16px;border-radius:24px;font-weight:700}
+.links a:hover{color:var(--blue2)}
+.cta{background:var(--blue);color:#0b1220!important;padding:10px 16px;border-radius:24px;font-weight:700}
 .hero{padding:115px 0 105px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:650px;height:650px;right:-280px;top:-180px;background:radial-gradient(circle,rgba(155,191,154,.12),transparent 65%);pointer-events:none}
+.hero:after{content:"";position:absolute;width:650px;height:650px;right:-280px;top:-180px;background:radial-gradient(circle,rgba(127,167,216,.12),transparent 65%);pointer-events:none}
 .grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:65px;align-items:center}
-.eyebrow{color:var(--sage);font-size:12px;letter-spacing:2.3px;text-transform:uppercase;font-weight:700}
+.eyebrow{color:var(--blue);font-size:12px;letter-spacing:2.3px;text-transform:uppercase;font-weight:700}
 h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--cream)}
 h1{font-size:clamp(48px,6vw,76px);line-height:1.03;letter-spacing:-3px;margin:20px 0 27px}
-h1 span{color:var(--sage)}
+h1 span{color:var(--blue)}
 .hero p,.intro,.about p,.project-copy p{color:var(--muted);line-height:1.85}
 .hero p{font-size:18px;max-width:650px;margin-bottom:30px}
 .buttons{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:13px 21px;border-radius:8px;font-size:14px;font-weight:700}
-.primary{background:var(--sage);color:#0b1112}.secondary{border:1px solid var(--line);color:var(--cream)}
-.hero-card{background:linear-gradient(145deg,rgba(155,191,154,.08),rgba(255,255,255,.02));border:1px solid var(--border);padding:32px;border-radius:20px}
+.primary{background:var(--blue);color:#0b1220}.secondary{border:1px solid var(--line);color:var(--cream)}
+.hero-card{background:linear-gradient(145deg,rgba(127,167,216,.08),rgba(255,255,255,.02));border:1px solid var(--border);padding:32px;border-radius:20px}
 .hero-card h3{font-size:26px;margin:14px 0 10px}.hero-card p{font-size:14px}
 .principles{margin-top:22px;display:grid;gap:14px}.principle{display:flex;gap:12px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--sage);margin-top:8px;flex:none}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--blue);margin-top:8px;flex:none}
 .principle strong{color:var(--cream);font-size:14px}.principle p{font-size:13px}
 section{padding:100px 0;border-top:1px solid var(--line)}
 h2{font-size:clamp(36px,4vw,50px);line-height:1.1;letter-spacing:-1.5px;margin:12px 0 18px}
@@ -47,41 +47,58 @@ h2{font-size:clamp(36px,4vw,50px);line-height:1.1;letter-spacing:-1.5px;margin:1
 .about p{margin-bottom:17px}
 .highlight{border-left:2px solid var(--sage);padding-left:18px;color:var(--cream)!important}
 .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
-.skill,.tag{border:1px solid var(--border);background:rgba(155,191,154,.04);padding:8px 12px;border-radius:6px;font-size:13px}
+.skill,.tag{border:1px solid var(--border);background:rgba(127,167,216,.04);padding:8px 12px;border-radius:6px;font-size:13px}
 .featured{background:var(--soft)}
 .project-head{display:flex;justify-content:space-between;align-items:end;gap:20px}
-.nda{color:var(--sage);font-size:12px;text-align:right}
+.nda{color:var(--blue);font-size:12px;text-align:right}
 .project-copy{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-bottom:55px}
 .project-copy h3{font-size:26px;margin-bottom:10px}
 .list{list-style:none;display:grid;gap:8px}.list li{color:var(--muted);font-size:14px}
-.list li:before{content:"✓";color:var(--sage);margin-right:9px}
+.list li:before{content:"✓";color:var(--blue);margin-right:9px}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
 .gallery-group{margin-top:62px}
 .gallery-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
 .gallery-heading h3{font-size:27px;margin-top:4px}
 .count{color:var(--muted);font-size:12px}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.shot{position:relative;border:1px solid var(--line);background:#172021;border-radius:10px;overflow:hidden;cursor:pointer;padding:0;transition:.25s;text-align:left}
+.shot{position:relative;border:1px solid var(--line);background:#172337;border-radius:10px;overflow:hidden;cursor:pointer;padding:0;transition:.25s;text-align:left}
 .shot:hover{transform:translateY(-4px);border-color:var(--border)}
 .shot img{width:100%;height:250px;object-fit:cover;object-position:top;display:block}
 .shot-label{position:absolute;left:9px;bottom:9px;background:rgba(11,17,18,.82);color:var(--cream);font-size:11px;padding:4px 7px;border-radius:4px}
+
+.experience-list{display:grid;gap:18px;margin-top:35px}
+.experience-item{display:grid;grid-template-columns:190px 1fr;gap:30px;padding:30px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.experience-meta{display:flex;flex-direction:column;gap:7px}
+.experience-date{color:var(--blue);font-size:13px;font-weight:700}
+.experience-type{color:var(--muted);font-size:12px}
+.experience-item h3{font-family:Arial,sans-serif;font-size:20px;margin-bottom:4px}
+.company{color:var(--muted);font-size:13px;margin-bottom:16px}
+.experience-item .list{margin-top:0}
+.support-strip{margin-top:18px;padding:22px 25px;background:rgba(127,167,216,.045);border:1px solid var(--border);border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.support-strip strong{display:block;color:var(--cream);font-size:14px;margin-top:7px}
+.support-strip p{color:var(--muted);font-size:13px;max-width:500px}
+.education-card{margin-top:18px;padding:28px;background:linear-gradient(135deg,rgba(127,167,216,.08),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:12px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.education-card h3{font-family:Arial,sans-serif;font-size:18px;margin:7px 0}
+.education-card p{color:var(--muted);font-size:13px}
+.education-note{color:var(--blue2);font-size:12px;max-width:280px;text-align:right}
+
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
 .service{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:28px}
-.service .num{color:var(--sage);font-size:12px;margin-bottom:28px}
+.service .num{color:var(--blue);font-size:12px;margin-bottom:28px}
 .service h3{font-family:Arial,sans-serif;font-size:17px;margin-bottom:9px}.service p{color:var(--muted);font-size:14px}
 .tools{display:flex;flex-wrap:wrap;gap:10px}.tool{padding:14px 18px;background:var(--card);border:1px solid var(--line);border-radius:8px;color:var(--cream)}
-.contact{text-align:center;padding:65px 25px;border:1px solid var(--border);border-radius:20px;background:radial-gradient(circle at 50% 0%,rgba(155,191,154,.08),transparent 55%),var(--card)}
+.contact{text-align:center;padding:65px 25px;border:1px solid var(--border);border-radius:20px;background:radial-gradient(circle at 50% 0%,rgba(127,167,216,.08),transparent 55%),var(--card)}
 .contact p{max-width:580px;margin:0 auto 28px;color:var(--muted)}
 footer{padding:28px 0;border-top:1px solid var(--line);color:#687572;font-size:12px}
 .footer{display:flex;justify-content:space-between;gap:20px}
 .lightbox{position:fixed;inset:0;background:rgba(3,7,8,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:35px}
 .lightbox.open{display:flex}
 .lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:8px}
-.close,.prev,.next{position:fixed;border:1px solid var(--line);background:rgba(18,29,30,.9);color:var(--cream);cursor:pointer;border-radius:50%;width:44px;height:44px}
+.close,.prev,.next{position:fixed;border:1px solid var(--line);background:rgba(18,29,46,.94);color:var(--cream);cursor:pointer;border-radius:50%;width:44px;height:44px}
 .close{top:20px;right:20px;font-size:22px}.prev{left:20px;top:50%;font-size:20px}.next{right:20px;top:50%;font-size:20px}
 .lightbox-title{position:fixed;bottom:15px;left:0;right:0;text-align:center;color:var(--muted);font-size:13px}
 @media(max-width:850px){
-.links{display:none}.grid2,.about,.project-copy{grid-template-columns:1fr}.hero{padding:80px 0}
+.links{display:none}.grid2,.about,.project-copy{grid-template-columns:1fr}.experience-item{grid-template-columns:1fr;gap:12px}.education-card{display:block}.education-note{text-align:left;margin-top:16px}.support-strip{display:block}.support-strip p{margin-top:12px}.hero{padding:80px 0}
 .gallery{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:1fr 1fr}
 .project-head{display:block}.nda{text-align:left;margin-top:14px}
 }
@@ -99,6 +116,7 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 <div class="logo">Joshua<span>.</span></div>
 <ul class="links">
 <li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
 <li><a href="#work">Work</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#skills">Skills</a></li>
@@ -111,8 +129,8 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 <div class="container grid2">
 <div>
 <div class="eyebrow">Shopify Store Builder & Web Designer</div>
-<h1>I build Shopify stores that <span>connect, convert,</span> and create impact.</h1>
-<p>I help brands build clean, user-focused Shopify stores designed to build trust, guide decisions, and create meaningful shopping experiences.</p>
+<h1>I build Shopify stores that <span>look sharp, feel clear,</span> and help people buy with confidence.</h1>
+<p>Shopify store builder, web designer, and personal assistant with experience supporting e-commerce operations, localization, content, reporting, and day-to-day business tasks.</p>
 <div class="buttons">
 <a class="btn primary" href="#work">View My Work →</a>
 <a class="btn secondary" href="#contact">Contact Me</a>
@@ -121,7 +139,7 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 <div class="hero-card">
 <div class="eyebrow">Design Philosophy</div>
 <h3>Design with people in mind.</h3>
-<p>My background in psychology gives me an additional perspective when thinking about how users perceive, navigate, and interact with digital experiences.</p>
+<p>My BS Psychology background gives me an additional perspective when thinking about attention, clarity, trust, decision-making, and how people interact with digital experiences.</p>
 <div class="principles">
 <div class="principle"><span class="dot"></span><div><strong>Empathy-driven</strong><p>Understand the customer before designing the experience.</p></div></div>
 <div class="principle"><span class="dot"></span><div><strong>Purpose-oriented</strong><p>Every section should have a reason to exist.</p></div></div>
@@ -137,9 +155,9 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 <h2>Psychology meets e-commerce.</h2>
 <div class="about">
 <div>
-<p>I'm Joshua, a Psychology graduate and Shopify web designer with hands-on experience building and customizing e-commerce stores.</p>
-<p>My psychology background has helped me develop an interest in human behavior, decision-making, and how people interact with information.</p>
-<p class="highlight">I bring that perspective into web design by thinking beyond how a store looks — focusing on clarity, trust, usability, and the customer's journey.</p>
+<p>I'm Joshua Paul, a BS Psychology graduate with hands-on experience in Shopify, e-commerce support, product-page optimization, UGC sourcing, and customer support.</p>
+<p>My psychology background strengthens the way I think about attention, communication, decision-making, and user behavior — useful when building pages that need to be both visually polished and easy to understand.</p>
+<p class="highlight">I combine creative web design with practical e-commerce thinking: clear information, strong product presentation, responsive layouts, and a smooth customer journey.</p>
 </div>
 <div>
 <div class="eyebrow">Core Skills</div>
@@ -147,6 +165,74 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 <span class="skill">Shopify</span><span class="skill">Liquid</span><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">Theme Customization</span><span class="skill">Product Pages</span><span class="skill">Landing Pages</span><span class="skill">Mobile Optimization</span><span class="skill">E-commerce Design</span><span class="skill">UI/UX Awareness</span><span class="skill">Store Setup</span><span class="skill">Collections</span><span class="skill">Troubleshooting</span>
 </div>
 </div>
+</div>
+</div>
+</section>
+
+
+<section id="experience">
+<div class="container">
+<div class="eyebrow">Experience</div>
+<h2>Hands-on e-commerce experience.</h2>
+<p class="intro">My recent work combines Shopify execution, e-commerce operations, creative production, personal-assistant support, localization, and day-to-day business coordination.</p>
+
+<div class="experience-list">
+  <article class="experience-item">
+    <div class="experience-meta">
+      <span class="experience-date">Nov 2025 — Jun 2026</span>
+      <span class="experience-type">Freelance</span>
+    </div>
+    <div>
+      <h3>Virtual Assistant — Shopify</h3>
+      <p class="company">E-commerce / Shopify</p>
+      <ul class="list">
+        <li>Built and optimized Shopify product pages with a focus on user experience, clarity, and conversion.</li>
+        <li>Customized storefronts, landing pages, and responsive layouts using Shopify, Liquid, HTML, CSS, and JavaScript.</li>
+        <li>Conducted product research and trend analysis to identify promising and high-demand products.</li>
+        <li>Sourced and coordinated with UGC creators for marketing campaigns and content production.</li>
+        <li>Created 1:1 video translations and 1:1 image translations for localized marketing content.</li>
+        <li>Uploaded and managed static ads through Meta Ads Manager for marketing campaigns.</li>
+        <li>Updated accounting and tracking sheets, maintained organized records, and supported day-to-day business operations.</li>
+        <li>Provided personal-assistant and administrative support directly to the business owner, helping manage recurring tasks and operational priorities.</li>
+        <li>Managed customer support, resolving inquiries and order concerns efficiently.</li>
+        <li>Assisted with product listings, content creation, store maintenance, and general e-commerce operations.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="experience-item">
+    <div class="experience-meta">
+      <span class="experience-date">Apr 2025 — Jun 2025</span>
+      <span class="experience-type">OJT</span>
+    </div>
+    <div>
+      <h3>Recruitment & Marketing</h3>
+      <p class="company">Crown Summit Life Insurance Agency — Pru Life UK</p>
+      <ul class="list">
+        <li>Created recruitment ads and engaging recruitment spiels in English, Tagalog, and Taglish.</li>
+        <li>Sourced and contacted potential applicants through email and calls.</li>
+        <li>Assisted with recruitment processes and initial candidate engagement.</li>
+        <li>Completed daily reports and submitted performance outputs to a supervisor.</li>
+      </ul>
+    </div>
+  </article>
+</div>
+
+<div class="support-strip">
+  <div>
+    <div class="eyebrow">Additional Support</div>
+    <strong>Personal Assistant · Administrative Support · Localization · Meta Ads · Reporting</strong>
+  </div>
+  <p>Comfortable handling recurring operational tasks, translations, spreadsheets, documentation, ad uploads, and time-sensitive requests alongside creative and technical work.</p>
+</div>
+
+<div class="education-card">
+  <div>
+    <div class="eyebrow">Education</div>
+    <h3>Bachelor of Science in Psychology</h3>
+    <p>Eulogio “Amang” Rodriguez Institute of Science and Technology (EARIST) — Manila · 2021–2025</p>
+  </div>
+  <div class="education-note">Analytical thinking · Communication · Human behavior · Adaptability</div>
 </div>
 </div>
 </section>
@@ -409,8 +495,8 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 
 <section id="services">
 <div class="container">
-<div class="eyebrow">What I Do</div><h2>Shopify, from build to polish.</h2>
-<p class="intro">I can take a Shopify store from a blank theme to a structured, professional, customer-ready experience.</p>
+<div class="eyebrow">What I Do</div><h2>Shopify, e-commerce, and operational support.</h2>
+<p class="intro">I can support both the storefront and the work around it — from Shopify builds and product pages to content, localization, spreadsheets, and day-to-day e-commerce operations.</p>
 <div class="services">
 <div class="service"><div class="num">01</div><h3>Store Building</h3><p>Build Shopify stores from scratch with clean structure, navigation, collections, pages, and product organization.</p></div><div class="service"><div class="num">02</div><h3>Theme Customization</h3><p>Customize Shopify themes using Liquid, HTML, CSS, and JavaScript to create unique layouts.</p></div><div class="service"><div class="num">03</div><h3>Product Pages</h3><p>Build product pages that clearly communicate value while maintaining a clean user experience.</p></div><div class="service"><div class="num">04</div><h3>Mobile Optimization</h3><p>Make sure storefronts remain clean, responsive, and usable across different screen sizes.</p></div><div class="service"><div class="num">05</div><h3>Store Setup</h3><p>Set up products, collections, navigation, pages, images, and basic store structure.</p></div><div class="service"><div class="num">06</div><h3>Troubleshooting</h3><p>Identify layout and code issues and work through theme problems to keep stores functioning properly.</p></div>
 </div>
@@ -420,7 +506,7 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 <section id="skills">
 <div class="container">
 <div class="eyebrow">Tools & Technologies</div><h2>What I work with.</h2>
-<div class="tools"><span class="tool">Shopify</span><span class="tool">Liquid</span><span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">JavaScript</span><span class="tool">Canva</span><span class="tool">Figma</span><span class="tool">ChatGPT</span><span class="tool">Claude</span></div>
+<div class="tools"><span class="tool">Shopify</span><span class="tool">Liquid</span><span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">JavaScript</span><span class="tool">Canva</span><span class="tool"></span><span class="tool">ChatGPT</span><span class="tool">Claude</span></div>
 </div>
 </section>
 
@@ -429,8 +515,8 @@ h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
 <div class="contact">
 <div class="eyebrow">Let's Work Together</div>
 <h2>Have a Shopify project in mind?</h2>
-<p>I'm open to long-term Shopify store building, web design, and e-commerce opportunities.</p>
-<a class="btn primary" href="mailto:YOUR-EMAIL@example.com">Get In Touch →</a>
+<p>I'm open to long-term Shopify store building, web design, and e-commerce opportunities.</p><p style="color:var(--blue2);font-weight:700;margin-top:-12px;margin-bottom:22px">joshua.ersando@gmail.com</p>
+<a class="btn primary" href="mailto:joshua.ersando@gmail.com">Get In Touch →</a>
 </div>
 </div>
 </section>
