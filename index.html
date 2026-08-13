@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joshua Paul | Shopify Store Builder & Web Designer</title>
-<meta name="description" content="Joshua Paul — Shopify Store Builder and Web Designer with experience in Shopify product pages, e-commerce, UGC sourcing, customer support, and responsive storefront design.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Joshua Paul | Shopify Store Builder &amp; Web Designer</title>
+<meta content="Joshua Paul — Shopify Store Builder and Web Designer with experience in Shopify product pages, e-commerce, UGC sourcing, customer support, and responsive storefront design." name="description"/>
 <style>
 :root{
 --bg:#0a101b;
@@ -1340,13 +1341,346 @@ header .container,header nav,nav .container{display:flex!important;align-items:c
   .mobile-menu-toggle,.mobile-menu{display:none !important}
 }
 
+
+/* =========================================================
+   FINAL MOBILE RESPONSIVE FIX
+   Prevents desktop two-column layouts from overflowing
+   on phones and narrow/tablet mobile browsers.
+   ========================================================= */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+img, video, iframe, svg {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px), screen and (pointer: coarse) {
+
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  nav {
+    width: 100% !important;
+  }
+
+  nav .container,
+  .container {
+    width: calc(100% - 30px) !important;
+    max-width: none !important;
+  }
+
+  .nav {
+    width: 100% !important;
+    height: 64px !important;
+  }
+
+  /* Never allow the desktop navigation to push the page wider */
+  .links {
+    display: none !important;
+  }
+
+  /* The hamburger replaces the desktop navigation */
+  .mobile-menu-toggle {
+    display: flex !important;
+    flex: 0 0 42px !important;
+  }
+
+  /* CRITICAL: stack every major two-column layout */
+  .grid2,
+  .about,
+  .project-copy,
+  .experience-item {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .grid2 {
+    gap: 28px !important;
+  }
+
+  .about,
+  .project-copy {
+    gap: 28px !important;
+  }
+
+  /* Make every grid child shrink instead of creating horizontal overflow */
+  .grid2 > *,
+  .about > *,
+  .project-copy > *,
+  .experience-item > *,
+  .hero > .container > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .hero {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 55px 0 45px !important;
+    overflow: hidden !important;
+  }
+
+  .hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(42px, 11vw, 62px) !important;
+    letter-spacing: -2px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .hero p {
+    max-width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  .hero-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  section {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Keep screenshots/cards inside the phone viewport */
+  .gallery,
+  .services,
+  .tools,
+  .skills,
+  .tags,
+  .buttons {
+    max-width: 100% !important;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .shots {
+    grid-template-columns: 1fr !important;
+  }
+
+  .shot,
+  .shot img {
+    max-width: 100% !important;
+  }
+
+  .shot img {
+    height: auto !important;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 560px), screen and (pointer: coarse) {
+
+  .container {
+    width: calc(100% - 30px) !important;
+  }
+
+  .logo {
+    font-size: 19px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero {
+    padding: 48px 0 38px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(39px, 11vw, 52px) !important;
+    line-height: .99 !important;
+  }
+
+  .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .buttons .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .gallery,
+  .services {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section,
+  section {
+    padding: 48px 0 !important;
+  }
+}
+
+
+/* =========================================================
+   TRUE MOBILE LAYOUT OVERRIDE
+   Use block flow instead of CSS Grid on phones so the
+   desktop hero card can NEVER sit beside the hero copy.
+   ========================================================= */
+
+@media (max-width:760px), (pointer:coarse) {
+  .hero .container.grid2,
+  .grid2 {
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .hero .container.grid2 > div,
+  .grid2 > div {
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+
+  .hero .container.grid2 > div + div,
+  .grid2 > div + div {
+    margin-top:30px !important;
+  }
+
+  .hero-card {
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+
+  .hero-card h3,
+  .hero-card p,
+  .hero-card .principles {
+    max-width:100% !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+  }
+
+  .hero h1 {
+    width:100% !important;
+    max-width:100% !important;
+    overflow-wrap:normal !important;
+  }
+
+  body {
+    overflow-x:hidden !important;
+  }
+
+  section,
+  header,
+  nav {
+    max-width:100vw !important;
+    overflow-x:hidden !important;
+  }
+}
+
+@media (max-width:480px), (pointer:coarse) {
+  .hero {
+    padding-top:48px !important;
+    padding-bottom:38px !important;
+  }
+
+  .hero .container {
+    width:calc(100% - 30px) !important;
+    max-width:none !important;
+  }
+
+  .hero h1 {
+    font-size:42px !important;
+    line-height:.99 !important;
+    letter-spacing:-1.8px !important;
+  }
+
+  .hero-card {
+    padding:24px !important;
+    border-radius:16px !important;
+  }
+}
+
+
+
+/* =========================================================
+   COLLAPSIBLE PORTFOLIO GALLERIES
+   Shows one representative screenshot by default.
+   Employers can expand a gallery only when they want to
+   inspect the complete set.
+   ========================================================= */
+
+.gallery-group.gallery-collapsed .gallery .shot:not(:first-child) {
+  display: none !important;
+}
+
+.gallery-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 14px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(151, 187, 218, 0.25);
+  border-radius: 10px;
+  background: rgba(151, 187, 218, 0.07);
+  color: #dce8f3;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease,
+              transform .2s ease;
+}
+
+.gallery-toggle::after {
+  content: "↓";
+  font-size: 14px;
+  transition: transform .2s ease;
+}
+
+.gallery-toggle:hover {
+  background: rgba(151, 187, 218, 0.13);
+  border-color: rgba(151, 187, 218, 0.42);
+  transform: translateY(-1px);
+}
+
+.gallery-group.gallery-expanded .gallery-toggle::after {
+  content: "↑";
+}
+
+.gallery-group.gallery-expanded .gallery .shot {
+  display: block;
+}
+
+@media (max-width: 760px), (pointer: coarse) {
+  .gallery-toggle {
+    width: 100%;
+    margin-top: 12px;
+    min-height: 46px;
+  }
+
+  .gallery-group.gallery-collapsed .gallery {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gallery-group.gallery-expanded .gallery {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 </head>
 <body>
-
 <nav>
 <div class="container nav">
-<div class="logo">Joshua Paul Ersando</div><button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+<div class="logo">Joshua Paul Ersando</div><button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-toggle" id="mobile-menu-toggle" type="button"><span></span><span></span><span></span></button>
 <ul class="links">
 <li><a href="#about">About</a></li>
 <li><a href="#experience">Experience</a></li>
@@ -1357,7 +1691,7 @@ header .container,header nav,nav .container{display:flex!important;align-items:c
 </ul>
 </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+<div aria-hidden="true" class="mobile-menu" id="mobile-menu">
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#work">Work</a>
@@ -1365,11 +1699,10 @@ header .container,header nav,nav .container{display:flex!important;align-items:c
 <a href="#skills">Skills</a>
 <a class="mobile-menu-cta" href="#contact">Let's Work Together</a>
 </div>
-
 <header class="hero">
 <div class="container grid2">
 <div>
-<div class="eyebrow">Shopify Store Builder & Web Designer</div>
+<div class="eyebrow">Shopify Store Builder &amp; Web Designer</div>
 <h1>I build Shopify stores that <span>look sharp, feel clear,</span> and help people buy with confidence.</h1>
 <p>Shopify store builder, web designer, and personal assistant with experience supporting e-commerce operations, localization, content, reporting, and day-to-day business tasks.</p>
 <div class="buttons">
@@ -1388,26 +1721,13 @@ header .container,header nav,nav .container{display:flex!important;align-items:c
 </div>
 </div>
 </div>
-
-
-
-
-
 </header>
-
 <section id="about">
 <div class="container">
 <div class="portfolio-profile-photo">
-  <img
-    src="images/profile.webp"
-    alt="Joshua Paul Ersando — Shopify Store Builder and E-commerce VA"
-    loading="lazy"
-  >
-  <div class="portfolio-profile-caption">Joshua Paul Ersando</div>
+<img alt="Joshua Paul Ersando — Shopify Store Builder and E-commerce VA" loading="lazy" src="images/profile.webp"/>
+<div class="portfolio-profile-caption">Joshua Paul Ersando</div>
 </div>
-
-
-
 <div class="eyebrow">About Me</div>
 <h2>Psychology meets e-commerce.</h2>
 <div class="about">
@@ -1425,341 +1745,285 @@ header .container,header nav,nav .container{display:flex!important;align-items:c
 </div>
 </div>
 </section>
-
-
-<section id="experience" class="reveal">
+<section class="reveal" id="experience">
 <div class="container">
 <div class="eyebrow">Experience</div>
 <h2>Hands-on e-commerce experience.</h2>
 <p class="intro">My recent work combines Shopify execution, e-commerce operations, creative production, personal-assistant support, localization, and day-to-day business coordination.</p>
-
 <div class="experience-list">
-  <article class="experience-item">
-    <div class="experience-meta">
-      <span class="experience-date">Nov 2025 — Jun 2026</span>
-      <span class="experience-type">Freelance</span>
-    </div>
-    <div>
-      <h3>Virtual Assistant — Shopify</h3>
-      <p class="company">E-commerce / Shopify</p>
-      <ul class="list">
-        <li>Built and optimized Shopify product pages with a focus on user experience, clarity, and conversion.</li>
-        <li>Customized storefronts, landing pages, and responsive layouts using Shopify, Liquid, HTML, CSS, and JavaScript.</li>
-        <li>Conducted product research and trend analysis to identify promising and high-demand products.</li>
-        <li>Sourced and coordinated with UGC creators for marketing campaigns and content production.</li>
-        <li>Created 1:1 video translations and 1:1 image translations for localized marketing content.</li>
-        <li>Uploaded and managed static ads through Meta Ads Manager for marketing campaigns.</li>
-        <li>Updated accounting and tracking sheets, maintained organized records, and supported day-to-day business operations.</li>
-        <li>Provided personal-assistant and administrative support directly to the business owner, helping manage recurring tasks and operational priorities.</li>
-        <li>Managed customer support, resolving inquiries and order concerns efficiently.</li>
-        <li>Assisted with product listings, content creation, store maintenance, and general e-commerce operations.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="experience-item">
-    <div class="experience-meta">
-      <span class="experience-date">Apr 2025 — Jun 2025</span>
-      <span class="experience-type">OJT</span>
-    </div>
-    <div>
-      <h3>Recruitment & Marketing</h3>
-      <p class="company">Crown Summit Life Insurance Agency — Pru Life UK</p>
-      <ul class="list">
-        <li>Created recruitment ads and engaging recruitment spiels in English, Tagalog, and Taglish.</li>
-        <li>Sourced and contacted potential applicants through email and calls.</li>
-        <li>Assisted with recruitment processes and initial candidate engagement.</li>
-        <li>Completed daily reports and submitted performance outputs to a supervisor.</li>
-      </ul>
-    </div>
-  </article>
+<article class="experience-item">
+<div class="experience-meta">
+<span class="experience-date">Nov 2025 — Jun 2026</span>
+<span class="experience-type">Freelance</span>
 </div>
-
+<div>
+<h3>Virtual Assistant — Shopify</h3>
+<p class="company">E-commerce / Shopify</p>
+<ul class="list">
+<li>Built and optimized Shopify product pages with a focus on user experience, clarity, and conversion.</li>
+<li>Customized storefronts, landing pages, and responsive layouts using Shopify, Liquid, HTML, CSS, and JavaScript.</li>
+<li>Conducted product research and trend analysis to identify promising and high-demand products.</li>
+<li>Sourced and coordinated with UGC creators for marketing campaigns and content production.</li>
+<li>Created 1:1 video translations and 1:1 image translations for localized marketing content.</li>
+<li>Uploaded and managed static ads through Meta Ads Manager for marketing campaigns.</li>
+<li>Updated accounting and tracking sheets, maintained organized records, and supported day-to-day business operations.</li>
+<li>Provided personal-assistant and administrative support directly to the business owner, helping manage recurring tasks and operational priorities.</li>
+<li>Managed customer support, resolving inquiries and order concerns efficiently.</li>
+<li>Assisted with product listings, content creation, store maintenance, and general e-commerce operations.</li>
+</ul>
+</div>
+</article>
+<article class="experience-item">
+<div class="experience-meta">
+<span class="experience-date">Apr 2025 — Jun 2025</span>
+<span class="experience-type">OJT</span>
+</div>
+<div>
+<h3>Recruitment &amp; Marketing</h3>
+<p class="company">Crown Summit Life Insurance Agency — Pru Life UK</p>
+<ul class="list">
+<li>Created recruitment ads and engaging recruitment spiels in English, Tagalog, and Taglish.</li>
+<li>Sourced and contacted potential applicants through email and calls.</li>
+<li>Assisted with recruitment processes and initial candidate engagement.</li>
+<li>Completed daily reports and submitted performance outputs to a supervisor.</li>
+</ul>
+</div>
+</article>
+</div>
 <div class="support-strip">
-  <div>
-    <div class="eyebrow">Additional Support</div>
-    <strong>Personal Assistant · Administrative Support · Localization · Meta Ads · Reporting</strong>
-  </div>
-  <p>Comfortable handling recurring operational tasks, translations, spreadsheets, documentation, ad uploads, and time-sensitive requests alongside creative and technical work.</p>
+<div>
+<div class="eyebrow">Additional Support</div>
+<strong>Personal Assistant · Administrative Support · Localization · Meta Ads · Reporting</strong>
 </div>
-
+<p>Comfortable handling recurring operational tasks, translations, spreadsheets, documentation, ad uploads, and time-sensitive requests alongside creative and technical work.</p>
+</div>
 <div class="education-card">
-  <div>
-    <div class="eyebrow">Education</div>
-    <h3>Bachelor of Science in Psychology</h3>
-    <p>Eulogio “Amang” Rodriguez Institute of Science and Technology (EARIST) — Manila · 2021–2025</p>
-  </div>
-  <div class="education-note">Analytical thinking · Communication · Human behavior · Adaptability</div>
+<div>
+<div class="eyebrow">Education</div>
+<h3>Bachelor of Science in Psychology</h3>
+<p>Eulogio “Amang” Rodriguez Institute of Science and Technology (EARIST) — Manila · 2021–2025</p>
+</div>
+<div class="education-note">Analytical thinking · Communication · Human behavior · Adaptability</div>
 </div>
 </div>
 </section>
-
-<section id="work" class="featured reveal">
+<section class="featured reveal" id="work">
 <div class="container">
 <div class="project-head">
 <div><div class="eyebrow">Featured Work</div><h2>Sleevelle</h2></div>
-<div class="nda">CLIENT PROJECT · NDA<br>Selected screenshots shown for portfolio purposes · NDA protected</div>
+<div class="nda">CLIENT PROJECT · NDA<br/>Selected screenshots shown for portfolio purposes · NDA protected</div>
 </div>
 <div class="project-copy">
-<div><h3>Shopify Store Design & Development</h3><p>A complete Shopify storefront project involving homepage development, product-page design, responsive layouts, content sections, social proof, FAQs, product storytelling, and conversion-focused presentation. Client live links are not provided because the projects are covered by confidentiality agreements; the portfolio focuses on screenshots of the public-facing work.</p><div class="tags"><span class="tag">Shopify</span><span class="tag">Liquid</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></div></div>
+<div><h3>Shopify Store Design &amp; Development</h3><p>A complete Shopify storefront project involving homepage development, product-page design, responsive layouts, content sections, social proof, FAQs, product storytelling, and conversion-focused presentation. Client live links are not provided because the projects are covered by confidentiality agreements; the portfolio focuses on screenshots of the public-facing work.</p><div class="tags"><span class="tag">Shopify</span><span class="tag">Liquid</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive Design</span></div></div>
 <div><h3>My Contribution</h3><ul class="list"><li>Shopify storefront customization</li><li>Homepage section development</li><li>Product page development</li><li>Desktop and mobile optimization</li><li>Content and information structure</li><li>Conversion-focused page sections</li><li>Theme customization and troubleshooting</li></ul></div>
 </div>
-
-        <div class="gallery-group">
-            <div class="gallery-heading">
-                <div>
-                    <span class="eyebrow">Sleevelle</span>
-                    <h3>Homepage — Desktop</h3>
-                </div>
-                <span class="count">8 screens</span>
-            </div>
-            <div class="gallery">
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-01.webp" data-title="Homepage — Desktop — 1">
-                    <img src="images/sleevelle/homepage-desktop-01.webp" alt="Sleevelle homepage — desktop screenshot 1" loading="lazy">
-                    <span class="shot-label">01</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-02.webp" data-title="Homepage — Desktop — 2">
-                    <img src="images/sleevelle/homepage-desktop-02.webp" alt="Sleevelle homepage — desktop screenshot 2" loading="lazy">
-                    <span class="shot-label">02</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-03.webp" data-title="Homepage — Desktop — 3">
-                    <img src="images/sleevelle/homepage-desktop-03.webp" alt="Sleevelle homepage — desktop screenshot 3" loading="lazy">
-                    <span class="shot-label">03</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-04.webp" data-title="Homepage — Desktop — 4">
-                    <img src="images/sleevelle/homepage-desktop-04.webp" alt="Sleevelle homepage — desktop screenshot 4" loading="lazy">
-                    <span class="shot-label">04</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-05.webp" data-title="Homepage — Desktop — 5">
-                    <img src="images/sleevelle/homepage-desktop-05.webp" alt="Sleevelle homepage — desktop screenshot 5" loading="lazy">
-                    <span class="shot-label">05</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-06.webp" data-title="Homepage — Desktop — 6">
-                    <img src="images/sleevelle/homepage-desktop-06.webp" alt="Sleevelle homepage — desktop screenshot 6" loading="lazy">
-                    <span class="shot-label">06</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-07.webp" data-title="Homepage — Desktop — 7">
-                    <img src="images/sleevelle/homepage-desktop-07.webp" alt="Sleevelle homepage — desktop screenshot 7" loading="lazy">
-                    <span class="shot-label">07</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-08.webp" data-title="Homepage — Desktop — 8">
-                    <img src="images/sleevelle/homepage-desktop-08.webp" alt="Sleevelle homepage — desktop screenshot 8" loading="lazy">
-                    <span class="shot-label">08</span>
-                </button>
-
-            </div>
-        </div>
-
-        <div class="gallery-group">
-            <div class="gallery-heading">
-                <div>
-                    <span class="eyebrow">Sleevelle</span>
-                    <h3>Homepage — Mobile</h3>
-                </div>
-                <span class="count">7 screens</span>
-            </div>
-            <div class="gallery">
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-01.webp" data-title="Homepage — Mobile — 1">
-                    <img src="images/sleevelle/homepage-mobile-01.webp" alt="Sleevelle homepage — mobile screenshot 1" loading="lazy">
-                    <span class="shot-label">01</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-02.webp" data-title="Homepage — Mobile — 2">
-                    <img src="images/sleevelle/homepage-mobile-02.webp" alt="Sleevelle homepage — mobile screenshot 2" loading="lazy">
-                    <span class="shot-label">02</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-03.webp" data-title="Homepage — Mobile — 3">
-                    <img src="images/sleevelle/homepage-mobile-03.webp" alt="Sleevelle homepage — mobile screenshot 3" loading="lazy">
-                    <span class="shot-label">03</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-04.webp" data-title="Homepage — Mobile — 4">
-                    <img src="images/sleevelle/homepage-mobile-04.webp" alt="Sleevelle homepage — mobile screenshot 4" loading="lazy">
-                    <span class="shot-label">04</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-05.webp" data-title="Homepage — Mobile — 5">
-                    <img src="images/sleevelle/homepage-mobile-05.webp" alt="Sleevelle homepage — mobile screenshot 5" loading="lazy">
-                    <span class="shot-label">05</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-06.webp" data-title="Homepage — Mobile — 6">
-                    <img src="images/sleevelle/homepage-mobile-06.webp" alt="Sleevelle homepage — mobile screenshot 6" loading="lazy">
-                    <span class="shot-label">06</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-07.webp" data-title="Homepage — Mobile — 7">
-                    <img src="images/sleevelle/homepage-mobile-07.webp" alt="Sleevelle homepage — mobile screenshot 7" loading="lazy">
-                    <span class="shot-label">07</span>
-                </button>
-
-            </div>
-        </div>
-
-        <div class="gallery-group">
-            <div class="gallery-heading">
-                <div>
-                    <span class="eyebrow">Sleevelle</span>
-                    <h3>Product Page — Desktop</h3>
-                </div>
-                <span class="count">10 screens</span>
-            </div>
-            <div class="gallery">
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-01.webp" data-title="Product Page — Desktop — 1">
-                    <img src="images/sleevelle/product-desktop-01.webp" alt="Sleevelle product page — desktop screenshot 1" loading="lazy">
-                    <span class="shot-label">01</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-02.webp" data-title="Product Page — Desktop — 2">
-                    <img src="images/sleevelle/product-desktop-02.webp" alt="Sleevelle product page — desktop screenshot 2" loading="lazy">
-                    <span class="shot-label">02</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-03.webp" data-title="Product Page — Desktop — 3">
-                    <img src="images/sleevelle/product-desktop-03.webp" alt="Sleevelle product page — desktop screenshot 3" loading="lazy">
-                    <span class="shot-label">03</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-04.webp" data-title="Product Page — Desktop — 4">
-                    <img src="images/sleevelle/product-desktop-04.webp" alt="Sleevelle product page — desktop screenshot 4" loading="lazy">
-                    <span class="shot-label">04</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-05.webp" data-title="Product Page — Desktop — 5">
-                    <img src="images/sleevelle/product-desktop-05.webp" alt="Sleevelle product page — desktop screenshot 5" loading="lazy">
-                    <span class="shot-label">05</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-06.webp" data-title="Product Page — Desktop — 6">
-                    <img src="images/sleevelle/product-desktop-06.webp" alt="Sleevelle product page — desktop screenshot 6" loading="lazy">
-                    <span class="shot-label">06</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-07.webp" data-title="Product Page — Desktop — 7">
-                    <img src="images/sleevelle/product-desktop-07.webp" alt="Sleevelle product page — desktop screenshot 7" loading="lazy">
-                    <span class="shot-label">07</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-08.webp" data-title="Product Page — Desktop — 8">
-                    <img src="images/sleevelle/product-desktop-08.webp" alt="Sleevelle product page — desktop screenshot 8" loading="lazy">
-                    <span class="shot-label">08</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-09.webp" data-title="Product Page — Desktop — 9">
-                    <img src="images/sleevelle/product-desktop-09.webp" alt="Sleevelle product page — desktop screenshot 9" loading="lazy">
-                    <span class="shot-label">09</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-10.webp" data-title="Product Page — Desktop — 10">
-                    <img src="images/sleevelle/product-desktop-10.webp" alt="Sleevelle product page — desktop screenshot 10" loading="lazy">
-                    <span class="shot-label">10</span>
-                </button>
-
-            </div>
-        </div>
-
-        <div class="gallery-group">
-            <div class="gallery-heading">
-                <div>
-                    <span class="eyebrow">Sleevelle</span>
-                    <h3>Product Page — Mobile</h3>
-                </div>
-                <span class="count">13 screens</span>
-            </div>
-            <div class="gallery">
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-01.webp" data-title="Product Page — Mobile — 1">
-                    <img src="images/sleevelle/product-mobile-01.webp" alt="Sleevelle product page — mobile screenshot 1" loading="lazy">
-                    <span class="shot-label">01</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-02.webp" data-title="Product Page — Mobile — 2">
-                    <img src="images/sleevelle/product-mobile-02.webp" alt="Sleevelle product page — mobile screenshot 2" loading="lazy">
-                    <span class="shot-label">02</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-03.webp" data-title="Product Page — Mobile — 3">
-                    <img src="images/sleevelle/product-mobile-03.webp" alt="Sleevelle product page — mobile screenshot 3" loading="lazy">
-                    <span class="shot-label">03</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-04.webp" data-title="Product Page — Mobile — 4">
-                    <img src="images/sleevelle/product-mobile-04.webp" alt="Sleevelle product page — mobile screenshot 4" loading="lazy">
-                    <span class="shot-label">04</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-05.webp" data-title="Product Page — Mobile — 5">
-                    <img src="images/sleevelle/product-mobile-05.webp" alt="Sleevelle product page — mobile screenshot 5" loading="lazy">
-                    <span class="shot-label">05</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-06.webp" data-title="Product Page — Mobile — 6">
-                    <img src="images/sleevelle/product-mobile-06.webp" alt="Sleevelle product page — mobile screenshot 6" loading="lazy">
-                    <span class="shot-label">06</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-07.webp" data-title="Product Page — Mobile — 7">
-                    <img src="images/sleevelle/product-mobile-07.webp" alt="Sleevelle product page — mobile screenshot 7" loading="lazy">
-                    <span class="shot-label">07</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-08.webp" data-title="Product Page — Mobile — 8">
-                    <img src="images/sleevelle/product-mobile-08.webp" alt="Sleevelle product page — mobile screenshot 8" loading="lazy">
-                    <span class="shot-label">08</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-09.webp" data-title="Product Page — Mobile — 9">
-                    <img src="images/sleevelle/product-mobile-09.webp" alt="Sleevelle product page — mobile screenshot 9" loading="lazy">
-                    <span class="shot-label">09</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-10.webp" data-title="Product Page — Mobile — 10">
-                    <img src="images/sleevelle/product-mobile-10.webp" alt="Sleevelle product page — mobile screenshot 10" loading="lazy">
-                    <span class="shot-label">10</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-11.webp" data-title="Product Page — Mobile — 11">
-                    <img src="images/sleevelle/product-mobile-11.webp" alt="Sleevelle product page — mobile screenshot 11" loading="lazy">
-                    <span class="shot-label">11</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-12.webp" data-title="Product Page — Mobile — 12">
-                    <img src="images/sleevelle/product-mobile-12.webp" alt="Sleevelle product page — mobile screenshot 12" loading="lazy">
-                    <span class="shot-label">12</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-13.webp" data-title="Product Page — Mobile — 13">
-                    <img src="images/sleevelle/product-mobile-13.webp" alt="Sleevelle product page — mobile screenshot 13" loading="lazy">
-                    <span class="shot-label">13</span>
-                </button>
-
-            </div>
-        </div>
-
+<div class="gallery-group gallery-collapsed">
+<div class="gallery-heading">
+<div>
+<span class="eyebrow">Sleevelle</span>
+<h3>Homepage — Desktop</h3>
+</div>
+<span class="count">8 screens</span>
+</div>
+<div class="gallery">
+<button class="shot" data-full="images/sleevelle/homepage-desktop-01.webp" data-title="Homepage — Desktop — 1" type="button">
+<img alt="Sleevelle homepage — desktop screenshot 1" loading="lazy" src="images/sleevelle/homepage-desktop-01.webp"/>
+<span class="shot-label">01</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-desktop-02.webp" data-title="Homepage — Desktop — 2" type="button">
+<img alt="Sleevelle homepage — desktop screenshot 2" loading="lazy" src="images/sleevelle/homepage-desktop-02.webp"/>
+<span class="shot-label">02</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-desktop-03.webp" data-title="Homepage — Desktop — 3" type="button">
+<img alt="Sleevelle homepage — desktop screenshot 3" loading="lazy" src="images/sleevelle/homepage-desktop-03.webp"/>
+<span class="shot-label">03</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-desktop-04.webp" data-title="Homepage — Desktop — 4" type="button">
+<img alt="Sleevelle homepage — desktop screenshot 4" loading="lazy" src="images/sleevelle/homepage-desktop-04.webp"/>
+<span class="shot-label">04</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-desktop-05.webp" data-title="Homepage — Desktop — 5" type="button">
+<img alt="Sleevelle homepage — desktop screenshot 5" loading="lazy" src="images/sleevelle/homepage-desktop-05.webp"/>
+<span class="shot-label">05</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-desktop-06.webp" data-title="Homepage — Desktop — 6" type="button">
+<img alt="Sleevelle homepage — desktop screenshot 6" loading="lazy" src="images/sleevelle/homepage-desktop-06.webp"/>
+<span class="shot-label">06</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-desktop-07.webp" data-title="Homepage — Desktop — 7" type="button">
+<img alt="Sleevelle homepage — desktop screenshot 7" loading="lazy" src="images/sleevelle/homepage-desktop-07.webp"/>
+<span class="shot-label">07</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-desktop-08.webp" data-title="Homepage — Desktop — 8" type="button">
+<img alt="Sleevelle homepage — desktop screenshot 8" loading="lazy" src="images/sleevelle/homepage-desktop-08.webp"/>
+<span class="shot-label">08</span>
+</button>
+</div><button aria-expanded="false" class="gallery-toggle" data-count="8" type="button">View all 8 screenshots</button>
+</div>
+<div class="gallery-group gallery-collapsed">
+<div class="gallery-heading">
+<div>
+<span class="eyebrow">Sleevelle</span>
+<h3>Homepage — Mobile</h3>
+</div>
+<span class="count">7 screens</span>
+</div>
+<div class="gallery">
+<button class="shot" data-full="images/sleevelle/homepage-mobile-01.webp" data-title="Homepage — Mobile — 1" type="button">
+<img alt="Sleevelle homepage — mobile screenshot 1" loading="lazy" src="images/sleevelle/homepage-mobile-01.webp"/>
+<span class="shot-label">01</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-mobile-02.webp" data-title="Homepage — Mobile — 2" type="button">
+<img alt="Sleevelle homepage — mobile screenshot 2" loading="lazy" src="images/sleevelle/homepage-mobile-02.webp"/>
+<span class="shot-label">02</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-mobile-03.webp" data-title="Homepage — Mobile — 3" type="button">
+<img alt="Sleevelle homepage — mobile screenshot 3" loading="lazy" src="images/sleevelle/homepage-mobile-03.webp"/>
+<span class="shot-label">03</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-mobile-04.webp" data-title="Homepage — Mobile — 4" type="button">
+<img alt="Sleevelle homepage — mobile screenshot 4" loading="lazy" src="images/sleevelle/homepage-mobile-04.webp"/>
+<span class="shot-label">04</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-mobile-05.webp" data-title="Homepage — Mobile — 5" type="button">
+<img alt="Sleevelle homepage — mobile screenshot 5" loading="lazy" src="images/sleevelle/homepage-mobile-05.webp"/>
+<span class="shot-label">05</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-mobile-06.webp" data-title="Homepage — Mobile — 6" type="button">
+<img alt="Sleevelle homepage — mobile screenshot 6" loading="lazy" src="images/sleevelle/homepage-mobile-06.webp"/>
+<span class="shot-label">06</span>
+</button>
+<button class="shot" data-full="images/sleevelle/homepage-mobile-07.webp" data-title="Homepage — Mobile — 7" type="button">
+<img alt="Sleevelle homepage — mobile screenshot 7" loading="lazy" src="images/sleevelle/homepage-mobile-07.webp"/>
+<span class="shot-label">07</span>
+</button>
+</div><button aria-expanded="false" class="gallery-toggle" data-count="7" type="button">View all 7 screenshots</button>
+</div>
+<div class="gallery-group gallery-collapsed">
+<div class="gallery-heading">
+<div>
+<span class="eyebrow">Sleevelle</span>
+<h3>Product Page — Desktop</h3>
+</div>
+<span class="count">10 screens</span>
+</div>
+<div class="gallery">
+<button class="shot" data-full="images/sleevelle/product-desktop-01.webp" data-title="Product Page — Desktop — 1" type="button">
+<img alt="Sleevelle product page — desktop screenshot 1" loading="lazy" src="images/sleevelle/product-desktop-01.webp"/>
+<span class="shot-label">01</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-02.webp" data-title="Product Page — Desktop — 2" type="button">
+<img alt="Sleevelle product page — desktop screenshot 2" loading="lazy" src="images/sleevelle/product-desktop-02.webp"/>
+<span class="shot-label">02</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-03.webp" data-title="Product Page — Desktop — 3" type="button">
+<img alt="Sleevelle product page — desktop screenshot 3" loading="lazy" src="images/sleevelle/product-desktop-03.webp"/>
+<span class="shot-label">03</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-04.webp" data-title="Product Page — Desktop — 4" type="button">
+<img alt="Sleevelle product page — desktop screenshot 4" loading="lazy" src="images/sleevelle/product-desktop-04.webp"/>
+<span class="shot-label">04</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-05.webp" data-title="Product Page — Desktop — 5" type="button">
+<img alt="Sleevelle product page — desktop screenshot 5" loading="lazy" src="images/sleevelle/product-desktop-05.webp"/>
+<span class="shot-label">05</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-06.webp" data-title="Product Page — Desktop — 6" type="button">
+<img alt="Sleevelle product page — desktop screenshot 6" loading="lazy" src="images/sleevelle/product-desktop-06.webp"/>
+<span class="shot-label">06</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-07.webp" data-title="Product Page — Desktop — 7" type="button">
+<img alt="Sleevelle product page — desktop screenshot 7" loading="lazy" src="images/sleevelle/product-desktop-07.webp"/>
+<span class="shot-label">07</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-08.webp" data-title="Product Page — Desktop — 8" type="button">
+<img alt="Sleevelle product page — desktop screenshot 8" loading="lazy" src="images/sleevelle/product-desktop-08.webp"/>
+<span class="shot-label">08</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-09.webp" data-title="Product Page — Desktop — 9" type="button">
+<img alt="Sleevelle product page — desktop screenshot 9" loading="lazy" src="images/sleevelle/product-desktop-09.webp"/>
+<span class="shot-label">09</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-desktop-10.webp" data-title="Product Page — Desktop — 10" type="button">
+<img alt="Sleevelle product page — desktop screenshot 10" loading="lazy" src="images/sleevelle/product-desktop-10.webp"/>
+<span class="shot-label">10</span>
+</button>
+</div><button aria-expanded="false" class="gallery-toggle" data-count="10" type="button">View all 10 screenshots</button>
+</div>
+<div class="gallery-group gallery-collapsed">
+<div class="gallery-heading">
+<div>
+<span class="eyebrow">Sleevelle</span>
+<h3>Product Page — Mobile</h3>
+</div>
+<span class="count">13 screens</span>
+</div>
+<div class="gallery">
+<button class="shot" data-full="images/sleevelle/product-mobile-01.webp" data-title="Product Page — Mobile — 1" type="button">
+<img alt="Sleevelle product page — mobile screenshot 1" loading="lazy" src="images/sleevelle/product-mobile-01.webp"/>
+<span class="shot-label">01</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-02.webp" data-title="Product Page — Mobile — 2" type="button">
+<img alt="Sleevelle product page — mobile screenshot 2" loading="lazy" src="images/sleevelle/product-mobile-02.webp"/>
+<span class="shot-label">02</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-03.webp" data-title="Product Page — Mobile — 3" type="button">
+<img alt="Sleevelle product page — mobile screenshot 3" loading="lazy" src="images/sleevelle/product-mobile-03.webp"/>
+<span class="shot-label">03</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-04.webp" data-title="Product Page — Mobile — 4" type="button">
+<img alt="Sleevelle product page — mobile screenshot 4" loading="lazy" src="images/sleevelle/product-mobile-04.webp"/>
+<span class="shot-label">04</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-05.webp" data-title="Product Page — Mobile — 5" type="button">
+<img alt="Sleevelle product page — mobile screenshot 5" loading="lazy" src="images/sleevelle/product-mobile-05.webp"/>
+<span class="shot-label">05</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-06.webp" data-title="Product Page — Mobile — 6" type="button">
+<img alt="Sleevelle product page — mobile screenshot 6" loading="lazy" src="images/sleevelle/product-mobile-06.webp"/>
+<span class="shot-label">06</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-07.webp" data-title="Product Page — Mobile — 7" type="button">
+<img alt="Sleevelle product page — mobile screenshot 7" loading="lazy" src="images/sleevelle/product-mobile-07.webp"/>
+<span class="shot-label">07</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-08.webp" data-title="Product Page — Mobile — 8" type="button">
+<img alt="Sleevelle product page — mobile screenshot 8" loading="lazy" src="images/sleevelle/product-mobile-08.webp"/>
+<span class="shot-label">08</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-09.webp" data-title="Product Page — Mobile — 9" type="button">
+<img alt="Sleevelle product page — mobile screenshot 9" loading="lazy" src="images/sleevelle/product-mobile-09.webp"/>
+<span class="shot-label">09</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-10.webp" data-title="Product Page — Mobile — 10" type="button">
+<img alt="Sleevelle product page — mobile screenshot 10" loading="lazy" src="images/sleevelle/product-mobile-10.webp"/>
+<span class="shot-label">10</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-11.webp" data-title="Product Page — Mobile — 11" type="button">
+<img alt="Sleevelle product page — mobile screenshot 11" loading="lazy" src="images/sleevelle/product-mobile-11.webp"/>
+<span class="shot-label">11</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-12.webp" data-title="Product Page — Mobile — 12" type="button">
+<img alt="Sleevelle product page — mobile screenshot 12" loading="lazy" src="images/sleevelle/product-mobile-12.webp"/>
+<span class="shot-label">12</span>
+</button>
+<button class="shot" data-full="images/sleevelle/product-mobile-13.webp" data-title="Product Page — Mobile — 13" type="button">
+<img alt="Sleevelle product page — mobile screenshot 13" loading="lazy" src="images/sleevelle/product-mobile-13.webp"/>
+<span class="shot-label">13</span>
+</button>
+</div><button aria-expanded="false" class="gallery-toggle" data-count="13" type="button">View all 13 screenshots</button>
+</div>
 </div>
 </section>
-
-
 <section class="featured reveal" id="magnuslab">
 <div class="container">
 <div class="project-head">
 <div><div class="eyebrow">Featured Work · 02</div><h2>MagnusLAB</h2></div>
-<div class="nda">CLIENT PROJECT · NDA<br>Selected screenshots shown for portfolio purposes · No live link provided</div>
+<div class="nda">CLIENT PROJECT · NDA<br/>Selected screenshots shown for portfolio purposes · No live link provided</div>
 </div>
 <div class="project-copy">
 <div>
-<h3>Shopify Store Design & Development</h3>
+<h3>Shopify Store Design &amp; Development</h3>
 <p>A second Shopify storefront project demonstrating responsive homepage and product-page design, storefront customization, product presentation, and mobile optimization. The portfolio focuses on screenshots of the public-facing work rather than client links or internal Shopify materials.</p>
 <div class="tags">
 <span class="tag">Shopify</span><span class="tag">Responsive Design</span><span class="tag">Product Pages</span><span class="tag">Mobile Optimization</span><span class="tag">E-commerce Design</span>
@@ -1778,193 +2042,157 @@ header .container,header nav,nav .container{display:flex!important;align-items:c
 </ul>
 </div>
 </div>
-
-        <div class="gallery-group">
-            <div class="gallery-heading">
-                <div>
-                    <span class="eyebrow">MagnusLAB</span>
-                    <h3>Homepage — Desktop</h3>
-                </div>
-                <span class="count">4 screens</span>
-            </div>
-            <div class="gallery">
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp" data-title="MagnusLAB — Homepage — Desktop — 1">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp" alt="MagnusLAB homepage — desktop screenshot 1" loading="lazy">
-                    <span class="shot-label">01</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp" data-title="MagnusLAB — Homepage — Desktop — 2">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp" alt="MagnusLAB homepage — desktop screenshot 2" loading="lazy">
-                    <span class="shot-label">02</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp" data-title="MagnusLAB — Homepage — Desktop — 3">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp" alt="MagnusLAB homepage — desktop screenshot 3" loading="lazy">
-                    <span class="shot-label">03</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.webp" data-title="MagnusLAB — Homepage — Desktop — 4">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.webp" alt="MagnusLAB homepage — desktop screenshot 4" loading="lazy">
-                    <span class="shot-label">04</span>
-                </button>
-
-            </div>
-        </div>
-
-        <div class="gallery-group">
-            <div class="gallery-heading">
-                <div>
-                    <span class="eyebrow">MagnusLAB</span>
-                    <h3>Homepage — Mobile</h3>
-                </div>
-                <span class="count">4 screens</span>
-            </div>
-            <div class="gallery">
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp" data-title="MagnusLAB — Homepage — Mobile — 1">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp" alt="MagnusLAB homepage — mobile screenshot 1" loading="lazy">
-                    <span class="shot-label">01</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp" data-title="MagnusLAB — Homepage — Mobile — 2">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp" alt="MagnusLAB homepage — mobile screenshot 2" loading="lazy">
-                    <span class="shot-label">02</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp" data-title="MagnusLAB — Homepage — Mobile — 3">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp" alt="MagnusLAB homepage — mobile screenshot 3" loading="lazy">
-                    <span class="shot-label">03</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.webp" data-title="MagnusLAB — Homepage — Mobile — 4">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.webp" alt="MagnusLAB homepage — mobile screenshot 4" loading="lazy">
-                    <span class="shot-label">04</span>
-                </button>
-
-            </div>
-        </div>
-
-        <div class="gallery-group">
-            <div class="gallery-heading">
-                <div>
-                    <span class="eyebrow">MagnusLAB</span>
-                    <h3>Product Page — Desktop</h3>
-                </div>
-                <span class="count">7 screens</span>
-            </div>
-            <div class="gallery">
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-01.webp" data-title="MagnusLAB — Product Page — Desktop — 1">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-01.webp" alt="MagnusLAB product page — desktop screenshot 1" loading="lazy">
-                    <span class="shot-label">01</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-02.webp" data-title="MagnusLAB — Product Page — Desktop — 2">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-02.webp" alt="MagnusLAB product page — desktop screenshot 2" loading="lazy">
-                    <span class="shot-label">02</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-03.webp" data-title="MagnusLAB — Product Page — Desktop — 3">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-03.webp" alt="MagnusLAB product page — desktop screenshot 3" loading="lazy">
-                    <span class="shot-label">03</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-04.webp" data-title="MagnusLAB — Product Page — Desktop — 4">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-04.webp" alt="MagnusLAB product page — desktop screenshot 4" loading="lazy">
-                    <span class="shot-label">04</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-05.webp" data-title="MagnusLAB — Product Page — Desktop — 5">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-05.webp" alt="MagnusLAB product page — desktop screenshot 5" loading="lazy">
-                    <span class="shot-label">05</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-06.webp" data-title="MagnusLAB — Product Page — Desktop — 6">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-06.webp" alt="MagnusLAB product page — desktop screenshot 6" loading="lazy">
-                    <span class="shot-label">06</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-07.webp" data-title="MagnusLAB — Product Page — Desktop — 7">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-07.webp" alt="MagnusLAB product page — desktop screenshot 7" loading="lazy">
-                    <span class="shot-label">07</span>
-                </button>
-
-            </div>
-        </div>
-
-        <div class="gallery-group">
-            <div class="gallery-heading">
-                <div>
-                    <span class="eyebrow">MagnusLAB</span>
-                    <h3>Product Page — Mobile</h3>
-                </div>
-                <span class="count">11 screens</span>
-            </div>
-            <div class="gallery">
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-01.webp" data-title="MagnusLAB — Product Page — Mobile — 1">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-01.webp" alt="MagnusLAB product page — mobile screenshot 1" loading="lazy">
-                    <span class="shot-label">01</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-02.webp" data-title="MagnusLAB — Product Page — Mobile — 2">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-02.webp" alt="MagnusLAB product page — mobile screenshot 2" loading="lazy">
-                    <span class="shot-label">02</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-03.webp" data-title="MagnusLAB — Product Page — Mobile — 3">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-03.webp" alt="MagnusLAB product page — mobile screenshot 3" loading="lazy">
-                    <span class="shot-label">03</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-04.webp" data-title="MagnusLAB — Product Page — Mobile — 4">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-04.webp" alt="MagnusLAB product page — mobile screenshot 4" loading="lazy">
-                    <span class="shot-label">04</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-05.webp" data-title="MagnusLAB — Product Page — Mobile — 5">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-05.webp" alt="MagnusLAB product page — mobile screenshot 5" loading="lazy">
-                    <span class="shot-label">05</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-06.webp" data-title="MagnusLAB — Product Page — Mobile — 6">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-06.webp" alt="MagnusLAB product page — mobile screenshot 6" loading="lazy">
-                    <span class="shot-label">06</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-07.webp" data-title="MagnusLAB — Product Page — Mobile — 7">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-07.webp" alt="MagnusLAB product page — mobile screenshot 7" loading="lazy">
-                    <span class="shot-label">07</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-08.webp" data-title="MagnusLAB — Product Page — Mobile — 8">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-08.webp" alt="MagnusLAB product page — mobile screenshot 8" loading="lazy">
-                    <span class="shot-label">08</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-09.webp" data-title="MagnusLAB — Product Page — Mobile — 9">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-09.webp" alt="MagnusLAB product page — mobile screenshot 9" loading="lazy">
-                    <span class="shot-label">09</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-10.webp" data-title="MagnusLAB — Product Page — Mobile — 10">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-10.webp" alt="MagnusLAB product page — mobile screenshot 10" loading="lazy">
-                    <span class="shot-label">10</span>
-                </button>
-
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-11.webp" data-title="MagnusLAB — Product Page — Mobile — 11">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-11.webp" alt="MagnusLAB product page — mobile screenshot 11" loading="lazy">
-                    <span class="shot-label">11</span>
-                </button>
-
-            </div>
-        </div>
-
+<div class="gallery-group gallery-collapsed">
+<div class="gallery-heading">
+<div>
+<span class="eyebrow">MagnusLAB</span>
+<h3>Homepage — Desktop</h3>
+</div>
+<span class="count">4 screens</span>
+</div>
+<div class="gallery">
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp" data-title="MagnusLAB — Homepage — Desktop — 1" type="button">
+<img alt="MagnusLAB homepage — desktop screenshot 1" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp"/>
+<span class="shot-label">01</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp" data-title="MagnusLAB — Homepage — Desktop — 2" type="button">
+<img alt="MagnusLAB homepage — desktop screenshot 2" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp"/>
+<span class="shot-label">02</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp" data-title="MagnusLAB — Homepage — Desktop — 3" type="button">
+<img alt="MagnusLAB homepage — desktop screenshot 3" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp"/>
+<span class="shot-label">03</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.webp" data-title="MagnusLAB — Homepage — Desktop — 4" type="button">
+<img alt="MagnusLAB homepage — desktop screenshot 4" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.webp"/>
+<span class="shot-label">04</span>
+</button>
+</div><button aria-expanded="false" class="gallery-toggle" data-count="4" type="button">View all 4 screenshots</button>
+</div>
+<div class="gallery-group gallery-collapsed">
+<div class="gallery-heading">
+<div>
+<span class="eyebrow">MagnusLAB</span>
+<h3>Homepage — Mobile</h3>
+</div>
+<span class="count">4 screens</span>
+</div>
+<div class="gallery">
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp" data-title="MagnusLAB — Homepage — Mobile — 1" type="button">
+<img alt="MagnusLAB homepage — mobile screenshot 1" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp"/>
+<span class="shot-label">01</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp" data-title="MagnusLAB — Homepage — Mobile — 2" type="button">
+<img alt="MagnusLAB homepage — mobile screenshot 2" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp"/>
+<span class="shot-label">02</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp" data-title="MagnusLAB — Homepage — Mobile — 3" type="button">
+<img alt="MagnusLAB homepage — mobile screenshot 3" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp"/>
+<span class="shot-label">03</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.webp" data-title="MagnusLAB — Homepage — Mobile — 4" type="button">
+<img alt="MagnusLAB homepage — mobile screenshot 4" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.webp"/>
+<span class="shot-label">04</span>
+</button>
+</div><button aria-expanded="false" class="gallery-toggle" data-count="4" type="button">View all 4 screenshots</button>
+</div>
+<div class="gallery-group gallery-collapsed">
+<div class="gallery-heading">
+<div>
+<span class="eyebrow">MagnusLAB</span>
+<h3>Product Page — Desktop</h3>
+</div>
+<span class="count">7 screens</span>
+</div>
+<div class="gallery">
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-01.webp" data-title="MagnusLAB — Product Page — Desktop — 1" type="button">
+<img alt="MagnusLAB product page — desktop screenshot 1" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-01.webp"/>
+<span class="shot-label">01</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-02.webp" data-title="MagnusLAB — Product Page — Desktop — 2" type="button">
+<img alt="MagnusLAB product page — desktop screenshot 2" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-02.webp"/>
+<span class="shot-label">02</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-03.webp" data-title="MagnusLAB — Product Page — Desktop — 3" type="button">
+<img alt="MagnusLAB product page — desktop screenshot 3" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-03.webp"/>
+<span class="shot-label">03</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-04.webp" data-title="MagnusLAB — Product Page — Desktop — 4" type="button">
+<img alt="MagnusLAB product page — desktop screenshot 4" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-04.webp"/>
+<span class="shot-label">04</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-05.webp" data-title="MagnusLAB — Product Page — Desktop — 5" type="button">
+<img alt="MagnusLAB product page — desktop screenshot 5" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-05.webp"/>
+<span class="shot-label">05</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-06.webp" data-title="MagnusLAB — Product Page — Desktop — 6" type="button">
+<img alt="MagnusLAB product page — desktop screenshot 6" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-06.webp"/>
+<span class="shot-label">06</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-07.webp" data-title="MagnusLAB — Product Page — Desktop — 7" type="button">
+<img alt="MagnusLAB product page — desktop screenshot 7" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-07.webp"/>
+<span class="shot-label">07</span>
+</button>
+</div><button aria-expanded="false" class="gallery-toggle" data-count="7" type="button">View all 7 screenshots</button>
+</div>
+<div class="gallery-group gallery-collapsed">
+<div class="gallery-heading">
+<div>
+<span class="eyebrow">MagnusLAB</span>
+<h3>Product Page — Mobile</h3>
+</div>
+<span class="count">11 screens</span>
+</div>
+<div class="gallery">
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-01.webp" data-title="MagnusLAB — Product Page — Mobile — 1" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 1" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-01.webp"/>
+<span class="shot-label">01</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-02.webp" data-title="MagnusLAB — Product Page — Mobile — 2" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 2" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-02.webp"/>
+<span class="shot-label">02</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-03.webp" data-title="MagnusLAB — Product Page — Mobile — 3" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 3" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-03.webp"/>
+<span class="shot-label">03</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-04.webp" data-title="MagnusLAB — Product Page — Mobile — 4" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 4" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-04.webp"/>
+<span class="shot-label">04</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-05.webp" data-title="MagnusLAB — Product Page — Mobile — 5" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 5" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-05.webp"/>
+<span class="shot-label">05</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-06.webp" data-title="MagnusLAB — Product Page — Mobile — 6" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 6" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-06.webp"/>
+<span class="shot-label">06</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-07.webp" data-title="MagnusLAB — Product Page — Mobile — 7" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 7" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-07.webp"/>
+<span class="shot-label">07</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-08.webp" data-title="MagnusLAB — Product Page — Mobile — 8" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 8" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-08.webp"/>
+<span class="shot-label">08</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-09.webp" data-title="MagnusLAB — Product Page — Mobile — 9" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 9" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-09.webp"/>
+<span class="shot-label">09</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-10.webp" data-title="MagnusLAB — Product Page — Mobile — 10" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 10" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-10.webp"/>
+<span class="shot-label">10</span>
+</button>
+<button class="shot" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-11.webp" data-title="MagnusLAB — Product Page — Mobile — 11" type="button">
+<img alt="MagnusLAB product page — mobile screenshot 11" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-11.webp"/>
+<span class="shot-label">11</span>
+</button>
+</div><button aria-expanded="false" class="gallery-toggle" data-count="11" type="button">View all 11 screenshots</button>
+</div>
 </div>
 </section>
-
-<section id="services" class="reveal">
+<section class="reveal" id="services">
 <div class="container">
 <div class="eyebrow">What I Do</div><h2>Shopify, e-commerce, and operational support.</h2>
 <p class="intro">I can support both the storefront and the work around it — from Shopify builds and product pages to content, localization, spreadsheets, and day-to-day e-commerce operations.</p>
@@ -1973,11 +2201,9 @@ header .container,header nav,nav .container{display:flex!important;align-items:c
 </div>
 </div>
 </section>
-
-<section id="skills" class="reveal">
+<section class="reveal" id="skills">
 <div class="container">
-<div class="eyebrow">Tools & Technologies</div><h2>What I work with.</h2>
-
+<div class="eyebrow">Tools &amp; Technologies</div><h2>What I work with.</h2>
 <div class="tools">
 <span class="tool">Shopify</span>
 <span class="tool">Liquid</span>
@@ -1998,85 +2224,52 @@ header .container,header nav,nav .container{display:flex!important;align-items:c
 </div>
 </div>
 </section>
-
-
-
-
 <section id="contact">
-  <div class="container">
-    <div class="contact">
-      <div class="eyebrow">LET'S WORK TOGETHER</div>
-      <h2>Let's build something great.</h2>
-      <p>
+<div class="container">
+<div class="contact">
+<div class="eyebrow">LET'S WORK TOGETHER</div>
+<h2>Let's build something great.</h2>
+<p>
         Have a Shopify, e-commerce, web design, or support project in mind?
         Get in touch through whichever channel is easiest for you.
       </p>
-
-      <div class="contact-actions">
-
-        <a
-          class="contact-card"
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=joshua.ersando@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Email Joshua through Gmail"
-        >
-          <span class="contact-icon">✉</span>
-          <span>
-            <small>Email · Open Gmail</small>
-            <strong>joshua.ersando@gmail.com</strong>
-          </span>
-        </a>
-
-        <a
-          class="contact-card"
-          href="https://wa.me/639942508537?text=Hi%20Joshua%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity."
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Message Joshua on WhatsApp"
-        >
-          <span class="contact-icon">◌</span>
-          <span>
-            <small>WhatsApp · Start Chat</small>
-            <strong>+63 994 250 8537</strong>
-          </span>
-        </a>
-
-        <a
-          class="contact-card"
-          href="viber://chat?number=%2B639942508537"
-          aria-label="Message Joshua on Viber"
-        >
-          <span class="contact-icon">✦</span>
-          <span>
-            <small>Viber · Start Chat</small>
-            <strong>0994 250 8537</strong>
-          </span>
-        </a>
-
-      </div>
-
-      <div class="contact-note">
+<div class="contact-actions">
+<a aria-label="Email Joshua through Gmail" class="contact-card" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=joshua.ersando@gmail.com" rel="noopener noreferrer" target="_blank">
+<span class="contact-icon">✉</span>
+<span>
+<small>Email · Open Gmail</small>
+<strong>joshua.ersando@gmail.com</strong>
+</span>
+</a>
+<a aria-label="Message Joshua on WhatsApp" class="contact-card" href="https://wa.me/639942508537?text=Hi%20Joshua%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." rel="noopener noreferrer" target="_blank">
+<span class="contact-icon">◌</span>
+<span>
+<small>WhatsApp · Start Chat</small>
+<strong>+63 994 250 8537</strong>
+</span>
+</a>
+<a aria-label="Message Joshua on Viber" class="contact-card" href="viber://chat?number=%2B639942508537">
+<span class="contact-icon">✦</span>
+<span>
+<small>Viber · Start Chat</small>
+<strong>0994 250 8537</strong>
+</span>
+</a>
+</div>
+<div class="contact-note">
         Available for Shopify store building, e-commerce support, web design, and long-term opportunities.
       </div>
-    </div>
-  </div>
+</div>
+</div>
 </section>
-
-
 <footer><div class="container footer"><span>© 2026 Joshua Paul</span><span>Shopify Store Builder · Web Designer</span></div></footer>
-
-
-
-
 <div class="lightbox" id="lightbox">
-<button class="close" aria-label="Close">×</button>
-<button class="prev" aria-label="Previous">‹</button>
-<img id="lightboxImg" src="" alt="">
-<button class="next" aria-label="Next">›</button>
+<button aria-label="Close" class="close">×</button>
+<button aria-label="Previous" class="prev">‹</button>
+<img alt="" id="lightboxImg" src=""/>
+<button aria-label="Next" class="next">›</button>
 <div class="lightbox-title" id="lightboxTitle"></div>
 </div>
-
 <script>
 const shots=[...document.querySelectorAll(".shot")];
 const box=document.getElementById("lightbox");
@@ -2128,12 +2321,6 @@ document.addEventListener("pointermove", (e) => {
 });
 
 </script>
-
-
-
-
-
-
 <script>
 (function(){
   const toggle = document.getElementById('mobile-menu-toggle');
@@ -2176,6 +2363,28 @@ document.addEventListener("pointermove", (e) => {
 
   window.addEventListener('resize', function(){
     if(window.innerWidth > 760) closeMenu();
+  });
+})();
+</script>
+
+<script>
+(function () {
+  document.querySelectorAll('.gallery-toggle').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const group = button.closest('.gallery-group');
+      if (!group) return;
+
+      const expanded = group.classList.toggle('gallery-expanded');
+      group.classList.toggle('gallery-collapsed', !expanded);
+
+      button.setAttribute('aria-expanded', String(expanded));
+      const count = button.getAttribute('data-count') || '';
+      button.textContent = expanded
+        ? 'Hide screenshots'
+        : 'View all ' + count + ' screenshots';
+
+      // Restore the arrow added by CSS.
+    });
   });
 })();
 </script>
