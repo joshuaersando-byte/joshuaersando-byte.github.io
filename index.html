@@ -5,214 +5,1242 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joshua Paul | Shopify Store Builder & Web Designer</title>
 <meta name="description" content="Joshua Paul — Shopify Store Builder and Web Designer with experience in Shopify product pages, e-commerce, UGC sourcing, customer support, and responsive storefront design.">
-<meta name="theme-color" content="#090f18">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Joshua Paul | Shopify Store Builder & Web Designer">
-<meta property="og:description" content="Shopify store builder and web designer — product pages, e-commerce, responsive storefront design.">
-<meta property="og:image" content="images/profile.png">
-<meta name="twitter:card" content="summary">
 <style>
 :root{
---bg:#090f18;--soft:#101827;--card:#141d2b;
---blue:#8fb6da;--blue2:#d8e6f2;--blue-deep:#5f83a6;
---cream:#f7f8fa;--text:#dce4eb;--muted:#98a6b5;
---border:rgba(235,242,248,.13);--line:rgba(235,242,248,.11)
+--bg:#0a101b;
+--soft:#0f1726;
+--card:#121c2d;
+--blue:#8db7df;
+--blue2:#b9d2eb;
+--blue-deep:#4f78a5;
+--blue-glow:rgba(110,164,216,.12);
+--cream:#f2f5f8;
+--text:#d9e2ec;
+--muted:#8d9bad;
+--border:rgba(141,183,223,.18);
+--line:rgba(218,230,242,.09)
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-background:
- radial-gradient(circle at 82% 10%,rgba(143,182,218,.075),transparent 27%),
- radial-gradient(circle at 10% 70%,rgba(255,255,255,.035),transparent 24%),
- var(--bg);
-color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
-img{max-width:100%}
-.container{width:92%;max-width:1120px;margin:auto}
-
-/* ---------- Nav ---------- */
-nav{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,rgba(9,15,24,.96),rgba(9,15,24,.88));backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.container{width:min(1120px,90%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,rgba(10,16,27,.96),rgba(10,16,27,.88));backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .nav{height:74px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-weight:800;font-size:20px;color:var(--cream)}.logo span{color:var(--blue)}
-.links{display:flex;gap:28px;list-style:none;align-items:center}
-.links a{font-size:14px;color:var(--muted);position:relative;transition:color .25s ease}
+.links{display:flex;gap:28px;list-style:none;align-items:center}.links a{font-size:14px;color:var(--muted)}
 .links a:hover{color:var(--blue2)}
-.links a:not(.cta)::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--blue);transition:right .25s ease}
-.links a:not(.cta):hover::after{right:0}
-.cta{background:linear-gradient(135deg,#dbe8f3,#91b8dc);color:#0a111a!important;padding:10px 16px;border-radius:24px;font-weight:700}
-
-/* ---------- Hero ---------- */
-.hero{min-height:74vh;padding:70px 0 52px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;width:650px;height:650px;right:-280px;top:-180px;background:radial-gradient(circle,rgba(120,166,216,.09),transparent 65%);pointer-events:none}
-.hero::before{content:"";position:absolute;width:520px;height:520px;left:28%;top:5%;border-radius:50%;background:radial-gradient(circle,rgba(141,183,223,.045),transparent 67%);filter:blur(2px);pointer-events:none;animation:heroOrb 11s ease-in-out infinite alternate}
-@keyframes heroOrb{0%{transform:translate(-30px,10px) scale(.92);opacity:.55}100%{transform:translate(35px,-25px) scale(1.08);opacity:1}}
-.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-.eyebrow{color:var(--blue);font-size:12px;letter-spacing:2.3px;text-transform:uppercase;font-weight:700;margin-bottom:9px;transition:letter-spacing .35s ease}
-section:hover .eyebrow{letter-spacing:2.8px}
+.cta{background:linear-gradient(135deg,var(--blue),#a8c6e4);color:#0a101b!important;padding:10px 16px;border-radius:24px;font-weight:700}
+.hero{padding:115px 0 105px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:650px;height:650px;right:-280px;top:-180px;background:radial-gradient(circle,rgba(120,166,216,.09),transparent 65%);pointer-events:none}
+.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:65px;align-items:center}
+.eyebrow{color:var(--blue);font-size:12px;letter-spacing:2.3px;text-transform:uppercase;font-weight:700}
 h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--cream)}
 h1{font-size:clamp(48px,6vw,76px);line-height:1.03;letter-spacing:-3px;margin:20px 0 27px}
-h1 span{color:var(--blue);display:inline-block;animation:accentFloat 4.5s ease-in-out infinite}
-@keyframes accentFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+h1 span{color:var(--blue)}
 .hero p,.intro,.about p,.project-copy p{color:var(--muted);line-height:1.85}
 .hero p{font-size:18px;max-width:650px;margin-bottom:30px}
 .buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:13px 21px;border-radius:8px;font-size:14px;font-weight:700;transition:transform .25s ease,box-shadow .25s ease}
-.btn:hover{transform:translateY(-3px)}
-.primary{background:linear-gradient(135deg,#dbe8f3,#91b8dc);color:#0a111a}
-.primary:hover{box-shadow:0 12px 30px rgba(120,166,216,.16)}
-.secondary{border:1px solid var(--line);color:var(--cream)}
-.hero-card{background:rgba(247,248,250,.025);border:1px solid var(--line);padding:32px;border-radius:20px;transition:border-color .3s ease;animation:heroIn .9s .18s ease-out both,heroCardFloat 7s 1.3s ease-in-out infinite}
-@keyframes heroCardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.btn{display:inline-block;padding:13px 21px;border-radius:8px;font-size:14px;font-weight:700}
+.primary{background:linear-gradient(135deg,var(--blue),#a8c6e4);color:#0a101b}.secondary{border:1px solid var(--line);color:var(--cream)}
+.hero-card{background:linear-gradient(145deg,rgba(120,166,216,.065),rgba(255,255,255,.02));border:1px solid var(--border);padding:32px;border-radius:20px}
 .hero-card h3{font-size:26px;margin:14px 0 10px}.hero-card p{font-size:14px}
 .principles{margin-top:22px;display:grid;gap:14px}.principle{display:flex;gap:12px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--blue);margin-top:8px;flex:none}
 .principle strong{color:var(--cream);font-size:14px}.principle p{font-size:13px}
-@keyframes heroIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hero .eyebrow{animation:heroIn .7s ease-out both}
-.hero h1{animation:heroIn .8s .08s ease-out both}
-.hero > .container > .grid2 > div:first-child > p{animation:heroIn .8s .16s ease-out both}
-.hero .buttons{animation:heroIn .8s .24s ease-out both}
-
-/* ---------- Sections ---------- */
-section{padding:58px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(36px,4vw,50px);line-height:1.1;letter-spacing:-1.5px;margin:12px 0 16px}
-.intro{max-width:680px;margin-bottom:22px}
+section{padding:100px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(36px,4vw,50px);line-height:1.1;letter-spacing:-1.5px;margin:12px 0 18px}
+.intro{max-width:680px;margin-bottom:45px}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:70px}
 .about p{margin-bottom:17px}
-.highlight{border-left:2px solid var(--blue);padding-left:18px;color:var(--cream)!important}
+.highlight{border-left:2px solid var(--sage);padding-left:18px;color:var(--cream)!important}
 .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
-.skill,.tag{border:1px solid rgba(235,242,248,.12);background:rgba(247,248,250,.035);padding:8px 12px;border-radius:6px;font-size:13px;transition:background .25s ease,border-color .25s ease,transform .25s ease}
-.skill:hover,.tag:hover{transform:translateY(-2px);border-color:rgba(141,183,223,.28);background:rgba(120,166,216,.065)}
-
-/* ---------- Profile photo ---------- */
-.portfolio-profile-photo{width:210px;margin:0 0 28px;text-align:center}
-.portfolio-profile-photo img{display:block;width:210px;height:255px;object-fit:cover;object-position:center top;border-radius:18px;border:1px solid rgba(235,242,248,.16);box-shadow:0 18px 45px rgba(0,0,0,.24)}
-.portfolio-profile-caption{margin-top:8px;color:var(--muted);font-size:11px;letter-spacing:.6px}
-@media(min-width:761px){#about .portfolio-profile-photo{float:left;margin:0 42px 18px 0}}
-
-/* ---------- Featured / gallery ---------- */
+.skill,.tag{border:1px solid var(--border);background:rgba(120,166,216,.035);padding:8px 12px;border-radius:6px;font-size:13px}
 .featured{background:var(--soft)}
 .project-head{display:flex;justify-content:space-between;align-items:end;gap:20px}
 .nda{color:var(--blue);font-size:12px;text-align:right}
-.project-copy{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-bottom:45px}
+.project-copy{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-bottom:55px}
 .project-copy h3{font-size:26px;margin-bottom:10px}
 .list{list-style:none;display:grid;gap:8px}.list li{color:var(--muted);font-size:14px}
 .list li:before{content:"✓";color:var(--blue);margin-right:9px}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-.gallery-group{margin-top:52px}
+.gallery-group{margin-top:62px}
 .gallery-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
 .gallery-heading h3{font-size:27px;margin-top:4px}
 .count{color:var(--muted);font-size:12px}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.shot{position:relative;border:1px solid var(--line);background:#172337;border-radius:10px;overflow:hidden;cursor:pointer;padding:0;text-align:left;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .35s ease}
-.shot:hover{transform:translateY(-7px) scale(1.012);border-color:rgba(141,183,223,.34);box-shadow:0 18px 40px rgba(0,0,0,.22)}
-.shot img{width:100%;height:250px;object-fit:cover;object-position:top;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.shot:hover img{transform:scale(1.035)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.shot{position:relative;border:1px solid var(--line);background:#172337;border-radius:10px;overflow:hidden;cursor:pointer;padding:0;transition:.25s;text-align:left}
+.shot:hover{transform:translateY(-4px);border-color:var(--border)}
+.shot img{width:100%;height:250px;object-fit:cover;object-position:top;display:block}
 .shot-label{position:absolute;left:9px;bottom:9px;background:rgba(11,17,18,.82);color:var(--cream);font-size:11px;padding:4px 7px;border-radius:4px}
 
-/* ---------- Experience / education ---------- */
-.experience-list{display:grid;gap:16px;margin-top:30px}
-.experience-item{display:grid;grid-template-columns:190px 1fr;gap:30px;padding:20px;background:rgba(247,248,250,.025);border:1px solid var(--line);border-radius:12px;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.experience-list{display:grid;gap:18px;margin-top:35px}
+.experience-item{display:grid;grid-template-columns:190px 1fr;gap:30px;padding:30px;background:var(--card);border:1px solid var(--line);border-radius:12px}
 .experience-meta{display:flex;flex-direction:column;gap:7px}
 .experience-date{color:var(--blue);font-size:13px;font-weight:700}
 .experience-type{color:var(--muted);font-size:12px}
 .experience-item h3{font-family:Arial,sans-serif;font-size:20px;margin-bottom:4px}
 .company{color:var(--muted);font-size:13px;margin-bottom:16px}
 .experience-item .list{margin-top:0}
-.support-strip{margin-top:14px;padding:18px 20px;background:rgba(120,166,216,.035);border:1px solid var(--border);border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.support-strip{margin-top:18px;padding:22px 25px;background:rgba(120,166,216,.035);border:1px solid var(--border);border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:30px}
 .support-strip strong{display:block;color:var(--cream);font-size:14px;margin-top:7px}
 .support-strip p{color:var(--muted);font-size:13px;max-width:500px}
-.education-card{margin-top:14px;padding:20px;background:rgba(247,248,250,.025);border:1px solid var(--line);border-radius:12px;display:flex;justify-content:space-between;gap:30px;align-items:center;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.education-card{margin-top:18px;padding:28px;background:linear-gradient(135deg,rgba(120,166,216,.065),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:12px;display:flex;justify-content:space-between;gap:30px;align-items:center}
 .education-card h3{font-family:Arial,sans-serif;font-size:18px;margin:7px 0}
 .education-card p{color:var(--muted);font-size:13px}
 .education-note{color:var(--blue2);font-size:12px;max-width:280px;text-align:right}
-.experience-item:hover,.education-card:hover,.service:hover{transform:translateY(-5px);border-color:rgba(141,183,223,.26);box-shadow:0 18px 45px rgba(0,0,0,.16)}
 
-/* ---------- Services / tools ---------- */
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.service{background:rgba(247,248,250,.025);border:1px solid var(--line);border-radius:11px;padding:20px;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
-.service .num{color:var(--blue);font-size:12px;margin-bottom:24px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.service{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:28px}
+.service .num{color:var(--blue);font-size:12px;margin-bottom:28px}
 .service h3{font-family:Arial,sans-serif;font-size:17px;margin-bottom:9px}.service p{color:var(--muted);font-size:14px}
-.tools{display:flex;flex-wrap:wrap;gap:9px}
-.tool{padding:10px 13px;background:rgba(247,248,250,.035);border:1px solid rgba(235,242,248,.12);border-radius:8px;color:var(--cream);transition:transform .3s ease,border-color .3s ease,color .3s ease}
-.tool:hover{transform:translateY(-3px);border-color:rgba(141,183,223,.30);color:var(--blue2)}
-
-/* ---------- Contact ---------- */
-#contact{padding:52px 0 58px}
-.contact{position:relative;overflow:hidden;text-align:center;padding:30px 25px;border:1px solid rgba(235,242,248,.13);border-radius:20px;background:radial-gradient(circle at 50% 0%,rgba(143,182,218,.075),transparent 55%),rgba(247,248,250,.025)}
-.contact::before{content:"";position:absolute;width:300px;height:300px;left:-120px;top:-150px;border-radius:50%;background:radial-gradient(circle,rgba(141,183,223,.10),transparent 68%);animation:contactGlow 8s ease-in-out infinite alternate;pointer-events:none}
-@keyframes contactGlow{from{transform:translate(0,0)}to{transform:translate(90px,35px)}}
-.contact p{max-width:600px;margin:0 auto 22px;color:var(--muted)}
-.contact-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;max-width:900px;margin:20px auto 12px}
-.contact-card{min-width:0;display:flex;align-items:center;gap:12px;padding:15px;text-align:left;cursor:pointer;border:1px solid rgba(235,242,248,.12);border-radius:12px;background:rgba(247,248,250,.025);transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease}
-.contact-card:hover{transform:translateY(-4px);border-color:rgba(143,182,218,.45);background:rgba(143,182,218,.07);box-shadow:0 16px 36px rgba(0,0,0,.2)}
-.contact-card small{display:block;color:var(--muted);font-size:10px;letter-spacing:.65px;text-transform:uppercase;margin-bottom:3px}
-.contact-card strong{display:block;color:var(--cream);font-size:12px;line-height:1.35;word-break:break-word}
-.contact-icon{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border-radius:10px;color:var(--blue2);background:rgba(143,182,218,.08);border:1px solid rgba(143,182,218,.15)}
-.contact-note{color:var(--muted);font-size:11px;margin-top:12px}
-
-/* ---------- Footer / lightbox / motion ---------- */
+.tools{display:flex;flex-wrap:wrap;gap:10px}.tool{padding:14px 18px;background:var(--card);border:1px solid var(--line);border-radius:8px;color:var(--cream)}
+.contact{text-align:center;padding:65px 25px;border:1px solid var(--border);border-radius:20px;background:radial-gradient(circle at 50% 0%,rgba(120,166,216,.065),transparent 55%),var(--card)}
+.contact p{max-width:580px;margin:0 auto 28px;color:var(--muted)}
 footer{padding:28px 0;border-top:1px solid var(--line);color:#687572;font-size:12px}
 .footer{display:flex;justify-content:space-between;gap:20px}
 .lightbox{position:fixed;inset:0;background:rgba(3,7,8,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:35px}
 .lightbox.open{display:flex}
-.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:8px;animation:imagePop .3s ease-out}
-@keyframes imagePop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:8px}
 .close,.prev,.next{position:fixed;border:1px solid var(--line);background:rgba(18,29,46,.94);color:var(--cream);cursor:pointer;border-radius:50%;width:44px;height:44px}
 .close{top:20px;right:20px;font-size:22px}.prev{left:20px;top:50%;font-size:20px}.next{right:20px;top:50%;font-size:20px}
 .lightbox-title{position:fixed;bottom:15px;left:0;right:0;text-align:center;color:var(--muted);font-size:13px}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-body::before{content:"";position:fixed;width:420px;height:420px;left:-180px;top:18vh;border-radius:50%;background:radial-gradient(circle,rgba(126,174,224,.075),transparent 68%);pointer-events:none;z-index:-1;animation:ambientFloat 12s ease-in-out infinite alternate}
-body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bottom:8vh;border-radius:50%;background:radial-gradient(circle,rgba(82,123,169,.045),transparent 68%);pointer-events:none;z-index:-1;animation:ambientFloat 15s ease-in-out infinite alternate-reverse}
-@keyframes ambientFloat{from{transform:translate3d(0,-20px,0) scale(1)}to{transform:translate3d(25px,25px,0) scale(1.08)}}
-.page-glow{position:fixed;left:var(--mouse-x,50%);top:var(--mouse-y,30%);width:260px;height:260px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(141,183,223,.035),transparent 68%);pointer-events:none;z-index:-1;transition:left .18s ease-out,top .18s ease-out}
-@media(hover:none){.page-glow{display:none}}
-
-/* ---------- Responsive ---------- */
 @media(max-width:850px){
- .links{gap:12px}
- .links a:not(.cta){display:none}
- .grid2,.about,.project-copy{grid-template-columns:1fr}
- .experience-item{grid-template-columns:1fr;gap:12px}
- .education-card{display:block}
- .education-note{text-align:left;margin-top:16px}
- .support-strip{display:block}
- .support-strip p{margin-top:12px}
- .gallery{grid-template-columns:repeat(2,1fr)}
- .services{grid-template-columns:1fr 1fr}
- .project-head{display:block}
- .nda{text-align:left;margin-top:14px}
-}
-@media(max-width:760px){
- section{padding:44px 0}
- .hero{min-height:auto;padding:52px 0 42px}
- .container{width:calc(100% - 30px)}
- .grid2{gap:20px}
- .nav{height:62px}
- .hero h1{font-size:clamp(40px,12vw,62px);line-height:.98}
- .hero p,.intro{font-size:15px;line-height:1.7}
- section h2{font-size:clamp(32px,9vw,48px);line-height:1.05}
- .portfolio-profile-photo{width:170px;margin:0 auto 22px;float:none}
- .portfolio-profile-photo img{width:170px;height:210px}
- #contact{padding:42px 0 48px}
- #contact .contact{padding:22px 16px}
- .contact-actions{grid-template-columns:1fr}
- .contact-card{min-height:60px;padding:14px}
+.links{display:none}.grid2,.about,.project-copy{grid-template-columns:1fr}.experience-item{grid-template-columns:1fr;gap:12px}.education-card{display:block}.education-note{text-align:left;margin-top:16px}.support-strip{display:block}.support-strip p{margin-top:12px}.hero{padding:80px 0}
+.gallery{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:1fr 1fr}
+.project-head{display:block}.nda{text-align:left;margin-top:14px}
 }
 @media(max-width:560px){
- .gallery,.services{grid-template-columns:1fr}
- .shot img{height:auto;max-height:none}
- .footer{flex-direction:column}
- .lightbox{padding:15px}.prev{left:10px}.next{right:10px}
- .hero h1{font-size:42px;letter-spacing:-2px}
- .btn{width:100%;text-align:center}
- .links .cta{font-size:12px;padding:9px 13px}
+h1{font-size:48px;letter-spacing:-2px}section{padding:70px 0}
+.gallery,.services{grid-template-columns:1fr}.shot img{height:auto;max-height:none}
+.footer{flex-direction:column}.lightbox{padding:15px}.prev{left:10px}.next{right:10px}
 }
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+
+/* ===== Subtle professional motion ===== */
+html { scroll-behavior: smooth; }
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    left: -180px;
+    top: 18vh;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(126,174,224,.075), transparent 68%);
+    pointer-events: none;
+    z-index: -1;
+    animation: ambientFloat 12s ease-in-out infinite alternate;
 }
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 360px;
+    height: 360px;
+    right: -150px;
+    bottom: 8vh;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(82,123,169,.045), transparent 68%);
+    pointer-events: none;
+    z-index: -1;
+    animation: ambientFloat 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes ambientFloat {
+    from { transform: translate3d(0, -20px, 0) scale(1); }
+    to   { transform: translate3d(25px, 25px, 0) scale(1.08); }
+}
+
+@keyframes heroIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero .eyebrow { animation: heroIn .7s ease-out both; }
+.hero h1 { animation: heroIn .8s .08s ease-out both; }
+.hero > .container > .grid2 > div:first-child > p {
+    animation: heroIn .8s .16s ease-out both;
+}
+.hero .buttons { animation: heroIn .8s .24s ease-out both; }
+.hero-card { animation: heroIn .9s .18s ease-out both; }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.links a {
+    position: relative;
+    transition: color .25s ease;
+}
+.links a:not(.cta)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -7px;
+    height: 1px;
+    background: var(--blue);
+    transition: right .25s ease;
+}
+.links a:not(.cta):hover::after { right: 0; }
+
+.btn {
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.btn:hover {
+    transform: translateY(-3px);
+}
+.primary:hover {
+    box-shadow: 0 12px 30px rgba(120,166,216,.16);
+}
+
+.service, .experience-item, .education-card, .hero-card, .tool {
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.service:hover, .experience-item:hover, .education-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(141,183,223,.26);
+    box-shadow: 0 18px 45px rgba(0,0,0,.16);
+}
+.tool:hover {
+    transform: translateY(-3px);
+    border-color: rgba(141,183,223,.30);
+    color: var(--blue2);
+}
+
+.skill, .tag {
+    transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.skill:hover, .tag:hover {
+    transform: translateY(-2px);
+    border-color: rgba(141,183,223,.28);
+    background: rgba(120,166,216,.065);
+}
+
+.shot {
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .3s ease, box-shadow .35s ease;
+}
+.shot:hover {
+    transform: translateY(-7px) scale(1.012);
+    border-color: rgba(141,183,223,.34);
+    box-shadow: 0 18px 40px rgba(0,0,0,.22);
+}
+.shot img {
+    transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.shot:hover img {
+    transform: scale(1.035);
+}
+
+.lightbox img {
+    animation: imagePop .3s ease-out;
+}
+@keyframes imagePop {
+    from { opacity: 0; transform: scale(.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* ===== Enhanced but professional motion ===== */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    left: 28%;
+    top: 5%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(141,183,223,.045), transparent 67%);
+    filter: blur(2px);
+    pointer-events: none;
+    animation: heroOrb 11s ease-in-out infinite alternate;
+}
+
+@keyframes heroOrb {
+    0% { transform: translate(-30px, 10px) scale(.92); opacity: .55; }
+    100% { transform: translate(35px, -25px) scale(1.08); opacity: 1; }
+}
+
+.hero h1 span {
+    display: inline-block;
+    animation: accentFloat 4.5s ease-in-out infinite;
+}
+@keyframes accentFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.eyebrow {
+    transition: letter-spacing .35s ease, opacity .35s ease;
+}
+section:hover .eyebrow {
+    letter-spacing: 2.8px;
+}
+
+.contact-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 30px auto 18px;
+    max-width: 850px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-align: left;
+    padding: 17px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(255,255,255,.025);
+    transition: transform .3s ease, border-color .3s ease, background .3s ease, box-shadow .3s ease;
+}
+.contact-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(141,183,223,.38);
+    background: rgba(141,183,223,.055);
+    box-shadow: 0 18px 42px rgba(0,0,0,.18);
+}
+.contact-card small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+.contact-card strong {
+    display: block;
+    color: var(--cream);
+    font-size: 13px;
+    word-break: break-word;
+}
+.contact-icon {
+    width: 37px;
+    height: 37px;
+    flex: 0 0 37px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    color: var(--blue2);
+    background: rgba(141,183,223,.08);
+    border: 1px solid rgba(141,183,223,.14);
+    transition: transform .3s ease, background .3s ease;
+}
+.contact-card:hover .contact-icon {
+    transform: rotate(-5deg) scale(1.08);
+    background: rgba(141,183,223,.14);
+}
+.contact-note {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.contact {
+    position: relative;
+    overflow: hidden;
+}
+.contact::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: -120px;
+    top: -150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(141,183,223,.10), transparent 68%);
+    animation: contactGlow 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+@keyframes contactGlow {
+    from { transform: translate(0,0); }
+    to { transform: translate(90px,35px); }
+}
+
+/* Staggered reveal for cards */
+.service:nth-child(1), .experience-item:nth-child(1), .tool:nth-child(1) { transition-delay: .02s; }
+.service:nth-child(2), .experience-item:nth-child(2), .tool:nth-child(2) { transition-delay: .06s; }
+.service:nth-child(3), .tool:nth-child(3) { transition-delay: .10s; }
+.service:nth-child(4), .tool:nth-child(4) { transition-delay: .14s; }
+.service:nth-child(5), .tool:nth-child(5) { transition-delay: .18s; }
+.service:nth-child(6), .tool:nth-child(6) { transition-delay: .22s; }
+
+/* Gentle floating motion on the featured card */
+.hero-card {
+    animation: heroCardFloat 7s ease-in-out infinite;
+}
+@keyframes heroCardFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 760px) {
+    .contact-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.page-glow {
+    position: fixed;
+    left: var(--mouse-x, 50%);
+    top: var(--mouse-y, 30%);
+    width: 260px;
+    height: 260px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(141,183,223,.035), transparent 68%);
+    pointer-events: none;
+    z-index: -1;
+    transition: left .18s ease-out, top .18s ease-out;
+}
+@media (hover: none) {
+    .page-glow { display: none; }
+}
+
+
+.contact-actions{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:30px auto 18px;
+  max-width:850px;
+}
+.contact-card{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  text-align:left;
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.025);
+  text-decoration:none;
+  transition:transform .3s ease,border-color .3s ease,background .3s ease,box-shadow .3s ease;
+}
+.contact-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(141,183,223,.38);
+  background:rgba(141,183,223,.055);
+  box-shadow:0 18px 42px rgba(0,0,0,.18);
+}
+.contact-card small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+.contact-card strong{
+  display:block;
+  color:var(--cream);
+  font-size:13px;
+  word-break:break-word;
+}
+.contact-icon{
+  width:37px;
+  height:37px;
+  flex:0 0 37px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  color:var(--blue2);
+  background:rgba(141,183,223,.08);
+  border:1px solid rgba(141,183,223,.14);
+}
+.contact-note{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:15px;
+}
+@media (max-width:760px){
+  .contact-actions{grid-template-columns:1fr}
+}
+
+
+/* ===== Employer-focused compact layout ===== */
+section { padding: 72px 0 !important; }
+.hero { min-height: 78vh !important; padding: 80px 0 65px !important; }
+.container { width: 92% !important; max-width: 1120px !important; }
+
+section h2 { margin-bottom: 18px !important; }
+section .intro { margin-bottom: 22px !important; }
+.eyebrow { margin-bottom: 10px !important; }
+
+.grid2 { gap: 46px !important; }
+.grid3 { gap: 16px !important; }
+
+.experience-item { margin-bottom: 16px !important; padding: 22px !important; }
+.service { padding: 22px !important; }
+.education-card { margin-top: 14px !important; padding: 22px !important; }
+.support-strip { margin-top: 14px !important; padding: 18px 20px !important; }
+
+.featured { padding-top: 64px !important; padding-bottom: 64px !important; }
+.shots { gap: 12px !important; }
+.tools { gap: 9px !important; }
+.tool { padding: 10px 13px !important; }
+
+.contact { padding: 30px !important; }
+.contact-actions { margin: 22px auto 12px !important; gap: 10px !important; }
+
+footer { padding: 28px 0 !important; }
+
+/* White balance: introduce soft off-white surfaces rather than making everything blue */
+:root {
+  --bg: #0a1019;
+  --soft: #101827;
+  --card: #141d2b;
+  --blue: #8fb6da;
+  --blue2: #d5e3ef;
+  --blue-deep: #5f83a6;
+  --cream: #f5f6f7;
+  --text: #dce3e9;
+  --muted: #97a4b2;
+  --border: rgba(220,230,238,.14);
+  --line: rgba(220,230,238,.10);
+}
+
+body {
+  background:
+    radial-gradient(circle at 82% 14%, rgba(143,182,218,.08), transparent 26%),
+    radial-gradient(circle at 12% 76%, rgba(255,255,255,.035), transparent 24%),
+    var(--bg) !important;
+}
+
+.card, .service, .experience-item, .education-card {
+  background: rgba(245,246,247,.025) !important;
+  border-color: rgba(220,230,238,.11) !important;
+}
+
+.tool, .skill, .tag {
+  background: rgba(245,246,247,.035) !important;
+  border-color: rgba(220,230,238,.12) !important;
+}
+
+.contact {
+  background:
+    linear-gradient(135deg, rgba(245,246,247,.045), rgba(143,182,218,.055)) !important;
+  border: 1px solid rgba(220,230,238,.13) !important;
+}
+
+.primary, .cta {
+  background: linear-gradient(135deg, #d7e5f1, #91b8dc) !important;
+  color: #0b111a !important;
+}
+
+/* ===== Mobile-first refinements ===== */
+@media (max-width: 760px) {
+  section { padding: 50px 0 !important; }
+  .hero {
+    min-height: auto !important;
+    padding: 58px 0 48px !important;
+  }
+  .container {
+    width: calc(100% - 32px) !important;
+  }
+
+  nav, .nav, header .container {
+    min-height: 62px !important;
+  }
+
+  .links {
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .links a {
+    font-size: 12px !important;
+  }
+
+  .links .cta {
+    padding: 9px 13px !important;
+  }
+
+  .grid2, .grid3 {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 66px) !important;
+    line-height: .98 !important;
+  }
+
+  .hero p, .intro {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  section h2 {
+    font-size: clamp(34px, 9vw, 50px) !important;
+    line-height: 1.05 !important;
+  }
+
+  .service, .experience-item, .education-card {
+    padding: 18px !important;
+  }
+
+  .support-strip {
+    display: block !important;
+  }
+
+  .support-strip p {
+    margin-top: 10px !important;
+  }
+
+  .contact {
+    padding: 22px !important;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-card {
+    min-height: 62px !important;
+    padding: 14px !important;
+  }
+
+  .contact-card strong {
+    font-size: 12px !important;
+  }
+
+  .shots {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tool {
+    padding: 9px 11px !important;
+    font-size: 12px !important;
+  }
+
+  footer {
+    padding: 22px 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .links a:not(.cta) {
+    display: none;
+  }
+
+  .links .cta {
+    font-size: 12px !important;
+  }
+
+  .hero h1 {
+    font-size: 43px !important;
+  }
+
+  .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+
+/* ===== FINAL EMPLOYER-READY OVERRIDES ===== */
+:root{
+  --bg:#0a1019;
+  --soft:#101827;
+  --card:#141d2b;
+  --blue:#8fb6da;
+  --blue2:#d5e3ef;
+  --cream:#f5f6f7;
+  --text:#dce3e9;
+  --muted:#97a4b2;
+  --line:rgba(220,230,238,.11);
+}
+
+body{
+  background:
+    radial-gradient(circle at 82% 14%,rgba(143,182,218,.08),transparent 26%),
+    radial-gradient(circle at 12% 76%,rgba(255,255,255,.035),transparent 24%),
+    var(--bg) !important;
+  color:var(--text) !important;
+}
+
+section{padding:56px 0 !important}
+.hero{min-height:76vh !important;padding:70px 0 55px !important}
+.container{width:92% !important;max-width:1120px !important}
+section h2{margin-bottom:16px !important}
+.eyebrow{margin-bottom:9px !important}
+.grid2{gap:40px !important}
+.grid3{gap:14px !important}
+
+.contact{
+  padding:28px !important;
+  background:linear-gradient(135deg,rgba(245,246,247,.045),rgba(143,182,218,.055)) !important;
+  border:1px solid rgba(220,230,238,.13) !important;
+}
+.contact-actions{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:10px !important;
+  margin:22px auto 12px !important;
+  max-width:900px !important;
+}
+.contact-card{
+  cursor:pointer !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  padding:15px !important;
+  min-width:0 !important;
+  text-decoration:none !important;
+  border:1px solid rgba(220,230,238,.12) !important;
+  border-radius:12px !important;
+  background:rgba(245,246,247,.025) !important;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease !important;
+}
+.contact-card:hover{
+  transform:translateY(-5px) !important;
+  border-color:rgba(143,182,218,.45) !important;
+  background:rgba(143,182,218,.07) !important;
+  box-shadow:0 16px 36px rgba(0,0,0,.2) !important;
+}
+.contact-card small{
+  display:block !important;
+  color:var(--muted) !important;
+  font-size:10px !important;
+  letter-spacing:.65px !important;
+  text-transform:uppercase !important;
+  margin-bottom:3px !important;
+}
+.contact-card strong{
+  display:block !important;
+  color:var(--cream) !important;
+  font-size:12px !important;
+  word-break:break-word !important;
+}
+.contact-icon{
+  width:36px !important;height:36px !important;flex:0 0 36px !important;
+  display:grid !important;place-items:center !important;
+  border-radius:10px !important;
+  color:var(--blue2) !important;
+  background:rgba(143,182,218,.08) !important;
+  border:1px solid rgba(143,182,218,.15) !important;
+}
+.contact-note{color:var(--muted) !important;font-size:11px !important;margin-top:12px !important}
+
+.card,.service,.experience-item,.education-card{
+  background:rgba(245,246,247,.025) !important;
+  border-color:rgba(220,230,238,.11) !important;
+}
+.tool,.skill,.tag{
+  background:rgba(245,246,247,.035) !important;
+  border-color:rgba(220,230,238,.12) !important;
+}
+.primary,.cta{
+  background:linear-gradient(135deg,#d7e5f1,#91b8dc) !important;
+  color:#0b111a !important;
+}
+
+@media(max-width:760px){
+  section{padding:44px 0 !important}
+  .hero{min-height:auto !important;padding:52px 0 42px !important}
+  .container{width:calc(100% - 30px) !important}
+  .grid2,.grid3{grid-template-columns:1fr !important;gap:20px !important}
+  .hero h1{font-size:clamp(40px,12vw,62px) !important;line-height:.98 !important}
+  section h2{font-size:clamp(32px,9vw,48px) !important;line-height:1.05 !important}
+  .contact{padding:20px !important}
+  .contact-actions{grid-template-columns:1fr !important}
+  .contact-card{min-height:60px !important}
+  .shots{grid-template-columns:1fr !important}
+}
+@media(max-width:480px){
+  .hero h1{font-size:42px !important}
+  .links a:not(.cta){display:none !important}
+  .btn{width:100% !important;text-align:center !important}
+}
+
+
+/* Profile photo */
+.portfolio-profile-photo{
+  width:220px;
+  margin:0 auto 26px;
+  text-align:center;
+  position:relative;
+}
+.portfolio-profile-photo img{
+  display:block;
+  width:220px;
+  height:270px;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:18px;
+  border:1px solid rgba(220,230,238,.16);
+  box-shadow:0 18px 45px rgba(0,0,0,.24);
+}
+.portfolio-profile-caption{
+  margin-top:9px;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.7px;
+}
+@media (min-width:761px){
+  #about .portfolio-profile-photo{
+    float:left;
+    margin:0 42px 18px 0;
+  }
+}
+@media (max-width:760px){
+  .portfolio-profile-photo{
+    width:170px;
+    margin:0 auto 22px;
+    float:none !important;
+  }
+  .portfolio-profile-photo img{
+    width:170px;
+    height:210px;
+  }
+}
+
+
+/* =========================================================
+   FINAL PORTFOLIO POLISH
+   ========================================================= */
+
+:root{
+  --bg:#090f18;
+  --soft:#101827;
+  --card:#141d2b;
+  --blue:#8fb6da;
+  --blue2:#d8e6f2;
+  --cream:#f7f8fa;
+  --text:#dce4eb;
+  --muted:#98a6b5;
+  --line:rgba(235,242,248,.11);
+  --border:rgba(235,242,248,.13);
+}
+
+body{
+  background:
+    radial-gradient(circle at 82% 10%,rgba(143,182,218,.075),transparent 27%),
+    radial-gradient(circle at 10% 70%,rgba(255,255,255,.035),transparent 24%),
+    var(--bg);
+  color:var(--text);
+}
+
+section{
+  padding:58px 0 !important;
+}
+
+.hero{
+  min-height:74vh !important;
+  padding:70px 0 52px !important;
+}
+
+.container{
+  width:92% !important;
+  max-width:1120px !important;
+}
+
+section h2{
+  margin-bottom:16px !important;
+}
+
+.eyebrow{
+  margin-bottom:9px !important;
+}
+
+/* Profile */
+.portfolio-profile-photo{
+  width:210px;
+  margin:0 0 28px;
+  text-align:center;
+}
+
+.portfolio-profile-photo img{
+  display:block;
+  width:210px;
+  height:255px;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:18px;
+  border:1px solid rgba(235,242,248,.16);
+  box-shadow:0 18px 45px rgba(0,0,0,.24);
+}
+
+.portfolio-profile-caption{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.6px;
+}
+
+/* Cards */
+.card,
+.service,
+.experience-item,
+.education-card,
+.hero-card{
+  background:rgba(247,248,250,.025) !important;
+  border-color:rgba(235,242,248,.11) !important;
+}
+
+.tool,
+.skill,
+.tag{
+  background:rgba(247,248,250,.035) !important;
+  border-color:rgba(235,242,248,.12) !important;
+}
+
+/* Contact — always visible */
+#contact{
+  display:block !important;
+  opacity:1 !important;
+  transform:none !important;
+  visibility:visible !important;
+  padding:52px 0 58px !important;
+}
+
+#contact .contact{
+  padding:30px 25px !important;
+  text-align:center;
+  border:1px solid rgba(235,242,248,.13);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(143,182,218,.075),transparent 55%),
+    rgba(247,248,250,.025);
+}
+
+#contact p{
+  max-width:600px;
+  margin:0 auto 22px !important;
+}
+
+.contact-actions{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:10px !important;
+  width:100%;
+  max-width:900px;
+  margin:20px auto 12px !important;
+}
+
+.contact-card{
+  min-width:0;
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  padding:15px !important;
+  text-align:left !important;
+  text-decoration:none !important;
+  cursor:pointer;
+  border:1px solid rgba(235,242,248,.12) !important;
+  border-radius:12px !important;
+  background:rgba(247,248,250,.025) !important;
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.contact-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(143,182,218,.45) !important;
+  background:rgba(143,182,218,.07) !important;
+  box-shadow:0 16px 36px rgba(0,0,0,.2);
+}
+
+.contact-card small{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:.65px;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+
+.contact-card strong{
+  display:block;
+  color:var(--cream);
+  font-size:12px;
+  line-height:1.35;
+  word-break:break-word;
+}
+
+.contact-icon{
+  width:36px;
+  height:36px;
+  flex:0 0 36px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  color:var(--blue2);
+  background:rgba(143,182,218,.08);
+  border:1px solid rgba(143,182,218,.15);
+}
+
+.contact-note{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:12px;
+}
+
+/* Buttons */
+.primary,
+.cta{
+  background:linear-gradient(135deg,#dbe8f3,#91b8dc) !important;
+  color:#0a111a !important;
+}
+
+/* Compact employer-friendly spacing */
+.experience-item,
+.service,
+.education-card{
+  padding:20px !important;
+}
+
+.grid2{
+  gap:38px !important;
+}
+
+.grid3{
+  gap:14px !important;
+}
+
+.tools{
+  gap:9px !important;
+}
+
+/* Mobile */
+@media (max-width:760px){
+
+  section{
+    padding:44px 0 !important;
+  }
+
+  .hero{
+    min-height:auto !important;
+    padding:52px 0 42px !important;
+  }
+
+  .container{
+    width:calc(100% - 30px) !important;
+  }
+
+  .grid2,
+  .grid3{
+    grid-template-columns:1fr !important;
+    gap:20px !important;
+  }
+
+  .hero h1{
+    font-size:clamp(40px,12vw,62px) !important;
+    line-height:.98 !important;
+  }
+
+  section h2{
+    font-size:clamp(32px,9vw,48px) !important;
+    line-height:1.05 !important;
+  }
+
+  .portfolio-profile-photo{
+    width:170px;
+    margin:0 auto 22px;
+    float:none !important;
+  }
+
+  .portfolio-profile-photo img{
+    width:170px;
+    height:210px;
+  }
+
+  #contact{
+    padding:42px 0 48px !important;
+  }
+
+  #contact .contact{
+    padding:22px 16px !important;
+  }
+
+  .contact-actions{
+    grid-template-columns:1fr !important;
+  }
+
+  .contact-card{
+    min-height:60px;
+    padding:14px !important;
+  }
+
+  .contact-card strong{
+    font-size:12px !important;
+  }
+
+  .shots{
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media (max-width:480px){
+
+  .hero h1{
+    font-size:42px !important;
+  }
+
+  .links a:not(.cta){
+    display:none !important;
+  }
+
+  .btn{
+    width:100% !important;
+    text-align:center !important;
+  }
+}
+
+
+/* =========================================================
+   CLEAN MOBILE HAMBURGER NAV
+   ========================================================= */
+
+.mobile-menu-toggle{
+  display:none;
+  width:42px;
+  height:42px;
+  padding:9px;
+  border:1px solid rgba(235,242,248,.14);
+  border-radius:11px;
+  background:rgba(247,248,250,.035);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:4px;
+  transition:background .25s ease,border-color .25s ease,transform .25s ease;
+}
+
+.mobile-menu-toggle:hover{
+  background:rgba(143,182,218,.09);
+  border-color:rgba(143,182,218,.32);
+}
+
+.mobile-menu-toggle span{
+  display:block;
+  width:17px;
+  height:1.5px;
+  border-radius:2px;
+  background:#dce6ef;
+  transition:transform .3s ease,opacity .25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1){
+  transform:translateY(5.5px) rotate(45deg);
+}
+.mobile-menu-toggle.active span:nth-child(2){
+  opacity:0;
+}
+.mobile-menu-toggle.active span:nth-child(3){
+  transform:translateY(-5.5px) rotate(-45deg);
+}
+
+.mobile-menu{
+  display:none;
+  position:fixed;
+  top:74px;
+  left:15px;
+  right:15px;
+  z-index:9999;
+  padding:9px;
+  border:1px solid rgba(235,242,248,.13);
+  border-radius:16px;
+  background:rgba(10,16,25,.97);
+  box-shadow:0 22px 55px rgba(0,0,0,.35);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  transform:translateY(-8px);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease;
+}
+
+.mobile-menu.open{
+  display:block;
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.mobile-menu a{
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  padding:0 15px;
+  border-radius:10px;
+  color:#dce4eb;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.1px;
+  transition:background .2s ease,color .2s ease,transform .2s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:focus{
+  background:rgba(143,182,218,.08);
+  color:#d8e6f2;
+  transform:translateX(3px);
+}
+
+.mobile-menu .mobile-menu-cta{
+  margin-top:7px;
+  justify-content:center;
+  background:linear-gradient(135deg,#dbe8f3,#91b8dc);
+  color:#0a111a;
+  font-weight:650;
+}
+
+@media (max-width:760px){
+  .mobile-menu-toggle{
+    display:flex !important;
+  }
+
+  /* Keep the desktop links hidden only at mobile sizes;
+     the hamburger replaces them. */
+  .links a:not(.cta){
+    display:none !important;
+  }
+
+  .links .cta{
+    display:none !important;
+  }
+
+  /* Keep header compact and aligned */
+  header .container,
+  nav .container{
+    min-height:64px !important;
+  }
+}
+
+@media (min-width:761px){
+  .mobile-menu,
+  .mobile-menu-toggle{
+    display:none !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -253,18 +1281,34 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
 </div>
 </div>
 </div>
+
+<button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+  <span></span><span></span><span></span>
+</button>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#work">Work</a>
+  <a href="#services">Services</a>
+  <a href="#skills">Skills</a>
+  <a class="mobile-menu-cta" href="#contact">Let's Work Together</a>
+</div>
+
 </header>
 
 <section id="about">
 <div class="container">
 <div class="portfolio-profile-photo">
   <img
-    src="images/profile.png"
+    src="images/profile.webp"
     alt="Joshua Paul Ersando — Shopify Store Builder and E-commerce VA"
     loading="lazy"
   >
   <div class="portfolio-profile-caption">Joshua Paul Ersando</div>
 </div>
+
+
 
 <div class="eyebrow">About Me</div>
 <h2>Psychology meets e-commerce.</h2>
@@ -283,6 +1327,7 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
 </div>
 </div>
 </section>
+
 
 <section id="experience" class="reveal">
 <div class="container">
@@ -372,43 +1417,43 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
             </div>
             <div class="gallery">
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-01.png" data-title="Homepage — Desktop — 1">
-                    <img src="images/sleevelle/homepage-desktop-01.png" alt="Sleevelle homepage — desktop screenshot 1" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-01.webp" data-title="Homepage — Desktop — 1">
+                    <img src="images/sleevelle/homepage-desktop-01.webp" alt="Sleevelle homepage — desktop screenshot 1" loading="lazy">
                     <span class="shot-label">01</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-02.png" data-title="Homepage — Desktop — 2">
-                    <img src="images/sleevelle/homepage-desktop-02.png" alt="Sleevelle homepage — desktop screenshot 2" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-02.webp" data-title="Homepage — Desktop — 2">
+                    <img src="images/sleevelle/homepage-desktop-02.webp" alt="Sleevelle homepage — desktop screenshot 2" loading="lazy">
                     <span class="shot-label">02</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-03.png" data-title="Homepage — Desktop — 3">
-                    <img src="images/sleevelle/homepage-desktop-03.png" alt="Sleevelle homepage — desktop screenshot 3" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-03.webp" data-title="Homepage — Desktop — 3">
+                    <img src="images/sleevelle/homepage-desktop-03.webp" alt="Sleevelle homepage — desktop screenshot 3" loading="lazy">
                     <span class="shot-label">03</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-04.png" data-title="Homepage — Desktop — 4">
-                    <img src="images/sleevelle/homepage-desktop-04.png" alt="Sleevelle homepage — desktop screenshot 4" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-04.webp" data-title="Homepage — Desktop — 4">
+                    <img src="images/sleevelle/homepage-desktop-04.webp" alt="Sleevelle homepage — desktop screenshot 4" loading="lazy">
                     <span class="shot-label">04</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-05.png" data-title="Homepage — Desktop — 5">
-                    <img src="images/sleevelle/homepage-desktop-05.png" alt="Sleevelle homepage — desktop screenshot 5" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-05.webp" data-title="Homepage — Desktop — 5">
+                    <img src="images/sleevelle/homepage-desktop-05.webp" alt="Sleevelle homepage — desktop screenshot 5" loading="lazy">
                     <span class="shot-label">05</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-06.png" data-title="Homepage — Desktop — 6">
-                    <img src="images/sleevelle/homepage-desktop-06.png" alt="Sleevelle homepage — desktop screenshot 6" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-06.webp" data-title="Homepage — Desktop — 6">
+                    <img src="images/sleevelle/homepage-desktop-06.webp" alt="Sleevelle homepage — desktop screenshot 6" loading="lazy">
                     <span class="shot-label">06</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-07.png" data-title="Homepage — Desktop — 7">
-                    <img src="images/sleevelle/homepage-desktop-07.png" alt="Sleevelle homepage — desktop screenshot 7" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-07.webp" data-title="Homepage — Desktop — 7">
+                    <img src="images/sleevelle/homepage-desktop-07.webp" alt="Sleevelle homepage — desktop screenshot 7" loading="lazy">
                     <span class="shot-label">07</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-08.png" data-title="Homepage — Desktop — 8">
-                    <img src="images/sleevelle/homepage-desktop-08.png" alt="Sleevelle homepage — desktop screenshot 8" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-desktop-08.webp" data-title="Homepage — Desktop — 8">
+                    <img src="images/sleevelle/homepage-desktop-08.webp" alt="Sleevelle homepage — desktop screenshot 8" loading="lazy">
                     <span class="shot-label">08</span>
                 </button>
 
@@ -425,38 +1470,38 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
             </div>
             <div class="gallery">
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-01.png" data-title="Homepage — Mobile — 1">
-                    <img src="images/sleevelle/homepage-mobile-01.png" alt="Sleevelle homepage — mobile screenshot 1" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-01.webp" data-title="Homepage — Mobile — 1">
+                    <img src="images/sleevelle/homepage-mobile-01.webp" alt="Sleevelle homepage — mobile screenshot 1" loading="lazy">
                     <span class="shot-label">01</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-02.png" data-title="Homepage — Mobile — 2">
-                    <img src="images/sleevelle/homepage-mobile-02.png" alt="Sleevelle homepage — mobile screenshot 2" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-02.webp" data-title="Homepage — Mobile — 2">
+                    <img src="images/sleevelle/homepage-mobile-02.webp" alt="Sleevelle homepage — mobile screenshot 2" loading="lazy">
                     <span class="shot-label">02</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-03.png" data-title="Homepage — Mobile — 3">
-                    <img src="images/sleevelle/homepage-mobile-03.png" alt="Sleevelle homepage — mobile screenshot 3" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-03.webp" data-title="Homepage — Mobile — 3">
+                    <img src="images/sleevelle/homepage-mobile-03.webp" alt="Sleevelle homepage — mobile screenshot 3" loading="lazy">
                     <span class="shot-label">03</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-04.png" data-title="Homepage — Mobile — 4">
-                    <img src="images/sleevelle/homepage-mobile-04.png" alt="Sleevelle homepage — mobile screenshot 4" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-04.webp" data-title="Homepage — Mobile — 4">
+                    <img src="images/sleevelle/homepage-mobile-04.webp" alt="Sleevelle homepage — mobile screenshot 4" loading="lazy">
                     <span class="shot-label">04</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-05.png" data-title="Homepage — Mobile — 5">
-                    <img src="images/sleevelle/homepage-mobile-05.png" alt="Sleevelle homepage — mobile screenshot 5" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-05.webp" data-title="Homepage — Mobile — 5">
+                    <img src="images/sleevelle/homepage-mobile-05.webp" alt="Sleevelle homepage — mobile screenshot 5" loading="lazy">
                     <span class="shot-label">05</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-06.png" data-title="Homepage — Mobile — 6">
-                    <img src="images/sleevelle/homepage-mobile-06.png" alt="Sleevelle homepage — mobile screenshot 6" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-06.webp" data-title="Homepage — Mobile — 6">
+                    <img src="images/sleevelle/homepage-mobile-06.webp" alt="Sleevelle homepage — mobile screenshot 6" loading="lazy">
                     <span class="shot-label">06</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-07.png" data-title="Homepage — Mobile — 7">
-                    <img src="images/sleevelle/homepage-mobile-07.png" alt="Sleevelle homepage — mobile screenshot 7" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/homepage-mobile-07.webp" data-title="Homepage — Mobile — 7">
+                    <img src="images/sleevelle/homepage-mobile-07.webp" alt="Sleevelle homepage — mobile screenshot 7" loading="lazy">
                     <span class="shot-label">07</span>
                 </button>
 
@@ -473,53 +1518,53 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
             </div>
             <div class="gallery">
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-01.png" data-title="Product Page — Desktop — 1">
-                    <img src="images/sleevelle/product-desktop-01.png" alt="Sleevelle product page — desktop screenshot 1" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-01.webp" data-title="Product Page — Desktop — 1">
+                    <img src="images/sleevelle/product-desktop-01.webp" alt="Sleevelle product page — desktop screenshot 1" loading="lazy">
                     <span class="shot-label">01</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-02.png" data-title="Product Page — Desktop — 2">
-                    <img src="images/sleevelle/product-desktop-02.png" alt="Sleevelle product page — desktop screenshot 2" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-02.webp" data-title="Product Page — Desktop — 2">
+                    <img src="images/sleevelle/product-desktop-02.webp" alt="Sleevelle product page — desktop screenshot 2" loading="lazy">
                     <span class="shot-label">02</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-03.png" data-title="Product Page — Desktop — 3">
-                    <img src="images/sleevelle/product-desktop-03.png" alt="Sleevelle product page — desktop screenshot 3" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-03.webp" data-title="Product Page — Desktop — 3">
+                    <img src="images/sleevelle/product-desktop-03.webp" alt="Sleevelle product page — desktop screenshot 3" loading="lazy">
                     <span class="shot-label">03</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-04.png" data-title="Product Page — Desktop — 4">
-                    <img src="images/sleevelle/product-desktop-04.png" alt="Sleevelle product page — desktop screenshot 4" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-04.webp" data-title="Product Page — Desktop — 4">
+                    <img src="images/sleevelle/product-desktop-04.webp" alt="Sleevelle product page — desktop screenshot 4" loading="lazy">
                     <span class="shot-label">04</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-05.png" data-title="Product Page — Desktop — 5">
-                    <img src="images/sleevelle/product-desktop-05.png" alt="Sleevelle product page — desktop screenshot 5" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-05.webp" data-title="Product Page — Desktop — 5">
+                    <img src="images/sleevelle/product-desktop-05.webp" alt="Sleevelle product page — desktop screenshot 5" loading="lazy">
                     <span class="shot-label">05</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-06.png" data-title="Product Page — Desktop — 6">
-                    <img src="images/sleevelle/product-desktop-06.png" alt="Sleevelle product page — desktop screenshot 6" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-06.webp" data-title="Product Page — Desktop — 6">
+                    <img src="images/sleevelle/product-desktop-06.webp" alt="Sleevelle product page — desktop screenshot 6" loading="lazy">
                     <span class="shot-label">06</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-07.png" data-title="Product Page — Desktop — 7">
-                    <img src="images/sleevelle/product-desktop-07.png" alt="Sleevelle product page — desktop screenshot 7" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-07.webp" data-title="Product Page — Desktop — 7">
+                    <img src="images/sleevelle/product-desktop-07.webp" alt="Sleevelle product page — desktop screenshot 7" loading="lazy">
                     <span class="shot-label">07</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-08.png" data-title="Product Page — Desktop — 8">
-                    <img src="images/sleevelle/product-desktop-08.png" alt="Sleevelle product page — desktop screenshot 8" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-08.webp" data-title="Product Page — Desktop — 8">
+                    <img src="images/sleevelle/product-desktop-08.webp" alt="Sleevelle product page — desktop screenshot 8" loading="lazy">
                     <span class="shot-label">08</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-09.png" data-title="Product Page — Desktop — 9">
-                    <img src="images/sleevelle/product-desktop-09.png" alt="Sleevelle product page — desktop screenshot 9" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-09.webp" data-title="Product Page — Desktop — 9">
+                    <img src="images/sleevelle/product-desktop-09.webp" alt="Sleevelle product page — desktop screenshot 9" loading="lazy">
                     <span class="shot-label">09</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-10.png" data-title="Product Page — Desktop — 10">
-                    <img src="images/sleevelle/product-desktop-10.png" alt="Sleevelle product page — desktop screenshot 10" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-desktop-10.webp" data-title="Product Page — Desktop — 10">
+                    <img src="images/sleevelle/product-desktop-10.webp" alt="Sleevelle product page — desktop screenshot 10" loading="lazy">
                     <span class="shot-label">10</span>
                 </button>
 
@@ -536,68 +1581,68 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
             </div>
             <div class="gallery">
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-01.png" data-title="Product Page — Mobile — 1">
-                    <img src="images/sleevelle/product-mobile-01.png" alt="Sleevelle product page — mobile screenshot 1" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-01.webp" data-title="Product Page — Mobile — 1">
+                    <img src="images/sleevelle/product-mobile-01.webp" alt="Sleevelle product page — mobile screenshot 1" loading="lazy">
                     <span class="shot-label">01</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-02.png" data-title="Product Page — Mobile — 2">
-                    <img src="images/sleevelle/product-mobile-02.png" alt="Sleevelle product page — mobile screenshot 2" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-02.webp" data-title="Product Page — Mobile — 2">
+                    <img src="images/sleevelle/product-mobile-02.webp" alt="Sleevelle product page — mobile screenshot 2" loading="lazy">
                     <span class="shot-label">02</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-03.png" data-title="Product Page — Mobile — 3">
-                    <img src="images/sleevelle/product-mobile-03.png" alt="Sleevelle product page — mobile screenshot 3" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-03.webp" data-title="Product Page — Mobile — 3">
+                    <img src="images/sleevelle/product-mobile-03.webp" alt="Sleevelle product page — mobile screenshot 3" loading="lazy">
                     <span class="shot-label">03</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-04.png" data-title="Product Page — Mobile — 4">
-                    <img src="images/sleevelle/product-mobile-04.png" alt="Sleevelle product page — mobile screenshot 4" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-04.webp" data-title="Product Page — Mobile — 4">
+                    <img src="images/sleevelle/product-mobile-04.webp" alt="Sleevelle product page — mobile screenshot 4" loading="lazy">
                     <span class="shot-label">04</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-05.png" data-title="Product Page — Mobile — 5">
-                    <img src="images/sleevelle/product-mobile-05.png" alt="Sleevelle product page — mobile screenshot 5" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-05.webp" data-title="Product Page — Mobile — 5">
+                    <img src="images/sleevelle/product-mobile-05.webp" alt="Sleevelle product page — mobile screenshot 5" loading="lazy">
                     <span class="shot-label">05</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-06.png" data-title="Product Page — Mobile — 6">
-                    <img src="images/sleevelle/product-mobile-06.png" alt="Sleevelle product page — mobile screenshot 6" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-06.webp" data-title="Product Page — Mobile — 6">
+                    <img src="images/sleevelle/product-mobile-06.webp" alt="Sleevelle product page — mobile screenshot 6" loading="lazy">
                     <span class="shot-label">06</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-07.png" data-title="Product Page — Mobile — 7">
-                    <img src="images/sleevelle/product-mobile-07.png" alt="Sleevelle product page — mobile screenshot 7" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-07.webp" data-title="Product Page — Mobile — 7">
+                    <img src="images/sleevelle/product-mobile-07.webp" alt="Sleevelle product page — mobile screenshot 7" loading="lazy">
                     <span class="shot-label">07</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-08.png" data-title="Product Page — Mobile — 8">
-                    <img src="images/sleevelle/product-mobile-08.png" alt="Sleevelle product page — mobile screenshot 8" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-08.webp" data-title="Product Page — Mobile — 8">
+                    <img src="images/sleevelle/product-mobile-08.webp" alt="Sleevelle product page — mobile screenshot 8" loading="lazy">
                     <span class="shot-label">08</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-09.png" data-title="Product Page — Mobile — 9">
-                    <img src="images/sleevelle/product-mobile-09.png" alt="Sleevelle product page — mobile screenshot 9" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-09.webp" data-title="Product Page — Mobile — 9">
+                    <img src="images/sleevelle/product-mobile-09.webp" alt="Sleevelle product page — mobile screenshot 9" loading="lazy">
                     <span class="shot-label">09</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-10.png" data-title="Product Page — Mobile — 10">
-                    <img src="images/sleevelle/product-mobile-10.png" alt="Sleevelle product page — mobile screenshot 10" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-10.webp" data-title="Product Page — Mobile — 10">
+                    <img src="images/sleevelle/product-mobile-10.webp" alt="Sleevelle product page — mobile screenshot 10" loading="lazy">
                     <span class="shot-label">10</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-11.png" data-title="Product Page — Mobile — 11">
-                    <img src="images/sleevelle/product-mobile-11.png" alt="Sleevelle product page — mobile screenshot 11" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-11.webp" data-title="Product Page — Mobile — 11">
+                    <img src="images/sleevelle/product-mobile-11.webp" alt="Sleevelle product page — mobile screenshot 11" loading="lazy">
                     <span class="shot-label">11</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-12.png" data-title="Product Page — Mobile — 12">
-                    <img src="images/sleevelle/product-mobile-12.png" alt="Sleevelle product page — mobile screenshot 12" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-12.webp" data-title="Product Page — Mobile — 12">
+                    <img src="images/sleevelle/product-mobile-12.webp" alt="Sleevelle product page — mobile screenshot 12" loading="lazy">
                     <span class="shot-label">12</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-13.png" data-title="Product Page — Mobile — 13">
-                    <img src="images/sleevelle/product-mobile-13.png" alt="Sleevelle product page — mobile screenshot 13" loading="lazy">
+                <button class="shot" type="button" data-full="images/sleevelle/product-mobile-13.webp" data-title="Product Page — Mobile — 13">
+                    <img src="images/sleevelle/product-mobile-13.webp" alt="Sleevelle product page — mobile screenshot 13" loading="lazy">
                     <span class="shot-label">13</span>
                 </button>
 
@@ -606,6 +1651,7 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
 
 </div>
 </section>
+
 
 <section class="featured reveal" id="magnuslab">
 <div class="container">
@@ -645,23 +1691,23 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
             </div>
             <div class="gallery">
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.png" data-title="MagnusLAB — Homepage — Desktop — 1">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.png" alt="MagnusLAB homepage — desktop screenshot 1" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp" data-title="MagnusLAB — Homepage — Desktop — 1">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp" alt="MagnusLAB homepage — desktop screenshot 1" loading="lazy">
                     <span class="shot-label">01</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.png" data-title="MagnusLAB — Homepage — Desktop — 2">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.png" alt="MagnusLAB homepage — desktop screenshot 2" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp" data-title="MagnusLAB — Homepage — Desktop — 2">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp" alt="MagnusLAB homepage — desktop screenshot 2" loading="lazy">
                     <span class="shot-label">02</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.png" data-title="MagnusLAB — Homepage — Desktop — 3">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.png" alt="MagnusLAB homepage — desktop screenshot 3" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp" data-title="MagnusLAB — Homepage — Desktop — 3">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp" alt="MagnusLAB homepage — desktop screenshot 3" loading="lazy">
                     <span class="shot-label">03</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.png" data-title="MagnusLAB — Homepage — Desktop — 4">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.png" alt="MagnusLAB homepage — desktop screenshot 4" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.webp" data-title="MagnusLAB — Homepage — Desktop — 4">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-desktop-04.webp" alt="MagnusLAB homepage — desktop screenshot 4" loading="lazy">
                     <span class="shot-label">04</span>
                 </button>
 
@@ -678,23 +1724,23 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
             </div>
             <div class="gallery">
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.png" data-title="MagnusLAB — Homepage — Mobile — 1">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.png" alt="MagnusLAB homepage — mobile screenshot 1" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp" data-title="MagnusLAB — Homepage — Mobile — 1">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp" alt="MagnusLAB homepage — mobile screenshot 1" loading="lazy">
                     <span class="shot-label">01</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.png" data-title="MagnusLAB — Homepage — Mobile — 2">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.png" alt="MagnusLAB homepage — mobile screenshot 2" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp" data-title="MagnusLAB — Homepage — Mobile — 2">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp" alt="MagnusLAB homepage — mobile screenshot 2" loading="lazy">
                     <span class="shot-label">02</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.png" data-title="MagnusLAB — Homepage — Mobile — 3">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.png" alt="MagnusLAB homepage — mobile screenshot 3" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp" data-title="MagnusLAB — Homepage — Mobile — 3">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp" alt="MagnusLAB homepage — mobile screenshot 3" loading="lazy">
                     <span class="shot-label">03</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.png" data-title="MagnusLAB — Homepage — Mobile — 4">
-                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.png" alt="MagnusLAB homepage — mobile screenshot 4" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.webp" data-title="MagnusLAB — Homepage — Mobile — 4">
+                    <img src="images/magnuslab_github_assets/magnuslab/homepage-mobile-04.webp" alt="MagnusLAB homepage — mobile screenshot 4" loading="lazy">
                     <span class="shot-label">04</span>
                 </button>
 
@@ -711,38 +1757,38 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
             </div>
             <div class="gallery">
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-01.png" data-title="MagnusLAB — Product Page — Desktop — 1">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-01.png" alt="MagnusLAB product page — desktop screenshot 1" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-01.webp" data-title="MagnusLAB — Product Page — Desktop — 1">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-01.webp" alt="MagnusLAB product page — desktop screenshot 1" loading="lazy">
                     <span class="shot-label">01</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-02.png" data-title="MagnusLAB — Product Page — Desktop — 2">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-02.png" alt="MagnusLAB product page — desktop screenshot 2" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-02.webp" data-title="MagnusLAB — Product Page — Desktop — 2">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-02.webp" alt="MagnusLAB product page — desktop screenshot 2" loading="lazy">
                     <span class="shot-label">02</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-03.png" data-title="MagnusLAB — Product Page — Desktop — 3">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-03.png" alt="MagnusLAB product page — desktop screenshot 3" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-03.webp" data-title="MagnusLAB — Product Page — Desktop — 3">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-03.webp" alt="MagnusLAB product page — desktop screenshot 3" loading="lazy">
                     <span class="shot-label">03</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-04.png" data-title="MagnusLAB — Product Page — Desktop — 4">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-04.png" alt="MagnusLAB product page — desktop screenshot 4" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-04.webp" data-title="MagnusLAB — Product Page — Desktop — 4">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-04.webp" alt="MagnusLAB product page — desktop screenshot 4" loading="lazy">
                     <span class="shot-label">04</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-05.png" data-title="MagnusLAB — Product Page — Desktop — 5">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-05.png" alt="MagnusLAB product page — desktop screenshot 5" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-05.webp" data-title="MagnusLAB — Product Page — Desktop — 5">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-05.webp" alt="MagnusLAB product page — desktop screenshot 5" loading="lazy">
                     <span class="shot-label">05</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-06.png" data-title="MagnusLAB — Product Page — Desktop — 6">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-06.png" alt="MagnusLAB product page — desktop screenshot 6" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-06.webp" data-title="MagnusLAB — Product Page — Desktop — 6">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-06.webp" alt="MagnusLAB product page — desktop screenshot 6" loading="lazy">
                     <span class="shot-label">06</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-07.png" data-title="MagnusLAB — Product Page — Desktop — 7">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-07.png" alt="MagnusLAB product page — desktop screenshot 7" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-desktop-07.webp" data-title="MagnusLAB — Product Page — Desktop — 7">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-desktop-07.webp" alt="MagnusLAB product page — desktop screenshot 7" loading="lazy">
                     <span class="shot-label">07</span>
                 </button>
 
@@ -759,58 +1805,58 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
             </div>
             <div class="gallery">
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-01.png" data-title="MagnusLAB — Product Page — Mobile — 1">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-01.png" alt="MagnusLAB product page — mobile screenshot 1" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-01.webp" data-title="MagnusLAB — Product Page — Mobile — 1">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-01.webp" alt="MagnusLAB product page — mobile screenshot 1" loading="lazy">
                     <span class="shot-label">01</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-02.png" data-title="MagnusLAB — Product Page — Mobile — 2">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-02.png" alt="MagnusLAB product page — mobile screenshot 2" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-02.webp" data-title="MagnusLAB — Product Page — Mobile — 2">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-02.webp" alt="MagnusLAB product page — mobile screenshot 2" loading="lazy">
                     <span class="shot-label">02</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-03.png" data-title="MagnusLAB — Product Page — Mobile — 3">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-03.png" alt="MagnusLAB product page — mobile screenshot 3" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-03.webp" data-title="MagnusLAB — Product Page — Mobile — 3">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-03.webp" alt="MagnusLAB product page — mobile screenshot 3" loading="lazy">
                     <span class="shot-label">03</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-04.png" data-title="MagnusLAB — Product Page — Mobile — 4">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-04.png" alt="MagnusLAB product page — mobile screenshot 4" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-04.webp" data-title="MagnusLAB — Product Page — Mobile — 4">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-04.webp" alt="MagnusLAB product page — mobile screenshot 4" loading="lazy">
                     <span class="shot-label">04</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-05.png" data-title="MagnusLAB — Product Page — Mobile — 5">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-05.png" alt="MagnusLAB product page — mobile screenshot 5" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-05.webp" data-title="MagnusLAB — Product Page — Mobile — 5">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-05.webp" alt="MagnusLAB product page — mobile screenshot 5" loading="lazy">
                     <span class="shot-label">05</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-06.png" data-title="MagnusLAB — Product Page — Mobile — 6">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-06.png" alt="MagnusLAB product page — mobile screenshot 6" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-06.webp" data-title="MagnusLAB — Product Page — Mobile — 6">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-06.webp" alt="MagnusLAB product page — mobile screenshot 6" loading="lazy">
                     <span class="shot-label">06</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-07.png" data-title="MagnusLAB — Product Page — Mobile — 7">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-07.png" alt="MagnusLAB product page — mobile screenshot 7" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-07.webp" data-title="MagnusLAB — Product Page — Mobile — 7">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-07.webp" alt="MagnusLAB product page — mobile screenshot 7" loading="lazy">
                     <span class="shot-label">07</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-08.png" data-title="MagnusLAB — Product Page — Mobile — 8">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-08.png" alt="MagnusLAB product page — mobile screenshot 8" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-08.webp" data-title="MagnusLAB — Product Page — Mobile — 8">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-08.webp" alt="MagnusLAB product page — mobile screenshot 8" loading="lazy">
                     <span class="shot-label">08</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-09.png" data-title="MagnusLAB — Product Page — Mobile — 9">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-09.png" alt="MagnusLAB product page — mobile screenshot 9" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-09.webp" data-title="MagnusLAB — Product Page — Mobile — 9">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-09.webp" alt="MagnusLAB product page — mobile screenshot 9" loading="lazy">
                     <span class="shot-label">09</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-10.png" data-title="MagnusLAB — Product Page — Mobile — 10">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-10.png" alt="MagnusLAB product page — mobile screenshot 10" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-10.webp" data-title="MagnusLAB — Product Page — Mobile — 10">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-10.webp" alt="MagnusLAB product page — mobile screenshot 10" loading="lazy">
                     <span class="shot-label">10</span>
                 </button>
 
-                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-11.png" data-title="MagnusLAB — Product Page — Mobile — 11">
-                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-11.png" alt="MagnusLAB product page — mobile screenshot 11" loading="lazy">
+                <button class="shot" type="button" data-full="images/magnuslab_github_assets/magnuslab/product-mobile-11.webp" data-title="MagnusLAB — Product Page — Mobile — 11">
+                    <img src="images/magnuslab_github_assets/magnuslab/product-mobile-11.webp" alt="MagnusLAB product page — mobile screenshot 11" loading="lazy">
                     <span class="shot-label">11</span>
                 </button>
 
@@ -855,6 +1901,9 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
 </div>
 </section>
 
+
+
+
 <section id="contact">
   <div class="container">
     <div class="contact">
@@ -867,7 +1916,7 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
 
       <div class="contact-actions">
 
-        
+        <a
           class="contact-card"
           href="https://mail.google.com/mail/?view=cm&fs=1&to=joshua.ersando@gmail.com"
           target="_blank"
@@ -881,7 +1930,7 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
           </span>
         </a>
 
-        
+        <a
           class="contact-card"
           href="https://wa.me/639942508537?text=Hi%20Joshua%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity."
           target="_blank"
@@ -895,7 +1944,7 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
           </span>
         </a>
 
-        
+        <a
           class="contact-card"
           href="viber://chat?number=%2B639942508537"
           aria-label="Message Joshua on Viber"
@@ -916,7 +1965,11 @@ body::after{content:"";position:fixed;width:360px;height:360px;right:-150px;bott
   </div>
 </section>
 
+
 <footer><div class="container footer"><span>© 2026 Joshua Paul</span><span>Shopify Store Builder · Web Designer</span></div></footer>
+
+
+
 
 <div class="lightbox" id="lightbox">
 <button class="close" aria-label="Close">×</button>
@@ -954,36 +2007,74 @@ document.addEventListener("keydown",e=>{
  if(e.key==="ArrowRight")move(1);
 });
 
-/* Touch swipe for lightbox (mobile) */
-let touchX=null;
-box.addEventListener("touchstart",e=>{touchX=e.touches[0].clientX},{passive:true});
-box.addEventListener("touchend",e=>{
- if(touchX===null)return;
- const dx=e.changedTouches[0].clientX-touchX;
- if(Math.abs(dx)>50)move(dx>0?-1:1);
- touchX=null;
-},{passive:true});
+const revealItems = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
 
-/* Scroll reveal */
-const revealItems=document.querySelectorAll(".reveal");
-const revealObserver=new IntersectionObserver((entries,observer)=>{
- entries.forEach(entry=>{
-  if(entry.isIntersecting){
-   entry.target.classList.add("visible");
-   observer.unobserve(entry.target);
-  }
- });
-},{threshold:0.12});
-revealItems.forEach(item=>revealObserver.observe(item));
+revealItems.forEach(item => revealObserver.observe(item));
 
-/* Cursor glow (desktop only) */
-const pageGlow=document.createElement("div");
-pageGlow.className="page-glow";
+
+const pageGlow = document.createElement("div");
+pageGlow.className = "page-glow";
 document.body.appendChild(pageGlow);
-document.addEventListener("pointermove",(e)=>{
- document.documentElement.style.setProperty("--mouse-x",`${e.clientX}px`);
- document.documentElement.style.setProperty("--mouse-y",`${e.clientY}px`);
+
+document.addEventListener("pointermove", (e) => {
+    document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+    document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
 });
+
+</script>
+
+
+
+
+<script>
+(function(){
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  if (!toggle || !menu) return;
+
+  function closeMenu(){
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open navigation menu');
+    menu.classList.remove('open');
+    menu.setAttribute('aria-hidden','true');
+  }
+
+  toggle.addEventListener('click', function(){
+    const isOpen = menu.classList.toggle('open');
+    toggle.classList.toggle('active', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    menu.setAttribute('aria-hidden', String(!isOpen));
+  });
+
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', function(event){
+    if (!menu.contains(event.target) && !toggle.contains(event.target)){
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 760) closeMenu();
+  });
+})();
 </script>
 
 </body>
