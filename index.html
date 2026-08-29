@@ -1,879 +1,688 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joshua Paul Ersando | Virtual Assistant, Digital Operations & Shopify</title>
-  <meta name="description" content="Joshua Paul Ersando — e-commerce virtual assistant and Shopify specialist supporting storefront builds, web design, localization, creative production, reporting, customer support, and day-to-day operations.">
-  <meta name="theme-color" content="#07111b">
-  <script>document.documentElement.classList.add('js')</script>
-  <style>
-    :root {
-      --bg:#07111b;
-      --bg-2:#0a1623;
-      --surface:#0d1b2a;
-      --surface-2:#102235;
-      --text:#f5f8fb;
-      --body:#c7d2de;
-      --muted:#8fa1b4;
-      --line:rgba(214,228,241,.12);
-      --line-strong:rgba(173,207,236,.24);
-      --accent:#a9cce9;
-      --accent-2:#d7e9f7;
-      --accent-soft:rgba(169,204,233,.09);
-      --success:#9fd5b3;
-      --shadow:0 24px 70px rgba(0,0,0,.28);
-      --radius:20px;
-      --radius-sm:13px;
-      --container:1180px;
-    }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Joshua Paul Ersando | Virtual Assistant, Digital Operations &amp; Shopify Specialist</title>
+<meta content="Joshua Paul Ersando — versatile virtual assistant and digital-operations support with hands-on Shopify and e-commerce experience across storefronts, research, reporting, content, localization, customer support, and day-to-day business operations." name="description"/>
+<meta content="#0B1726" name="theme-color"/>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --page:#f7f8fa;
+  --surface:#ffffff;
+  --surface-soft:#f1f4f7;
+  --navy:#0b1726;
+  --navy-2:#11243a;
+  --navy-text:#f7fafc;
+  --heading:#111827;
+  --body:#475569;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --line-strong:#cbd5e1;
+  --blue:#315e81;
+  --blue-2:#254c6a;
+  --blue-soft:#e8f0f6;
+  --green:#608266;
+  --green-soft:#edf3ed;
+  --dark-muted:#b8c6d4;
+  --radius:18px;
+  --shadow:0 12px 32px rgba(15,23,42,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{background:var(--page);color:var(--body);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+body.menu-open,body.modal-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;max-width:100%}
+.container{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+section[id]{scroll-margin-top:82px}
+.skip-link{position:fixed;left:16px;top:-60px;z-index:20000;padding:10px 14px;border-radius:8px;background:#fff;color:var(--heading);box-shadow:var(--shadow);font-size:14px;font-weight:800;transition:top .18s ease}
+.skip-link:focus{top:12px}
+.kicker{display:inline-block;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:13px}
+h1,h2,h3,h4{color:var(--heading);font-weight:760;letter-spacing:-.035em;text-wrap:balance}
+h1{font-size:clamp(48px,5.8vw,72px);line-height:1.01;max-width:920px}
+h2{font-size:clamp(34px,4vw,50px);line-height:1.07}
+h3{font-size:22px;line-height:1.25;letter-spacing:-.025em}
+h4{font-size:20px;line-height:1.3;letter-spacing:-.02em}
+.lede{max-width:760px;font-size:17px;line-height:1.8;color:var(--body)}
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:88px}
-    body{
-      margin:0;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 78% -8%, rgba(109,163,210,.12), transparent 28rem),
-        radial-gradient(circle at -8% 38%, rgba(255,255,255,.035), transparent 28rem),
-        var(--bg);
-      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-    }
-    body.menu-open,body.modal-open{overflow:hidden}
-    img{max-width:100%;display:block}
-    button,a{font:inherit}
-    a{color:inherit;text-decoration:none}
-    button{color:inherit}
-    ::selection{background:rgba(169,204,233,.24)}
+/* Navigation */
+.site-nav{position:sticky;top:0;z-index:1000;background:rgba(11,23,38,.94);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--navy-text)}
+.brand-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:var(--blue);color:#fff;font-size:12px;font-weight:900;letter-spacing:.04em}
+.brand-copy strong{display:block;font-size:14px;line-height:1.2}.brand-copy small{display:block;margin-top:3px;color:#9fb0c0;font-size:11px;letter-spacing:.055em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:24px}.nav-links a{display:inline-flex;align-items:center;min-height:40px;color:#b8c6d4;font-size:13px;font-weight:700}.nav-links a:hover,.nav-links a:focus-visible{color:#fff}.nav-links .nav-cta{min-height:42px;padding:0 16px;border-radius:10px;background:#fff;color:var(--navy);font-weight:850}.nav-links .nav-cta:hover{color:var(--navy);background:#edf3f7}
+.menu-toggle{display:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.15);border-radius:11px;background:rgba(255,255,255,.04);align-items:center;justify-content:center;flex-direction:column;gap:4px;cursor:pointer}.menu-toggle span{width:18px;height:2px;border-radius:2px;background:#fff;transition:transform .2s ease,opacity .2s ease}
+.mobile-menu{display:none}
 
-    .container{width:min(var(--container),calc(100% - 48px));margin-inline:auto}
-    .section{padding:92px 0;border-top:1px solid var(--line)}
-    .section-soft{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.006))}
-    .kicker{
-      display:inline-block;
-      color:var(--accent);
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-    h1,h2,h3,h4,p{margin-top:0}
-    h1{
-      max-width:820px;
-      margin-bottom:24px;
-      font-size:clamp(48px,6.4vw,86px);
-      line-height:.98;
-      letter-spacing:-.055em;
-      font-weight:780;
-    }
-    h1 .accent{color:var(--accent-2)}
-    h2{
-      margin:10px 0 16px;
-      font-size:clamp(36px,4.4vw,58px);
-      line-height:1.02;
-      letter-spacing:-.045em;
-    }
-    h3{font-size:22px;line-height:1.25;letter-spacing:-.025em}
-    h4{font-size:21px;line-height:1.25;letter-spacing:-.02em;margin:5px 0 0}
-    .lede{max-width:760px;color:var(--body);font-size:18px;line-height:1.8}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:36px;margin-bottom:38px}
-    .section-head p{max-width:590px;margin:0;color:var(--muted)}
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--navy);padding:96px 0 92px;color:var(--dark-muted)}
+.hero::after{content:"";position:absolute;right:-220px;top:-260px;width:660px;height:660px;border-radius:50%;background:radial-gradient(circle,rgba(49,94,129,.30),transparent 66%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(340px,.65fr);gap:64px;align-items:center}
+.hero .kicker{color:#9dc2df}.hero h1{color:#fff;margin-bottom:24px}.hero h1 .accent{color:#b6d3e9}.hero-copy>p{max-width:760px;color:#c3cfda;font-size:18px;line-height:1.8;margin-bottom:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}.btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:0 18px;border:1px solid transparent;border-radius:11px;font-size:14px;font-weight:850;transition:background .18s ease,border-color .18s ease,transform .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-2)}.hero .btn-secondary,.contact-wrap .btn-secondary{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#fff}.hero .btn-secondary:hover,.contact-wrap .btn-secondary:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.28)}
+.hero-signal{display:flex;flex-wrap:wrap;gap:8px}.signal{padding:7px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.035);color:#c8d5df;font-size:12px;font-weight:750}.signal-shopify{border-color:rgba(132,169,137,.38);background:rgba(96,130,102,.14);color:#c8dfcb}
+.proof-panel{border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(255,255,255,.045);padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.proof-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.proof-top .kicker{margin:0}.status{display:flex;align-items:center;gap:8px;color:#c6d2dc;font-size:12px;font-weight:750}.status-dot{width:8px;height:8px;border-radius:50%;background:#9bc3a0;box-shadow:0 0 0 5px rgba(155,195,160,.08)}
+.proof-list{display:grid;gap:18px;margin-top:24px}.proof-item{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}.proof-num{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:rgba(157,194,223,.10);color:#c5dcec;font-size:12px;font-weight:900}.proof-item strong{display:block;color:#fff;font-size:14px;margin-bottom:4px}.proof-item span:last-child{display:block;color:#aebdcc;font-size:13px;line-height:1.6}.proof-footer{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.10);color:#9fb0c0;font-size:12px}
 
-    /* NAV */
-    .site-nav{
-      position:sticky;top:0;z-index:50;
-      border-bottom:1px solid var(--line);
-      background:rgba(7,17,27,.78);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-    }
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:0}
-    .brand-mark{
-      width:36px;height:36px;border:1px solid var(--line-strong);border-radius:10px;
-      display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-2);
-      font-size:12px;font-weight:900;letter-spacing:.04em;
-    }
-    .brand-copy{min-width:0}
-    .brand-copy strong{display:block;font-size:14px;white-space:nowrap}
-    .brand-copy small{display:block;color:var(--muted);font-size:10px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
-    .nav-links{display:flex;align-items:center;gap:26px}
-    .nav-links a{color:var(--muted);font-size:13px;font-weight:650;transition:color .2s ease}
-    .nav-links a:hover,.nav-links a:focus-visible{color:var(--text)}
-    .nav-links .nav-cta{
-      color:#07111b;background:var(--accent-2);padding:10px 15px;border-radius:999px;
-    }
-    .menu-toggle{
-      display:none;width:42px;height:42px;border:1px solid var(--line-strong);border-radius:11px;
-      background:rgba(255,255,255,.035);align-items:center;justify-content:center;flex-direction:column;gap:4px;cursor:pointer;
-    }
-    .menu-toggle span{width:18px;height:2px;background:var(--text);border-radius:2px;transition:.2s}
-    .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-    .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-    .mobile-menu{display:none}
+/* Capability proof strip */
+.proof-strip{
+  position:relative;
+  z-index:3;
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 8px 24px rgba(15,23,42,.035);
+}
+.proof-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.proof-card{
+  position:relative;
+  min-width:0;
+  padding:23px 22px 22px;
+  border-left:1px solid var(--line);
+}
+.proof-card:last-child{border-right:1px solid var(--line)}
+.proof-card::before{
+  content:"";
+  position:absolute;
+  left:22px;
+  top:0;
+  width:34px;
+  height:3px;
+  border-radius:0 0 3px 3px;
+  background:var(--blue);
+  opacity:.72;
+}
+.proof-card strong{
+  display:block;
+  margin-bottom:6px;
+  color:var(--heading);
+  font-size:13px;
+  font-weight:850;
+  line-height:1.35;
+  letter-spacing:-.01em;
+}
+.proof-card span{
+  display:block;
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.55;
+}
+.proof-card-shopify{
+  background:linear-gradient(180deg,rgba(237,243,237,.72),rgba(255,255,255,.96));
+}
+.proof-card-shopify::before{background:var(--green);opacity:1}
+.proof-card-shopify strong{color:#466a4d}
 
-    /* HERO */
-    .hero{padding:92px 0 72px;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);gap:64px;align-items:center}
-    .hero .kicker{margin-bottom:18px}
-    .hero-copy>p{max-width:720px;color:var(--body);font-size:18px;line-height:1.8;margin-bottom:28px}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
-    .btn{
-      min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:0 19px;
-      border:1px solid var(--line-strong);border-radius:11px;font-size:13px;font-weight:800;transition:.2s ease;
-    }
-    .btn-primary{background:var(--accent-2);color:#07111b;border-color:transparent}
-    .btn-secondary{background:rgba(255,255,255,.025)}
-    .btn:hover{transform:translateY(-2px)}
-    .hero-signal{display:flex;flex-wrap:wrap;gap:8px}
-    .signal{
-      padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);
-      background:rgba(255,255,255,.02);font-size:11px;font-weight:700;
-    }
+/* Shared sections */
+.section,.case{padding:88px 0}.section-soft{background:var(--surface-soft)}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.7fr);gap:56px;align-items:end;margin-bottom:38px}.section-head>p{max-width:560px;color:var(--body);font-size:15px;line-height:1.8}
 
-    .proof-panel{
-      position:relative;padding:28px;border:1px solid var(--line-strong);border-radius:24px;
-      background:linear-gradient(145deg,rgba(169,204,233,.085),rgba(255,255,255,.025));
-      box-shadow:var(--shadow);
-    }
-    .proof-panel:before{
-      content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.035);border-radius:17px;pointer-events:none;
-    }
-    .proof-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}
-    .status{display:flex;align-items:center;gap:8px;color:var(--body);font-size:11px;font-weight:750}
-    .status-dot{width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 0 5px rgba(159,213,179,.08)}
-    .proof-list{display:grid;gap:10px}
-    .proof-item{
-      position:relative;display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;padding:14px;
-      border:1px solid var(--line);border-radius:13px;background:rgba(7,17,27,.42);
-    }
-    .proof-num{width:38px;height:38px;display:grid;place-items:center;border-radius:10px;background:var(--accent-soft);color:var(--accent-2);font-size:11px;font-weight:900}
-    .proof-item strong{display:block;font-size:13px;margin-bottom:2px}
-    .proof-item span{display:block;color:var(--muted);font-size:12px;line-height:1.55}
-    .proof-footer{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:11px}
+/* Work overview */
+.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.work-card{overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--surface);transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}.work-card:hover{transform:translateY(-2px);border-color:#c4d4df;box-shadow:var(--shadow)}.work-visual{position:relative;height:320px;padding:24px;background:linear-gradient(145deg,#e8eef3,#f8fafc);overflow:hidden}.work-shot{position:absolute;overflow:hidden;border:1px solid #cbd5e1;border-radius:12px;background:#fff;box-shadow:0 10px 24px rgba(15,23,42,.10)}.work-shot img{width:100%;height:100%;object-fit:cover;object-position:top}.work-shot.desktop{left:24px;right:80px;top:26px;bottom:26px}.work-shot.mobile{width:112px;right:24px;bottom:18px;top:70px}.work-copy{padding:26px}.work-copy h3{font-size:28px;margin:2px 0 10px}.work-copy p{font-size:14px;line-height:1.75;color:var(--body);margin-bottom:17px}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:19px}.tag{padding:6px 9px;border:1px solid var(--line);border-radius:999px;background:#fafbfc;color:#526174;font-size:11px;font-weight:750}.tag-shopify{border-color:#c8dacb;background:var(--green-soft);color:#4e7054}.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-size:13px;font-weight:850}.text-link:hover{text-decoration:underline;text-underline-offset:3px}
 
-    /* QUICK PROOF */
-    .proof-strip{padding:0 0 76px}
-    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .proof-card{padding:17px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.022)}
-    .proof-card strong{display:block;font-size:13px;margin-bottom:4px}
-    .proof-card span{color:var(--muted);font-size:11px}
+/* Case studies */
+.case{background:var(--surface);content-visibility:auto;contain-intrinsic-size:1100px}.case.section-soft{background:var(--surface-soft)}.case-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,.7fr);gap:58px;align-items:start;margin-bottom:40px}.case-title h2{font-size:clamp(40px,5vw,58px);margin-bottom:14px}.case-title p{max-width:720px;font-size:15px;line-height:1.8;color:var(--body)}.nda-note{display:inline-flex;margin-top:13px;color:var(--muted);font-size:12px}.case-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.fact{min-height:96px;padding:16px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.78)}.fact small{display:block;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}.fact strong{display:block;color:var(--heading);font-size:13px;line-height:1.5}.case-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;padding:26px;border:1px solid var(--line);border-radius:16px;background:#fbfcfd;margin-bottom:44px}.case-body h3{font-size:18px;margin-bottom:10px}.case-body p,.case-body li{font-size:14px;line-height:1.75;color:var(--body)}.clean-list{list-style:none;display:grid;gap:8px}.clean-list li{position:relative;padding-left:18px}.clean-list li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.gallery-group{padding:0;margin-top:38px}.gallery-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:14px}.gallery-heading .kicker{margin-bottom:5px}.gallery-count{color:var(--muted);font-size:12px}.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.shot{overflow:hidden;border:1px solid var(--line);border-radius:13px;background:#fff;text-align:left;cursor:pointer;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}.shot:hover,.shot:focus-visible{transform:translateY(-2px);border-color:#bfd0dc;box-shadow:0 8px 22px rgba(15,23,42,.06)}.shot-frame{display:block;aspect-ratio:4/3;overflow:hidden;background:#eef2f5}.shot-frame img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .25s ease}.shot:hover .shot-frame img{transform:scale(1.015)}.shot-meta{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;color:var(--muted);font-size:11px;font-weight:750;letter-spacing:.04em;text-transform:uppercase}.gallery-toggle{min-height:44px;margin-top:13px;padding:0 14px;border:1px solid var(--line-strong);border-radius:10px;background:#fff;color:var(--blue);font-size:13px;font-weight:800;cursor:pointer}.gallery-toggle:hover{background:var(--blue-soft)}
 
-    /* SELECTED WORK */
-    .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .work-card{
-      overflow:hidden;border:1px solid var(--line-strong);border-radius:22px;background:var(--surface);
-      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-    }
-    .work-card:hover{transform:translateY(-4px);border-color:rgba(169,204,233,.36);box-shadow:0 20px 50px rgba(0,0,0,.18)}
-    .work-visual{display:grid;grid-template-columns:1.5fr .7fr;gap:8px;padding:10px;background:#08121d;border-bottom:1px solid var(--line)}
-    .work-shot{overflow:hidden;border-radius:12px;border:1px solid var(--line);background:#0f1f30}
-    .work-shot.desktop{aspect-ratio:16/10}
-    .work-shot.mobile{aspect-ratio:3/4}
-    .work-shot img{width:100%;height:100%;object-fit:cover;object-position:top}
-    .work-copy{padding:24px}
-    .work-copy h3{font-size:29px;margin:7px 0 10px}
-    .work-copy p{color:var(--muted);font-size:13px;line-height:1.75;margin-bottom:18px}
-    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:19px}
-    .tag{padding:6px 9px;border:1px solid var(--line);border-radius:999px;color:var(--body);font-size:10px;font-weight:750;background:rgba(255,255,255,.022)}
-    .text-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent-2);font-size:12px;font-weight:850}
+/* Experience */
+.experience-list{display:grid;gap:16px}.experience-card{display:grid;grid-template-columns:190px 1fr;gap:30px;padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff}.experience-meta{color:var(--muted);font-size:13px;line-height:1.7}.experience-meta strong{display:block;color:var(--blue);font-size:13px;margin-bottom:4px}.experience-copy h3{font-size:21px}.company{margin:5px 0 16px;color:var(--muted);font-size:13px}.experience-copy .clean-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 24px}.experience-copy .clean-list li{font-size:14px;line-height:1.65}
 
-    /* CASE STUDIES */
-    .case{padding:96px 0;border-top:1px solid var(--line)}
-    .case-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:64px;align-items:start;margin-bottom:42px}
-    .case-title h2{font-size:clamp(43px,5vw,66px)}
-    .case-title p{max-width:660px;color:var(--body);line-height:1.8}
-    .nda-note{display:inline-flex;gap:8px;align-items:center;margin-top:10px;color:var(--muted);font-size:11px}
-    .nda-note:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
-    .case-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .fact{padding:15px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}
-    .fact small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px}
-    .fact strong{font-size:12px;line-height:1.5}
-    .case-body{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:54px}
-    .case-body h3{margin-bottom:13px}
-    .case-body p,.case-body li{color:var(--muted);font-size:13px;line-height:1.75}
-    .clean-list{list-style:none;padding:0;margin:0;display:grid;gap:9px}
-    .clean-list li{position:relative;padding-left:19px}
-    .clean-list li:before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+/* Capabilities */
+.cap-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.cap-card{min-height:220px;padding:24px;border:1px solid var(--line);border-radius:16px;background:#fff}.cap-index{display:block;color:var(--blue);font-size:11px;font-weight:900;letter-spacing:.10em;margin-bottom:28px}.cap-card h3{font-size:18px;margin-bottom:10px}.cap-card p{font-size:14px;line-height:1.7;color:var(--body)}.cap-card-shopify{border-color:#c9d9cc;background:linear-gradient(180deg,#fff,var(--green-soft))}.cap-card-shopify .cap-index{color:var(--green)}
 
-    /* GALLERY */
-    .gallery-group{padding:30px 0;border-top:1px solid var(--line)}
-    .gallery-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:16px}
-    .gallery-count{color:var(--muted);font-size:10px}
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .shot{
-      padding:0;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);
-      overflow:hidden;text-align:left;cursor:pointer;transition:transform .2s ease,border-color .2s ease;
-    }
-    .shot:hover,.shot:focus-visible{transform:translateY(-3px);border-color:rgba(169,204,233,.36);outline:none}
-    .shot-frame{display:block;aspect-ratio:4/3;overflow:hidden;background:#101f2f}
-    .shot-frame img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .35s ease}
-    .shot:hover img{transform:scale(1.025)}
-    .shot-meta{display:flex;justify-content:space-between;align-items:center;padding:9px 11px;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.08em}
-    .gallery-toggle{
-      margin-top:13px;min-height:43px;padding:0 14px;border:1px solid var(--line-strong);border-radius:10px;
-      background:var(--accent-soft);color:var(--accent-2);font-size:11px;font-weight:800;cursor:pointer;
-    }
+/* About */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.82fr);gap:76px;align-items:start}.feature-stack{display:grid;gap:12px;margin-top:28px}.feature-row{padding:18px 0;border-top:1px solid var(--line)}.feature-row strong{display:block;color:var(--heading);font-size:14px;margin-bottom:4px}.feature-row p{font-size:14px;color:var(--body)}.about-copy{padding:28px;border:1px solid var(--line);border-radius:18px;background:#fff}.about-photo{width:154px;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:15px;border:1px solid var(--line);box-shadow:0 12px 28px rgba(15,23,42,.08);margin-bottom:24px}.about-copy h3{font-size:22px;margin:1px 0 12px}.about-copy p{font-size:14px;line-height:1.78;color:var(--body);margin-top:10px}.education{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}.education strong{display:block;color:var(--heading);font-size:13px}.education span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 
-    /* EXPERIENCE */
-    .experience-list{display:grid;gap:14px}
-    .experience-card{
-      display:grid;grid-template-columns:190px 1fr;gap:34px;padding:25px;border:1px solid var(--line);
-      border-radius:17px;background:rgba(255,255,255,.022);
-    }
-    .experience-meta{color:var(--muted);font-size:11px;line-height:1.7}
-    .experience-meta strong{display:block;color:var(--accent);font-size:12px;margin-bottom:4px}
-    .experience-copy h3{margin-bottom:3px}
-    .company{color:var(--muted);font-size:11px;margin-bottom:15px}
-    .experience-copy .clean-list{grid-template-columns:1fr 1fr;column-gap:30px}
+/* Tools */
+.tool-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.tool-group{padding:22px;border:1px solid var(--line);border-radius:15px;background:#fff}.tool-group h3{font-size:16px;margin-bottom:14px}.tool-list{display:flex;flex-wrap:wrap;gap:7px}.tool{padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fafbfc;color:#526174;font-size:12px}.tool-group-shopify{border-color:#c9d9cc;background:linear-gradient(180deg,#fff,var(--green-soft))}
 
-    /* CAPABILITIES */
-    .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .cap-card{padding:23px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.022)}
-    .cap-index{display:block;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.12em;margin-bottom:30px}
-    .cap-card h3{font-size:17px;margin-bottom:9px}
-    .cap-card p{color:var(--muted);font-size:12px;line-height:1.7;margin:0}
+/* Contact */
+#contact{background:var(--navy);padding:86px 0}.contact-wrap{max-width:860px}.contact-wrap .kicker{color:#9dc2df}.contact-wrap h2{color:#fff;max-width:800px}.contact-wrap>p{max-width:650px;color:#becbd6;font-size:16px;line-height:1.8;margin:18px 0 26px}.contact-actions{display:flex;flex-wrap:wrap;gap:10px}.contact-alt{display:flex;align-items:center;gap:8px;margin-top:16px;color:#8fa2b4;font-size:12px}.contact-alt-link{color:#c8d6e1;text-decoration:underline;text-underline-offset:3px}.contact-note{margin-top:18px;color:#8fa2b4;font-size:12px}
+footer{background:#081321;border-top:1px solid rgba(255,255,255,.08);padding:28px 0;color:#8fa2b4;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px}
 
-    /* WORK STYLE / ABOUT */
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
-    .feature-stack{display:grid;gap:11px}
-    .feature-row{padding:17px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
-    .feature-row strong{display:block;font-size:13px;margin-bottom:4px}
-    .feature-row p{margin:0;color:var(--muted);font-size:12px}
-    .about-photo{
-      width:164px;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:18px;
-      border:1px solid var(--line-strong);box-shadow:0 16px 40px rgba(0,0,0,.2);margin-bottom:22px;
-    }
-    .about-copy p{color:var(--muted);font-size:13px;line-height:1.78}
-    .education{margin-top:21px;padding-top:18px;border-top:1px solid var(--line)}
-    .education strong{display:block;font-size:13px}
-    .education span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+/* Mobile menu */
+@media(max-width:860px){
+  .nav-links{display:none}.menu-toggle{display:flex}.mobile-menu{position:fixed;top:72px;left:16px;right:16px;z-index:1200;padding:8px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:#0c1a2a;box-shadow:0 18px 50px rgba(0,0,0,.28);opacity:0;transform:translateY(-8px);pointer-events:none;transition:.18s ease}.mobile-menu.open{display:block;opacity:1;transform:none;pointer-events:auto}.mobile-menu a{display:flex;align-items:center;min-height:46px;padding:0 13px;border-radius:9px;color:#d4dee7;font-size:13px;font-weight:750}.mobile-menu a:hover,.mobile-menu a:focus-visible{background:rgba(255,255,255,.06);color:#fff}
+  .hero-grid,.section-head,.case-head,.split{grid-template-columns:1fr}.hero-grid{gap:36px}.section-head,.case-head{gap:22px}.cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.experience-card{grid-template-columns:1fr;gap:14px}.experience-copy .clean-list{grid-template-columns:1fr}.work-visual{height:290px}
+  .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proof-card{border-bottom:1px solid var(--line)}
+  .proof-card:nth-child(2n){border-right:1px solid var(--line)}
+  .proof-card:nth-last-child(-n+2){border-bottom:0}
+}
+@media(max-width:620px){
+  .container{width:min(100% - 30px,1180px)}.nav-inner{height:66px}.mobile-menu{top:66px}.brand-copy small{display:none}.hero{padding:64px 0 58px}.hero-grid{gap:30px}h1{font-size:clamp(40px,12vw,54px)}.hero-copy>p{font-size:16px}.hero-actions .btn{flex:1 1 160px}.proof-panel{padding:21px}.section,.case{padding:64px 0}.section-head{margin-bottom:28px}.work-grid,.case-body,.tool-groups,.cap-grid{grid-template-columns:1fr}.work-visual{height:270px}.work-shot.desktop{right:66px}.work-shot.mobile{width:92px}.case-facts{grid-template-columns:1fr 1fr}.case-body{padding:20px}.gallery-grid{grid-template-columns:1fr}.gallery-toggle{width:100%}.experience-card{padding:21px}.cap-card{min-height:0}.split{gap:34px}.about-copy{padding:22px}.contact-actions{display:grid;grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:5px}
+  .proof-strip{box-shadow:none}
+  .proof-grid{grid-template-columns:1fr}
+  .proof-card,.proof-card:nth-child(2n),.proof-card:last-child{
+    display:grid;
+    grid-template-columns:minmax(130px,.72fr) minmax(0,1.28fr);
+    gap:14px;
+    align-items:start;
+    padding:17px 0;
+    border-left:0;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+    background:transparent;
+  }
+  .proof-card:last-child{border-bottom:0}
+  .proof-card::before{left:0;top:20px;width:3px;height:30px;border-radius:0 3px 3px 0}
+  .proof-card strong{padding-left:13px;margin:0;font-size:12.5px}
+  .proof-card span{font-size:12px;line-height:1.5}
+  .proof-card-shopify{background:transparent}
+}
 
-    /* TOOLS */
-    .tool-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .tool-group{padding:22px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02)}
-    .tool-group h3{font-size:14px;margin-bottom:14px}
-    .tool-list{display:flex;flex-wrap:wrap;gap:7px}
-    .tool{padding:7px 9px;border:1px solid var(--line);border-radius:8px;color:var(--body);font-size:10px;background:rgba(255,255,255,.02)}
+@media(max-width:420px){.case-facts{grid-template-columns:1fr}.proof-top{display:block}.status{margin-top:9px}.work-visual{height:240px}.work-shot.desktop{left:18px;right:58px;top:20px;bottom:20px}.work-shot.mobile{right:18px;top:62px;bottom:14px;width:82px}}
 
-    /* CONTACT */
-    .contact-wrap{
-      position:relative;overflow:hidden;padding:52px;border:1px solid var(--line-strong);border-radius:26px;
-      background:linear-gradient(145deg,rgba(169,204,233,.09),rgba(255,255,255,.025));
-    }
-    .contact-wrap:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-100px;top:-140px;background:radial-gradient(circle,rgba(169,204,233,.13),transparent 68%);pointer-events:none}
-    .contact-wrap h2{max-width:760px}
-    .contact-wrap p{max-width:650px;color:var(--body)}
-    .contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .contact-note{margin-top:17px;color:var(--muted);font-size:10px}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:72px 86px;background:rgba(3,8,14,.94)}.lightbox.open{display:flex}.lightbox-stage{max-width:min(1200px,82vw);max-height:82vh;display:grid;place-items:center}.lightbox img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.32)}.lightbox-btn{position:fixed;width:46px;height:46px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.16);border-radius:50%;background:rgba(17,30,45,.92);color:#fff;font-size:22px;cursor:pointer}.lightbox-close{top:20px;right:20px}.lightbox-prev{left:22px;top:50%;transform:translateY(-50%)}.lightbox-next{right:22px;top:50%;transform:translateY(-50%)}.lightbox-caption{position:fixed;left:20px;right:20px;bottom:16px;text-align:center;color:#b8c6d4;font-size:12px}
 
-    footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:10px}
-    .footer-inner{display:flex;justify-content:space-between;gap:20px}
-
-    /* LIGHTBOX */
-    .lightbox{
-      position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:28px;background:rgba(2,7,12,.94);
-    }
-    .lightbox.open{display:grid}
-    .lightbox-stage{max-width:min(1180px,92vw);max-height:86vh;display:grid;place-items:center}
-    .lightbox img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:10px;box-shadow:var(--shadow)}
-    .lightbox-btn{
-      position:fixed;width:44px;height:44px;border:1px solid var(--line-strong);border-radius:50%;background:rgba(13,27,42,.92);
-      cursor:pointer;display:grid;place-items:center;font-size:22px;
-    }
-    .lightbox-close{top:18px;right:18px}
-    .lightbox-prev{left:18px;top:50%;transform:translateY(-50%)}
-    .lightbox-next{right:18px;top:50%;transform:translateY(-50%)}
-    .lightbox-caption{position:fixed;bottom:14px;left:20px;right:20px;text-align:center;color:var(--muted);font-size:10px}
-
-    /* REVEAL */
-    .reveal{opacity:1;transform:none}
-    .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
-    .js .reveal.visible{opacity:1;transform:none}
-
-    :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-    @media (max-width:980px){
-      .nav-links{display:none}
-      .menu-toggle{display:flex}
-      .mobile-menu{
-        position:fixed;top:76px;left:16px;right:16px;z-index:49;padding:8px;border:1px solid var(--line-strong);
-        border-radius:15px;background:rgba(7,17,27,.98);box-shadow:var(--shadow);
-      }
-      .mobile-menu.open{display:grid}
-      .mobile-menu a{padding:13px 14px;border-radius:9px;color:var(--body);font-size:12px;font-weight:700}
-      .mobile-menu a:hover{background:var(--accent-soft);color:var(--text)}
-      .hero-grid,.case-head,.split{grid-template-columns:1fr}
-      .hero-grid{gap:36px}
-      .proof-panel{max-width:720px}
-      .proof-grid,.cap-grid{grid-template-columns:repeat(2,1fr)}
-      .case-head{gap:28px}
-      .experience-card{grid-template-columns:1fr;gap:14px}
-      .tool-groups{grid-template-columns:1fr 1fr}
-    }
-
-    @media (max-width:720px){
-      .container{width:min(100% - 30px,var(--container))}
-      .section,.case{padding:68px 0}
-      .hero{padding:65px 0 45px}
-      h1{font-size:clamp(44px,13vw,64px)}
-      .hero-copy>p,.lede{font-size:15px}
-      .proof-strip{padding-bottom:58px}
-      .proof-grid,.work-grid,.case-body,.case-facts,.cap-grid,.tool-groups{grid-template-columns:1fr}
-      .section-head{display:block}
-      .section-head p{margin-top:15px}
-      .gallery-grid{grid-template-columns:1fr}
-      .experience-copy .clean-list{grid-template-columns:1fr}
-      .contact-wrap{padding:31px 22px}
-      .contact-actions .btn{width:100%}
-      .footer-inner{display:block}
-      .footer-inner span{display:block;margin-top:4px}
-      .work-visual{grid-template-columns:1.35fr .65fr}
-      .proof-panel{padding:22px}
-    }
-
-    @media (prefers-reduced-motion:reduce){
-      *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-      .reveal{opacity:1;transform:none}
-    }
-  
-    .proof-card-shopify, .cap-card-shopify, .tool-group-shopify {
-      border-color: rgba(143,182,218,.30) !important;
-      background: linear-gradient(145deg, rgba(143,182,218,.085), rgba(255,255,255,.025)) !important;
-    }
-    .cap-card-shopify .cap-index, .tool-group-shopify h3 { color: var(--blue2); }
-
-  </style>
-</head>
-<body>
-  <nav class="site-nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Joshua Paul Ersando portfolio home">
-        <span class="brand-mark">JP</span>
-        <span class="brand-copy">
-          <strong>Joshua Paul Ersando</strong>
-          <small>Virtual Assistant · Digital Ops · Shopify</small>
-        </span>
-      </a>
-      <div class="nav-links" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#about">About</a>
-        <a class="nav-cta" href="#contact">Contact</a>
-      </div>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#work">Work</a>
-    <a href="#experience">Experience</a>
-    <a href="#capabilities">Capabilities</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-  <main id="top">
-    <header class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="kicker">Virtual assistance · Digital operations · Shopify & e-commerce</span>
-          <h1>Versatile support for the <span class="accent">work behind a growing business.</span></h1>
-          <p>I support founders and teams across administration, digital operations, content, customer support, research and reporting — with a strong specialization in Shopify and e-commerce execution.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#work">View selected work <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#contact">Contact me</a>
-          </div>
-          <div class="hero-signal" aria-label="Core strengths">
-            <span class="signal">Executive & admin support</span>
-            <span class="signal">Shopify & e-commerce</span>
-            <span class="signal">Research & reporting</span>
-            <span class="signal">Content & localization</span>
-            <span class="signal">Customer support</span>
-          </div>
-        </div>
-
-        <aside class="proof-panel" aria-label="At a glance">
-          <div class="proof-top">
-            <span class="kicker">At a glance</span>
-            <span class="status"><span class="status-dot"></span> Cross-functional</span>
-          </div>
-          <div class="proof-list">
-            <div class="proof-item"><span class="proof-num">01</span><div><strong>Business support</strong><span>Recurring priorities, research, documentation, reporting, coordination and administrative follow-through.</span></div></div>
-            <div class="proof-item"><span class="proof-num">02</span><div><strong>Shopify & e-commerce</strong><span>Product pages, store updates, theme edits, responsive layouts, listings and troubleshooting.</span></div></div>
-            <div class="proof-item"><span class="proof-num">03</span><div><strong>Content & customer support</strong><span>Localization, creative adaptation, UGC coordination, ad uploads and customer communication.</span></div></div>
-          </div>
-          <div class="proof-footer">BS Psychology background · people-aware communication · detail-focused execution</div>
-        </aside>
-      </div>
-    </header>
-
-    <div class="proof-strip">
-      <div class="container proof-grid">
-        <div class="proof-card"><strong>Admin & Executive Support</strong><span>Coordination, research, reporting, documentation and recurring priorities</span></div>
-        <div class="proof-card proof-card-shopify"><strong>Shopify & E-commerce</strong><span>Storefronts, product pages, listings, QA and theme customization</span></div>
-        <div class="proof-card"><strong>Creative & Content</strong><span>Localization, static ads, video/image adaptation and UGC support</span></div>
-        <div class="proof-card"><strong>Customer & Operations</strong><span>Customer support, tracking, maintenance and day-to-day execution</span></div>
-      </div>
-    </div>
-
-    <section class="section section-soft reveal" id="work">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="kicker">Selected work</span>
-            <h2>Shopify is where my technical work is strongest.</h2>
-          </div>
-          <p>My overall experience is broad, but Shopify is where I can show the clearest visual proof — including storefront structure, product pages, responsive layouts, customization and e-commerce presentation.</p>
-        </div>
-
-        <div class="work-grid">
-          <article class="work-card">
-            <div class="work-visual">
-              <div class="work-shot desktop"><img loading="lazy" decoding="async" src="images/sleevelle/homepage-desktop-01.webp" alt="Sleevelle desktop storefront preview"></div>
-              <div class="work-shot mobile"><img loading="lazy" decoding="async" src="images/sleevelle/homepage-mobile-01.webp" alt="Sleevelle mobile storefront preview"></div>
-            </div>
-            <div class="work-copy">
-              <span class="kicker">Client project · NDA</span>
-              <h3>Sleevelle</h3>
-              <p>Shopify storefront development covering homepage sections, product-page structure, responsive layouts, product storytelling, FAQs, social proof and conversion-focused presentation.</p>
-              <div class="tags"><span class="tag">Shopify</span><span class="tag">Liquid</span><span class="tag">HTML/CSS</span><span class="tag">Responsive</span></div>
-              <a class="text-link" href="#case-sleevelle">Explore case study <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <article class="work-card">
-            <div class="work-visual">
-              <div class="work-shot desktop"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp" alt="MagnusLAB desktop storefront preview"></div>
-              <div class="work-shot mobile"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp" alt="MagnusLAB mobile storefront preview"></div>
-            </div>
-            <div class="work-copy">
-              <span class="kicker">Client project · NDA</span>
-              <h3>MagnusLAB</h3>
-              <p>Responsive Shopify storefront work focused on homepage development, product-page presentation, theme customization, visual consistency and mobile optimization.</p>
-              <div class="tags"><span class="tag">Shopify</span><span class="tag">Product Pages</span><span class="tag">Mobile UX</span><span class="tag">E-commerce</span></div>
-              <a class="text-link" href="#case-magnuslab">Explore case study <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="case reveal" id="case-sleevelle">
-      <div class="container">
-        <div class="case-head">
-          <div class="case-title">
-            <span class="kicker">Case study 01</span>
-            <h2>Sleevelle</h2>
-            <p>A complete Shopify storefront project involving homepage development, product-page design, responsive layouts, content sections, social proof, FAQs, product storytelling and conversion-focused presentation.</p>
-            <span class="nda-note">NDA protected — public-facing screenshots only</span>
-          </div>
-          <div class="case-facts">
-            <div class="fact"><small>Role</small><strong>Shopify Store Design & Development</strong></div>
-            <div class="fact"><small>Platform</small><strong>Shopify · Liquid · HTML · CSS</strong></div>
-            <div class="fact"><small>Surfaces</small><strong>Homepage + Product Pages</strong></div>
-            <div class="fact"><small>Responsive</small><strong>Desktop + Mobile</strong></div>
-          </div>
-        </div>
-        <div class="case-body">
-          <div>
-            <h3>What I worked on</h3>
-            <p>The focus was not only visual polish. The storefront needed clear information hierarchy, strong product presentation and responsive sections that remained usable across screen sizes.</p>
-          </div>
-          <div>
-            <h3>My contribution</h3>
-            <ul class="clean-list">
-              <li>Shopify storefront customization</li><li>Homepage section development</li><li>Product page development</li><li>Desktop and mobile optimization</li><li>Content and information structure</li><li>Conversion-focused page sections</li><li>Theme customization and troubleshooting</li>
-            </ul>
-          </div>
-        </div>
-        
-        <section class="gallery-group" data-gallery="work-gallery-1">
-          <div class="gallery-heading">
-            <div>
-              <span class="kicker">Sleevelle</span>
-              <h4>Homepage — Desktop</h4>
-            </div>
-            <span class="gallery-count">8 screens</span>
-          </div>
-          <div class="gallery-grid" id="work-gallery-1">
-            
-              <button class="shot" type="button" data-group="work-gallery-1" data-index="0" aria-label="Open Homepage — Desktop — 1">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/homepage-desktop-01.webp" alt="Sleevelle homepage — desktop screenshot 1"></span>
-                <span class="shot-meta"><span>01</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="work-gallery-1" data-index="1" aria-label="Open Homepage — Desktop — 2">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/homepage-desktop-02.webp" alt="Sleevelle homepage — desktop screenshot 2"></span>
-                <span class="shot-meta"><span>02</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="work-gallery-1" data-index="2" aria-label="Open Homepage — Desktop — 3">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/homepage-desktop-03.webp" alt="Sleevelle homepage — desktop screenshot 3"></span>
-                <span class="shot-meta"><span>03</span><span>Open</span></span>
-              </button>
-          </div>
-          <button class="gallery-toggle" type="button" data-gallery-toggle="work-gallery-1" aria-expanded="false">
+.js .reveal{opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}.js .reveal.visible{opacity:1;transform:none}
+:focus-visible{outline:3px solid #79a9ca;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.js .reveal{opacity:1!important;transform:none!important}}
+@media print{.site-nav,.mobile-menu,.menu-toggle,.hero-actions,.hero-signal,.gallery-toggle,.lightbox,.contact-actions,.contact-alt{display:none!important}.hero,#contact,footer{background:#fff!important;color:#111!important}.hero h1,#contact h2{color:#111!important}.hero p,#contact p{color:#444!important}.hero{padding:36px 0}.section,.case,#contact{padding:36px 0}.work-card,.experience-card,.cap-card,.tool-group,.about-copy,.case-body,.fact,.shot{box-shadow:none!important;break-inside:avoid}.case{content-visibility:visible}.gallery-grid{grid-template-columns:repeat(2,1fr)}a{color:#111!important}.kicker{color:#315e81!important}}
+</style>
+<meta content="Joshua Paul Ersando" name="author"/><meta content="index,follow" name="robots"/><meta content="website" property="og:type"/><meta content="Joshua Paul Ersando | Virtual Assistant, Digital Operations &amp; Shopify Specialist" property="og:title"/><meta content="Versatile business support with hands-on Shopify and e-commerce execution." property="og:description"/></head>
+<body><a class="skip-link" href="#main-content">Skip to main content</a>
+<nav class="site-nav">
+<div class="container nav-inner">
+<a aria-label="Joshua Paul Ersando portfolio home" class="brand" href="#top">
+<span class="brand-mark">JP</span>
+<span class="brand-copy">
+<strong>Joshua Paul Ersando</strong>
+<small>Virtual Assistant · Operations · Shopify</small>
+</span>
+</a>
+<div aria-label="Primary navigation" class="nav-links">
+<a href="#work">Work</a>
+<a href="#experience">Experience</a>
+<a href="#capabilities">Capabilities</a>
+<a href="#about">About</a>
+<a class="nav-cta" href="#contact">Contact</a>
+</div>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div aria-hidden="true" class="mobile-menu" id="mobileMenu">
+<a href="#work">Work</a>
+<a href="#experience">Experience</a>
+<a href="#capabilities">Capabilities</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+<main id="main-content">
+<header aria-label="Professional introduction" class="hero" id="top">
+<div class="container hero-grid">
+<div class="hero-copy">
+<span class="kicker">Virtual Assistant · Digital Operations · E-commerce Support</span>
+<h1>I help teams keep the work moving — from day-to-day operations <span class="accent">to Shopify execution.</span></h1>
+<p>Cross-functional support across administration, research, reporting, content, customer support and e-commerce — with hands-on Shopify experience when the storefront needs work.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#work">View selected work <span aria-hidden="true">→</span></a>
+<a class="btn btn-secondary" href="#contact">Contact me</a>
+</div>
+<div aria-label="Core strengths" class="hero-signal"><span class="signal">Virtual Assistant</span><span class="signal">Digital Operations</span><span class="signal">E-commerce Support</span><span class="signal signal-shopify">Shopify Specialty</span></div>
+</div>
+<aside aria-label="What you can hand me" class="proof-panel">
+<div class="proof-top">
+<span class="kicker">What you can hand me</span>
+<span class="status"><span class="status-dot"></span>Cross-functional support</span>
+</div>
+<div class="proof-list">
+<div class="proof-item"><span class="proof-num">01</span><div><strong>Recurring business tasks</strong><span>Research, spreadsheets, reporting, documentation, organization and day-to-day follow-through.</span></div></div>
+<div class="proof-item"><span class="proof-num">02</span><div><strong>Storefront &amp; e-commerce work</strong><span>Product pages, listings, store updates, responsive layouts, QA, theme edits and troubleshooting.</span></div></div>
+<div class="proof-item"><span class="proof-num">03</span><div><strong>Content &amp; customer workflows</strong><span>Localization, creative adaptation, ad uploads, UGC coordination and customer communication.</span></div></div>
+</div>
+<div class="proof-footer">Generalist by role · Shopify is my strongest technical specialty</div>
+</aside>
+</div>
+</header>
+<div class="proof-strip">
+<div class="container proof-grid">
+<div class="proof-card"><strong>Admin &amp; Executive Support</strong><span>Coordination, research, reporting, documentation and recurring priorities</span></div>
+<div class="proof-card proof-card-shopify"><strong>Shopify &amp; E-commerce</strong><span>Storefronts, product pages, listings, QA and theme customization</span></div>
+<div class="proof-card"><strong>Creative &amp; Content</strong><span>Localization, static ads, video/image adaptation and UGC support</span></div>
+<div class="proof-card"><strong>Customer &amp; Operations</strong><span>Customer support, tracking, maintenance and day-to-day execution</span></div>
+</div>
+</div>
+<section class="section section-soft reveal" id="work">
+<div class="container">
+<div class="section-head">
+<div>
+<span class="kicker">Selected work</span>
+<h2>Selected proof from Shopify &amp; e-commerce.</h2>
+</div>
+<p>My overall experience is broad. These projects are the clearest visual proof of my technical execution: storefront structure, product pages, responsive layouts, theme customization and e-commerce presentation.</p>
+</div>
+<div class="work-grid">
+<article class="work-card">
+<div class="work-visual">
+<div class="work-shot desktop"><img alt="Sleevelle desktop storefront preview" decoding="async" loading="lazy" src="images/sleevelle/homepage-desktop-01.webp"/></div>
+<div class="work-shot mobile"><img alt="Sleevelle mobile storefront preview" decoding="async" loading="lazy" src="images/sleevelle/homepage-mobile-01.webp"/></div>
+</div>
+<div class="work-copy">
+<span class="kicker">Client project · NDA</span>
+<h3>Sleevelle</h3>
+<p>Shopify storefront development covering homepage sections, product-page structure, responsive layouts, product storytelling, FAQs, social proof and conversion-focused presentation.</p>
+<div class="tags"><span class="tag tag-shopify">Shopify</span><span class="tag">Liquid</span><span class="tag">HTML/CSS</span><span class="tag">Responsive</span></div>
+<a class="text-link" href="#case-sleevelle">View case study <span aria-hidden="true">→</span></a>
+</div>
+</article>
+<article class="work-card">
+<div class="work-visual">
+<div class="work-shot desktop"><img alt="MagnusLAB desktop storefront preview" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp"/></div>
+<div class="work-shot mobile"><img alt="MagnusLAB mobile storefront preview" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp"/></div>
+</div>
+<div class="work-copy">
+<span class="kicker">Client project · NDA</span>
+<h3>MagnusLAB</h3>
+<p>Responsive Shopify storefront work focused on homepage development, product-page presentation, theme customization, visual consistency and mobile optimization.</p>
+<div class="tags"><span class="tag tag-shopify">Shopify</span><span class="tag">Product Pages</span><span class="tag">Mobile UX</span><span class="tag">E-commerce</span></div>
+<a class="text-link" href="#case-magnuslab">View case study <span aria-hidden="true">→</span></a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="case reveal" id="case-sleevelle">
+<div class="container">
+<div class="case-head">
+<div class="case-title">
+<span class="kicker">Case study 01</span>
+<h2>Sleevelle</h2>
+<p>A complete Shopify storefront project involving homepage development, product-page design, responsive layouts, content sections, social proof, FAQs, product storytelling and conversion-focused presentation.</p>
+<span class="nda-note">NDA protected — public-facing screenshots only</span>
+</div>
+<div class="case-facts">
+<div class="fact"><small>Role</small><strong>Shopify Store Design &amp; Development</strong></div>
+<div class="fact"><small>Platform</small><strong>Shopify · Liquid · HTML · CSS</strong></div>
+<div class="fact"><small>Surfaces</small><strong>Homepage + Product Pages</strong></div>
+<div class="fact"><small>Responsive</small><strong>Desktop + Mobile</strong></div>
+</div>
+</div>
+<div class="case-body">
+<div>
+<h3>What the work required</h3>
+<p>The focus was not only visual polish. The storefront needed clear information hierarchy, strong product presentation and responsive sections that remained usable across screen sizes.</p>
+</div>
+<div>
+<h3>What I owned</h3>
+<ul class="clean-list">
+<li>Shopify storefront customization</li><li>Homepage section development</li><li>Product page development</li><li>Desktop and mobile optimization</li><li>Content and information structure</li><li>Conversion-focused page sections</li><li>Theme customization and troubleshooting</li>
+</ul>
+</div>
+</div>
+<section class="gallery-group" data-gallery="work-gallery-1">
+<div class="gallery-heading">
+<div>
+<span class="kicker">Sleevelle</span>
+<h4>Homepage — Desktop</h4>
+</div>
+<span class="gallery-count">8 screens</span>
+</div>
+<div class="gallery-grid" id="work-gallery-1">
+<button aria-label="Open Homepage — Desktop — 1" class="shot" data-group="work-gallery-1" data-index="0" type="button">
+<span class="shot-frame"><img alt="Sleevelle homepage — desktop screenshot 1" decoding="async" loading="lazy" src="images/sleevelle/homepage-desktop-01.webp"/></span>
+<span class="shot-meta"><span>01</span><span>Open</span></span>
+</button>
+<button aria-label="Open Homepage — Desktop — 2" class="shot" data-group="work-gallery-1" data-index="1" type="button">
+<span class="shot-frame"><img alt="Sleevelle homepage — desktop screenshot 2" decoding="async" loading="lazy" src="images/sleevelle/homepage-desktop-02.webp"/></span>
+<span class="shot-meta"><span>02</span><span>Open</span></span>
+</button>
+<button aria-label="Open Homepage — Desktop — 3" class="shot" data-group="work-gallery-1" data-index="2" type="button">
+<span class="shot-frame"><img alt="Sleevelle homepage — desktop screenshot 3" decoding="async" loading="lazy" src="images/sleevelle/homepage-desktop-03.webp"/></span>
+<span class="shot-meta"><span>03</span><span>Open</span></span>
+</button>
+</div>
+<button aria-expanded="false" class="gallery-toggle" data-gallery-toggle="work-gallery-1" type="button">
             View all 8 screenshots
           </button>
-        </section>
-        <section class="gallery-group" data-gallery="work-gallery-2">
-          <div class="gallery-heading">
-            <div>
-              <span class="kicker">Sleevelle</span>
-              <h4>Homepage — Mobile</h4>
-            </div>
-            <span class="gallery-count">7 screens</span>
-          </div>
-          <div class="gallery-grid" id="work-gallery-2">
-            
-              <button class="shot" type="button" data-group="work-gallery-2" data-index="0" aria-label="Open Homepage — Mobile — 1">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/homepage-mobile-01.webp" alt="Sleevelle homepage — mobile screenshot 1"></span>
-                <span class="shot-meta"><span>01</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="work-gallery-2" data-index="1" aria-label="Open Homepage — Mobile — 2">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/homepage-mobile-02.webp" alt="Sleevelle homepage — mobile screenshot 2"></span>
-                <span class="shot-meta"><span>02</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="work-gallery-2" data-index="2" aria-label="Open Homepage — Mobile — 3">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/homepage-mobile-03.webp" alt="Sleevelle homepage — mobile screenshot 3"></span>
-                <span class="shot-meta"><span>03</span><span>Open</span></span>
-              </button>
-          </div>
-          <button class="gallery-toggle" type="button" data-gallery-toggle="work-gallery-2" aria-expanded="false">
+</section>
+<section class="gallery-group" data-gallery="work-gallery-2">
+<div class="gallery-heading">
+<div>
+<span class="kicker">Sleevelle</span>
+<h4>Homepage — Mobile</h4>
+</div>
+<span class="gallery-count">7 screens</span>
+</div>
+<div class="gallery-grid" id="work-gallery-2">
+<button aria-label="Open Homepage — Mobile — 1" class="shot" data-group="work-gallery-2" data-index="0" type="button">
+<span class="shot-frame"><img alt="Sleevelle homepage — mobile screenshot 1" decoding="async" loading="lazy" src="images/sleevelle/homepage-mobile-01.webp"/></span>
+<span class="shot-meta"><span>01</span><span>Open</span></span>
+</button>
+<button aria-label="Open Homepage — Mobile — 2" class="shot" data-group="work-gallery-2" data-index="1" type="button">
+<span class="shot-frame"><img alt="Sleevelle homepage — mobile screenshot 2" decoding="async" loading="lazy" src="images/sleevelle/homepage-mobile-02.webp"/></span>
+<span class="shot-meta"><span>02</span><span>Open</span></span>
+</button>
+<button aria-label="Open Homepage — Mobile — 3" class="shot" data-group="work-gallery-2" data-index="2" type="button">
+<span class="shot-frame"><img alt="Sleevelle homepage — mobile screenshot 3" decoding="async" loading="lazy" src="images/sleevelle/homepage-mobile-03.webp"/></span>
+<span class="shot-meta"><span>03</span><span>Open</span></span>
+</button>
+</div>
+<button aria-expanded="false" class="gallery-toggle" data-gallery-toggle="work-gallery-2" type="button">
             View all 7 screenshots
           </button>
-        </section>
-        <section class="gallery-group" data-gallery="work-gallery-3">
-          <div class="gallery-heading">
-            <div>
-              <span class="kicker">Sleevelle</span>
-              <h4>Product Page — Desktop</h4>
-            </div>
-            <span class="gallery-count">10 screens</span>
-          </div>
-          <div class="gallery-grid" id="work-gallery-3">
-            
-              <button class="shot" type="button" data-group="work-gallery-3" data-index="0" aria-label="Open Product Page — Desktop — 1">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/product-desktop-01.webp" alt="Sleevelle product page — desktop screenshot 1"></span>
-                <span class="shot-meta"><span>01</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="work-gallery-3" data-index="1" aria-label="Open Product Page — Desktop — 2">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/product-desktop-02.webp" alt="Sleevelle product page — desktop screenshot 2"></span>
-                <span class="shot-meta"><span>02</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="work-gallery-3" data-index="2" aria-label="Open Product Page — Desktop — 3">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/product-desktop-03.webp" alt="Sleevelle product page — desktop screenshot 3"></span>
-                <span class="shot-meta"><span>03</span><span>Open</span></span>
-              </button>
-          </div>
-          <button class="gallery-toggle" type="button" data-gallery-toggle="work-gallery-3" aria-expanded="false">
+</section>
+<section class="gallery-group" data-gallery="work-gallery-3">
+<div class="gallery-heading">
+<div>
+<span class="kicker">Sleevelle</span>
+<h4>Product Page — Desktop</h4>
+</div>
+<span class="gallery-count">10 screens</span>
+</div>
+<div class="gallery-grid" id="work-gallery-3">
+<button aria-label="Open Product Page — Desktop — 1" class="shot" data-group="work-gallery-3" data-index="0" type="button">
+<span class="shot-frame"><img alt="Sleevelle product page — desktop screenshot 1" decoding="async" loading="lazy" src="images/sleevelle/product-desktop-01.webp"/></span>
+<span class="shot-meta"><span>01</span><span>Open</span></span>
+</button>
+<button aria-label="Open Product Page — Desktop — 2" class="shot" data-group="work-gallery-3" data-index="1" type="button">
+<span class="shot-frame"><img alt="Sleevelle product page — desktop screenshot 2" decoding="async" loading="lazy" src="images/sleevelle/product-desktop-02.webp"/></span>
+<span class="shot-meta"><span>02</span><span>Open</span></span>
+</button>
+<button aria-label="Open Product Page — Desktop — 3" class="shot" data-group="work-gallery-3" data-index="2" type="button">
+<span class="shot-frame"><img alt="Sleevelle product page — desktop screenshot 3" decoding="async" loading="lazy" src="images/sleevelle/product-desktop-03.webp"/></span>
+<span class="shot-meta"><span>03</span><span>Open</span></span>
+</button>
+</div>
+<button aria-expanded="false" class="gallery-toggle" data-gallery-toggle="work-gallery-3" type="button">
             View all 10 screenshots
           </button>
-        </section>
-        <section class="gallery-group" data-gallery="work-gallery-4">
-          <div class="gallery-heading">
-            <div>
-              <span class="kicker">Sleevelle</span>
-              <h4>Product Page — Mobile</h4>
-            </div>
-            <span class="gallery-count">13 screens</span>
-          </div>
-          <div class="gallery-grid" id="work-gallery-4">
-            
-              <button class="shot" type="button" data-group="work-gallery-4" data-index="0" aria-label="Open Product Page — Mobile — 1">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/product-mobile-01.webp" alt="Sleevelle product page — mobile screenshot 1"></span>
-                <span class="shot-meta"><span>01</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="work-gallery-4" data-index="1" aria-label="Open Product Page — Mobile — 2">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/product-mobile-02.webp" alt="Sleevelle product page — mobile screenshot 2"></span>
-                <span class="shot-meta"><span>02</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="work-gallery-4" data-index="2" aria-label="Open Product Page — Mobile — 3">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/sleevelle/product-mobile-03.webp" alt="Sleevelle product page — mobile screenshot 3"></span>
-                <span class="shot-meta"><span>03</span><span>Open</span></span>
-              </button>
-          </div>
-          <button class="gallery-toggle" type="button" data-gallery-toggle="work-gallery-4" aria-expanded="false">
+</section>
+<section class="gallery-group" data-gallery="work-gallery-4">
+<div class="gallery-heading">
+<div>
+<span class="kicker">Sleevelle</span>
+<h4>Product Page — Mobile</h4>
+</div>
+<span class="gallery-count">13 screens</span>
+</div>
+<div class="gallery-grid" id="work-gallery-4">
+<button aria-label="Open Product Page — Mobile — 1" class="shot" data-group="work-gallery-4" data-index="0" type="button">
+<span class="shot-frame"><img alt="Sleevelle product page — mobile screenshot 1" decoding="async" loading="lazy" src="images/sleevelle/product-mobile-01.webp"/></span>
+<span class="shot-meta"><span>01</span><span>Open</span></span>
+</button>
+<button aria-label="Open Product Page — Mobile — 2" class="shot" data-group="work-gallery-4" data-index="1" type="button">
+<span class="shot-frame"><img alt="Sleevelle product page — mobile screenshot 2" decoding="async" loading="lazy" src="images/sleevelle/product-mobile-02.webp"/></span>
+<span class="shot-meta"><span>02</span><span>Open</span></span>
+</button>
+<button aria-label="Open Product Page — Mobile — 3" class="shot" data-group="work-gallery-4" data-index="2" type="button">
+<span class="shot-frame"><img alt="Sleevelle product page — mobile screenshot 3" decoding="async" loading="lazy" src="images/sleevelle/product-mobile-03.webp"/></span>
+<span class="shot-meta"><span>03</span><span>Open</span></span>
+</button>
+</div>
+<button aria-expanded="false" class="gallery-toggle" data-gallery-toggle="work-gallery-4" type="button">
             View all 13 screenshots
           </button>
-        </section>
-      </div>
-    </section>
-
-    <section class="case section-soft reveal" id="case-magnuslab">
-      <div class="container">
-        <div class="case-head">
-          <div class="case-title">
-            <span class="kicker">Case study 02</span>
-            <h2>MagnusLAB</h2>
-            <p>A second Shopify storefront project demonstrating responsive homepage and product-page design, storefront customization, product presentation and mobile optimization.</p>
-            <span class="nda-note">NDA protected — no internal Shopify materials shown</span>
-          </div>
-          <div class="case-facts">
-            <div class="fact"><small>Role</small><strong>Shopify Store Design & Development</strong></div>
-            <div class="fact"><small>Focus</small><strong>Storefront + Product Presentation</strong></div>
-            <div class="fact"><small>Surfaces</small><strong>Homepage + Product Pages</strong></div>
-            <div class="fact"><small>Responsive</small><strong>Desktop + Mobile</strong></div>
-          </div>
-        </div>
-        <div class="case-body">
-          <div>
-            <h3>Project focus</h3>
-            <p>The project demonstrates practical e-commerce execution: maintaining visual consistency while adapting layouts, product information and page sections across desktop and mobile storefront experiences.</p>
-          </div>
-          <div>
-            <h3>My contribution</h3>
-            <ul class="clean-list">
-              <li>Shopify storefront customization</li><li>Homepage development</li><li>Product page development</li><li>Desktop and mobile optimization</li><li>Product presentation and page structure</li><li>Responsive e-commerce design</li><li>Theme layout and visual consistency</li>
-            </ul>
-          </div>
-        </div>
-        
-        <section class="gallery-group" data-gallery="magnuslab-gallery-1">
-          <div class="gallery-heading">
-            <div>
-              <span class="kicker">MagnusLAB</span>
-              <h4>Homepage — Desktop</h4>
-            </div>
-            <span class="gallery-count">4 screens</span>
-          </div>
-          <div class="gallery-grid" id="magnuslab-gallery-1">
-            
-              <button class="shot" type="button" data-group="magnuslab-gallery-1" data-index="0" aria-label="Open MagnusLAB — Homepage — Desktop — 1">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp" alt="MagnusLAB homepage — desktop screenshot 1"></span>
-                <span class="shot-meta"><span>01</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="magnuslab-gallery-1" data-index="1" aria-label="Open MagnusLAB — Homepage — Desktop — 2">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp" alt="MagnusLAB homepage — desktop screenshot 2"></span>
-                <span class="shot-meta"><span>02</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="magnuslab-gallery-1" data-index="2" aria-label="Open MagnusLAB — Homepage — Desktop — 3">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp" alt="MagnusLAB homepage — desktop screenshot 3"></span>
-                <span class="shot-meta"><span>03</span><span>Open</span></span>
-              </button>
-          </div>
-          <button class="gallery-toggle" type="button" data-gallery-toggle="magnuslab-gallery-1" aria-expanded="false">
+</section>
+</div>
+</section>
+<section class="case section-soft reveal" id="case-magnuslab">
+<div class="container">
+<div class="case-head">
+<div class="case-title">
+<span class="kicker">Case study 02</span>
+<h2>MagnusLAB</h2>
+<p>A second Shopify storefront project demonstrating responsive homepage and product-page design, storefront customization, product presentation and mobile optimization.</p>
+<span class="nda-note">NDA protected — no internal Shopify materials shown</span>
+</div>
+<div class="case-facts">
+<div class="fact"><small>Role</small><strong>Shopify Store Design &amp; Development</strong></div>
+<div class="fact"><small>Focus</small><strong>Storefront + Product Presentation</strong></div>
+<div class="fact"><small>Surfaces</small><strong>Homepage + Product Pages</strong></div>
+<div class="fact"><small>Responsive</small><strong>Desktop + Mobile</strong></div>
+</div>
+</div>
+<div class="case-body">
+<div>
+<h3>What the work required</h3>
+<p>The project demonstrates practical e-commerce execution: maintaining visual consistency while adapting layouts, product information and page sections across desktop and mobile storefront experiences.</p>
+</div>
+<div>
+<h3>What I owned</h3>
+<ul class="clean-list">
+<li>Shopify storefront customization</li><li>Homepage development</li><li>Product page development</li><li>Desktop and mobile optimization</li><li>Product presentation and page structure</li><li>Responsive e-commerce design</li><li>Theme layout and visual consistency</li>
+</ul>
+</div>
+</div>
+<section class="gallery-group" data-gallery="magnuslab-gallery-1">
+<div class="gallery-heading">
+<div>
+<span class="kicker">MagnusLAB</span>
+<h4>Homepage — Desktop</h4>
+</div>
+<span class="gallery-count">4 screens</span>
+</div>
+<div class="gallery-grid" id="magnuslab-gallery-1">
+<button aria-label="Open MagnusLAB — Homepage — Desktop — 1" class="shot" data-group="magnuslab-gallery-1" data-index="0" type="button">
+<span class="shot-frame"><img alt="MagnusLAB homepage — desktop screenshot 1" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp"/></span>
+<span class="shot-meta"><span>01</span><span>Open</span></span>
+</button>
+<button aria-label="Open MagnusLAB — Homepage — Desktop — 2" class="shot" data-group="magnuslab-gallery-1" data-index="1" type="button">
+<span class="shot-frame"><img alt="MagnusLAB homepage — desktop screenshot 2" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp"/></span>
+<span class="shot-meta"><span>02</span><span>Open</span></span>
+</button>
+<button aria-label="Open MagnusLAB — Homepage — Desktop — 3" class="shot" data-group="magnuslab-gallery-1" data-index="2" type="button">
+<span class="shot-frame"><img alt="MagnusLAB homepage — desktop screenshot 3" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp"/></span>
+<span class="shot-meta"><span>03</span><span>Open</span></span>
+</button>
+</div>
+<button aria-expanded="false" class="gallery-toggle" data-gallery-toggle="magnuslab-gallery-1" type="button">
             View all 4 screenshots
           </button>
-        </section>
-        <section class="gallery-group" data-gallery="magnuslab-gallery-2">
-          <div class="gallery-heading">
-            <div>
-              <span class="kicker">MagnusLAB</span>
-              <h4>Homepage — Mobile</h4>
-            </div>
-            <span class="gallery-count">4 screens</span>
-          </div>
-          <div class="gallery-grid" id="magnuslab-gallery-2">
-            
-              <button class="shot" type="button" data-group="magnuslab-gallery-2" data-index="0" aria-label="Open MagnusLAB — Homepage — Mobile — 1">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp" alt="MagnusLAB homepage — mobile screenshot 1"></span>
-                <span class="shot-meta"><span>01</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="magnuslab-gallery-2" data-index="1" aria-label="Open MagnusLAB — Homepage — Mobile — 2">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp" alt="MagnusLAB homepage — mobile screenshot 2"></span>
-                <span class="shot-meta"><span>02</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="magnuslab-gallery-2" data-index="2" aria-label="Open MagnusLAB — Homepage — Mobile — 3">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp" alt="MagnusLAB homepage — mobile screenshot 3"></span>
-                <span class="shot-meta"><span>03</span><span>Open</span></span>
-              </button>
-          </div>
-          <button class="gallery-toggle" type="button" data-gallery-toggle="magnuslab-gallery-2" aria-expanded="false">
+</section>
+<section class="gallery-group" data-gallery="magnuslab-gallery-2">
+<div class="gallery-heading">
+<div>
+<span class="kicker">MagnusLAB</span>
+<h4>Homepage — Mobile</h4>
+</div>
+<span class="gallery-count">4 screens</span>
+</div>
+<div class="gallery-grid" id="magnuslab-gallery-2">
+<button aria-label="Open MagnusLAB — Homepage — Mobile — 1" class="shot" data-group="magnuslab-gallery-2" data-index="0" type="button">
+<span class="shot-frame"><img alt="MagnusLAB homepage — mobile screenshot 1" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp"/></span>
+<span class="shot-meta"><span>01</span><span>Open</span></span>
+</button>
+<button aria-label="Open MagnusLAB — Homepage — Mobile — 2" class="shot" data-group="magnuslab-gallery-2" data-index="1" type="button">
+<span class="shot-frame"><img alt="MagnusLAB homepage — mobile screenshot 2" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp"/></span>
+<span class="shot-meta"><span>02</span><span>Open</span></span>
+</button>
+<button aria-label="Open MagnusLAB — Homepage — Mobile — 3" class="shot" data-group="magnuslab-gallery-2" data-index="2" type="button">
+<span class="shot-frame"><img alt="MagnusLAB homepage — mobile screenshot 3" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp"/></span>
+<span class="shot-meta"><span>03</span><span>Open</span></span>
+</button>
+</div>
+<button aria-expanded="false" class="gallery-toggle" data-gallery-toggle="magnuslab-gallery-2" type="button">
             View all 4 screenshots
           </button>
-        </section>
-        <section class="gallery-group" data-gallery="magnuslab-gallery-3">
-          <div class="gallery-heading">
-            <div>
-              <span class="kicker">MagnusLAB</span>
-              <h4>Product Page — Desktop</h4>
-            </div>
-            <span class="gallery-count">7 screens</span>
-          </div>
-          <div class="gallery-grid" id="magnuslab-gallery-3">
-            
-              <button class="shot" type="button" data-group="magnuslab-gallery-3" data-index="0" aria-label="Open MagnusLAB — Product Page — Desktop — 1">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/product-desktop-01.webp" alt="MagnusLAB product page — desktop screenshot 1"></span>
-                <span class="shot-meta"><span>01</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="magnuslab-gallery-3" data-index="1" aria-label="Open MagnusLAB — Product Page — Desktop — 2">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/product-desktop-02.webp" alt="MagnusLAB product page — desktop screenshot 2"></span>
-                <span class="shot-meta"><span>02</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="magnuslab-gallery-3" data-index="2" aria-label="Open MagnusLAB — Product Page — Desktop — 3">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/product-desktop-03.webp" alt="MagnusLAB product page — desktop screenshot 3"></span>
-                <span class="shot-meta"><span>03</span><span>Open</span></span>
-              </button>
-          </div>
-          <button class="gallery-toggle" type="button" data-gallery-toggle="magnuslab-gallery-3" aria-expanded="false">
+</section>
+<section class="gallery-group" data-gallery="magnuslab-gallery-3">
+<div class="gallery-heading">
+<div>
+<span class="kicker">MagnusLAB</span>
+<h4>Product Page — Desktop</h4>
+</div>
+<span class="gallery-count">7 screens</span>
+</div>
+<div class="gallery-grid" id="magnuslab-gallery-3">
+<button aria-label="Open MagnusLAB — Product Page — Desktop — 1" class="shot" data-group="magnuslab-gallery-3" data-index="0" type="button">
+<span class="shot-frame"><img alt="MagnusLAB product page — desktop screenshot 1" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-01.webp"/></span>
+<span class="shot-meta"><span>01</span><span>Open</span></span>
+</button>
+<button aria-label="Open MagnusLAB — Product Page — Desktop — 2" class="shot" data-group="magnuslab-gallery-3" data-index="1" type="button">
+<span class="shot-frame"><img alt="MagnusLAB product page — desktop screenshot 2" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-02.webp"/></span>
+<span class="shot-meta"><span>02</span><span>Open</span></span>
+</button>
+<button aria-label="Open MagnusLAB — Product Page — Desktop — 3" class="shot" data-group="magnuslab-gallery-3" data-index="2" type="button">
+<span class="shot-frame"><img alt="MagnusLAB product page — desktop screenshot 3" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-desktop-03.webp"/></span>
+<span class="shot-meta"><span>03</span><span>Open</span></span>
+</button>
+</div>
+<button aria-expanded="false" class="gallery-toggle" data-gallery-toggle="magnuslab-gallery-3" type="button">
             View all 7 screenshots
           </button>
-        </section>
-        <section class="gallery-group" data-gallery="magnuslab-gallery-4">
-          <div class="gallery-heading">
-            <div>
-              <span class="kicker">MagnusLAB</span>
-              <h4>Product Page — Mobile</h4>
-            </div>
-            <span class="gallery-count">11 screens</span>
-          </div>
-          <div class="gallery-grid" id="magnuslab-gallery-4">
-            
-              <button class="shot" type="button" data-group="magnuslab-gallery-4" data-index="0" aria-label="Open MagnusLAB — Product Page — Mobile — 1">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/product-mobile-01.webp" alt="MagnusLAB product page — mobile screenshot 1"></span>
-                <span class="shot-meta"><span>01</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="magnuslab-gallery-4" data-index="1" aria-label="Open MagnusLAB — Product Page — Mobile — 2">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/product-mobile-02.webp" alt="MagnusLAB product page — mobile screenshot 2"></span>
-                <span class="shot-meta"><span>02</span><span>Open</span></span>
-              </button>
-              <button class="shot" type="button" data-group="magnuslab-gallery-4" data-index="2" aria-label="Open MagnusLAB — Product Page — Mobile — 3">
-                <span class="shot-frame"><img loading="lazy" decoding="async" src="images/magnuslab_github_assets/magnuslab/product-mobile-03.webp" alt="MagnusLAB product page — mobile screenshot 3"></span>
-                <span class="shot-meta"><span>03</span><span>Open</span></span>
-              </button>
-          </div>
-          <button class="gallery-toggle" type="button" data-gallery-toggle="magnuslab-gallery-4" aria-expanded="false">
+</section>
+<section class="gallery-group" data-gallery="magnuslab-gallery-4">
+<div class="gallery-heading">
+<div>
+<span class="kicker">MagnusLAB</span>
+<h4>Product Page — Mobile</h4>
+</div>
+<span class="gallery-count">11 screens</span>
+</div>
+<div class="gallery-grid" id="magnuslab-gallery-4">
+<button aria-label="Open MagnusLAB — Product Page — Mobile — 1" class="shot" data-group="magnuslab-gallery-4" data-index="0" type="button">
+<span class="shot-frame"><img alt="MagnusLAB product page — mobile screenshot 1" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-01.webp"/></span>
+<span class="shot-meta"><span>01</span><span>Open</span></span>
+</button>
+<button aria-label="Open MagnusLAB — Product Page — Mobile — 2" class="shot" data-group="magnuslab-gallery-4" data-index="1" type="button">
+<span class="shot-frame"><img alt="MagnusLAB product page — mobile screenshot 2" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-02.webp"/></span>
+<span class="shot-meta"><span>02</span><span>Open</span></span>
+</button>
+<button aria-label="Open MagnusLAB — Product Page — Mobile — 3" class="shot" data-group="magnuslab-gallery-4" data-index="2" type="button">
+<span class="shot-frame"><img alt="MagnusLAB product page — mobile screenshot 3" decoding="async" loading="lazy" src="images/magnuslab_github_assets/magnuslab/product-mobile-03.webp"/></span>
+<span class="shot-meta"><span>03</span><span>Open</span></span>
+</button>
+</div>
+<button aria-expanded="false" class="gallery-toggle" data-gallery-toggle="magnuslab-gallery-4" type="button">
             View all 11 screenshots
           </button>
-        </section>
-      </div>
-    </section>
-
-    <section class="section reveal" id="experience">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="kicker">Experience</span><h2>Broad support, hands-on execution.</h2></div>
-          <p>My strongest value is adaptability. I can move between administrative work, digital operations, content, customer support and e-commerce tasks — with Shopify as my strongest technical specialization.</p>
-        </div>
-        <div class="experience-list">
-          <article class="experience-card">
-            <div class="experience-meta"><strong>Nov 2025 — Jun 2026</strong>Freelance</div>
-            <div class="experience-copy">
-              <h3>Virtual Assistant — Shopify</h3>
-              <p class="company">E-commerce / Shopify</p>
-              <ul class="clean-list">
-                <li>Built and optimized Shopify product pages with attention to clarity, usability and conversion.</li>
-                <li>Customized storefronts and responsive layouts using Shopify, Liquid, HTML, CSS and JavaScript.</li>
-                <li>Conducted product research and trend analysis for e-commerce opportunities.</li>
-                <li>Sourced and coordinated with UGC creators for marketing content.</li>
-                <li>Produced localized 1:1 video and image adaptations and managed static-ad uploads.</li>
-                <li>Maintained accounting/tracking sheets, records and recurring operational tasks.</li>
-                <li>Provided direct personal-assistant and administrative support to the business owner.</li>
-                <li>Handled customer support, listings, content updates, QA and store maintenance.</li>
-              </ul>
-            </div>
-          </article>
-          <article class="experience-card">
-            <div class="experience-meta"><strong>Apr 2025 — Jun 2025</strong>On-the-job training</div>
-            <div class="experience-copy">
-              <h3>Recruitment & Marketing</h3>
-              <p class="company">Crown Summit Life Insurance Agency — Pru Life UK</p>
-              <ul class="clean-list">
-                <li>Created recruitment ads and recruitment spiels in English, Tagalog and Taglish.</li>
-                <li>Sourced and contacted potential applicants through email and calls.</li>
-                <li>Assisted with recruitment processes and initial candidate engagement.</li>
-                <li>Completed daily reports and submitted performance outputs to a supervisor.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft reveal" id="capabilities">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="kicker">Capabilities</span><h2>General support with a Shopify edge.</h2></div>
-          <p>I’m suited to general virtual-assistant and digital-operations roles where the work can change from day to day, while bringing deeper Shopify and e-commerce capability when the business needs it.</p>
-        </div>
-        <div class="cap-grid">
-          <article class="cap-card"><span class="cap-index">01 · ADMIN</span><h3>Executive & Administrative Support</h3><p>Research, reporting, spreadsheets, documentation, recurring priorities, organization and day-to-day coordination.</p></article>
-          <article class="cap-card cap-card-shopify"><span class="cap-index">02 · SPECIALTY</span><h3>Shopify & E-commerce</h3><p>Store builds, product pages, listings, landing pages, theme customization, QA, responsive layout and troubleshooting.</p></article>
-          <article class="cap-card"><span class="cap-index">03 · CREATIVE</span><h3>Content & Localization</h3><p>Static ads, image/video adaptation, localization, UGC sourcing, campaign assets and content updates.</p></article>
-          <article class="cap-card"><span class="cap-index">04 · OPERATIONS</span><h3>Customer & Digital Operations</h3><p>Customer inquiries, tracking, store maintenance, task follow-through and cross-functional business support.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" id="about">
-      <div class="container split">
-        <div>
-          <span class="kicker">How I work</span>
-          <h2>Practical, people-aware, detail-focused.</h2>
-          <p class="lede">My Psychology background adds a useful lens to digital work: attention, communication, trust and decision-making. I combine that with hands-on e-commerce execution and a willingness to troubleshoot until something works.</p>
-          <div class="feature-stack">
-            <div class="feature-row"><strong>Clarity before decoration</strong><p>Pages and processes should make the next step obvious, not merely look impressive.</p></div>
-            <div class="feature-row"><strong>Own the details</strong><p>I’m comfortable moving between design, admin, content, QA and troubleshooting instead of treating them as separate worlds.</p></div>
-            <div class="feature-row"><strong>Test, verify, improve</strong><p>For theme edits and storefront fixes, I work carefully, review output and validate changes before considering them finished.</p></div>
-          </div>
-        </div>
-        <div class="about-copy">
-          <img class="about-photo" loading="lazy" decoding="async" src="images/profile.webp" alt="Joshua Paul Ersando">
-          <span class="kicker">About Joshua</span>
-          <h3>A generalist who is especially strong in Shopify.</h3>
-          <p>I’m a Psychology graduate with hands-on experience across administrative support, personal assistance, research, e-commerce operations, web design, digital content and customer support.</p>
-          <p>I’m most useful when a team needs a flexible support person who can understand the task quickly, communicate clearly and switch between administrative, technical, creative and operational work without losing organization.</p>
-          <div class="education">
-            <strong>Bachelor of Science in Psychology</strong>
-            <span>Eulogio “Amang” Rodriguez Institute of Science and Technology (EARIST), Manila · 2021–2025</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft reveal" id="tools">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="kicker">Tools</span><h2>Tools I use across the work.</h2></div>
-          <p>Grouped by function so an employer can see capability at a glance instead of reading a wall of software badges.</p>
-        </div>
-        <div class="tool-groups">
-          <div class="tool-group"><h3>Admin & Operations</h3><div class="tool-list"><span class="tool">Google Workspace</span><span class="tool">Google Sheets</span><span class="tool">Excel</span><span class="tool">Research</span><span class="tool">Reporting</span></div></div>
-          <div class="tool-group tool-group-shopify"><h3>Shopify & Web</h3><div class="tool-list"><span class="tool">Shopify</span><span class="tool">Liquid</span><span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">JavaScript</span></div></div>
-          <div class="tool-group"><h3>Creative & Marketing</h3><div class="tool-list"><span class="tool">Canva</span><span class="tool">CapCut</span><span class="tool">Meta Ads Manager</span><span class="tool">HeyGen</span><span class="tool">ElevenLabs</span><span class="tool">Vmake</span></div></div>
-          <div class="tool-group"><h3>AI & Production</h3><div class="tool-list"><span class="tool">ChatGPT</span><span class="tool">Claude</span><span class="tool">Google Gemini</span><span class="tool">Google Flow</span><span class="tool">Grok</span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-wrap">
-          <span class="kicker">Let’s work together</span>
-          <h2>Need a reliable generalist who can also handle Shopify?</h2>
-          <p>I’m open to virtual-assistant, executive-support, digital-operations, e-commerce and Shopify-focused opportunities.</p>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:joshua.ersando@gmail.com">Email me <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="https://wa.me/639942508537?text=Hi%20Joshua%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a class="btn btn-secondary" href="viber://chat?number=%2B639942508537">Viber</a>
-          </div>
-          <div class="contact-note">joshua.ersando@gmail.com · +63 994 250 8537</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>© 2026 Joshua Paul Ersando</span>
-      <span>Virtual Assistant · Digital Operations · Shopify & E-commerce</span>
-    </div>
-  </footer>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio screenshot viewer">
-    <button class="lightbox-btn lightbox-close" id="lightboxClose" type="button" aria-label="Close">×</button>
-    <button class="lightbox-btn lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous image">‹</button>
-    <div class="lightbox-stage"><img id="lightboxImg" alt=""></div>
-    <button class="lightbox-btn lightbox-next" id="lightboxNext" type="button" aria-label="Next image">›</button>
-    <div class="lightbox-caption" id="lightboxCaption"></div>
-  </div>
-
-  <script>
+</section>
+</div>
+</section>
+<section class="section reveal" id="experience">
+<div class="container">
+<div class="section-head">
+<div><span class="kicker">Experience</span><h2>Where I've supported teams.</h2></div>
+<p>The through-line is adaptability: I can move between admin, operations, content, customer support and e-commerce tasks while keeping work organized and moving forward.</p>
+</div>
+<div class="experience-list">
+<article class="experience-card">
+<div class="experience-meta"><strong>Nov 2025 — Jun 2026</strong>Freelance</div>
+<div class="experience-copy">
+<h3>Virtual Assistant — Shopify</h3>
+<p class="company">E-commerce / Shopify</p>
+<ul class="clean-list">
+<li>Built and optimized Shopify product pages with attention to clarity, usability and conversion.</li>
+<li>Customized storefronts and responsive layouts using Shopify, Liquid, HTML, CSS and JavaScript.</li>
+<li>Conducted product research and trend analysis for e-commerce opportunities.</li>
+<li>Sourced and coordinated with UGC creators for marketing content.</li>
+<li>Produced localized 1:1 video and image adaptations and managed static-ad uploads.</li>
+<li>Maintained accounting/tracking sheets, records and recurring operational tasks.</li>
+<li>Provided direct personal-assistant and administrative support to the business owner.</li>
+<li>Handled customer support, listings, content updates, QA and store maintenance.</li>
+</ul>
+</div>
+</article>
+<article class="experience-card">
+<div class="experience-meta"><strong>Apr 2025 — Jun 2025</strong>On-the-job training</div>
+<div class="experience-copy">
+<h3>Recruitment &amp; Marketing</h3>
+<p class="company">Crown Summit Life Insurance Agency — Pru Life UK</p>
+<ul class="clean-list">
+<li>Created recruitment ads and recruitment spiels in English, Tagalog and Taglish.</li>
+<li>Sourced and contacted potential applicants through email and calls.</li>
+<li>Assisted with recruitment processes and initial candidate engagement.</li>
+<li>Completed daily reports and submitted performance outputs to a supervisor.</li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section section-soft reveal" id="capabilities">
+<div class="container">
+<div class="section-head">
+<div><span class="kicker">Capabilities</span><h2>What I can take ownership of.</h2></div>
+<p>Useful for teams that need a flexible support person rather than a narrow specialist — with deeper Shopify capability available when the business needs storefront work.</p>
+</div>
+<div class="cap-grid">
+<article class="cap-card"><span class="cap-index">01 · ADMIN</span><h3>Executive &amp; Administrative Support</h3><p>Research, reporting, spreadsheets, documentation, recurring priorities, organization and day-to-day coordination.</p></article>
+<article class="cap-card cap-card-shopify"><span class="cap-index">02 · SPECIALTY</span><h3>Shopify &amp; E-commerce</h3><p>Store builds, product pages, listings, landing pages, theme customization, QA, responsive layout and troubleshooting.</p></article>
+<article class="cap-card"><span class="cap-index">03 · CREATIVE</span><h3>Content &amp; Localization</h3><p>Static ads, image/video adaptation, localization, UGC sourcing, campaign assets and content updates.</p></article>
+<article class="cap-card"><span class="cap-index">04 · OPERATIONS</span><h3>Customer &amp; Digital Operations</h3><p>Customer inquiries, tracking, store maintenance, task follow-through and cross-functional business support.</p></article>
+</div>
+</div>
+</section>
+<section class="section reveal" id="about">
+<div class="container split">
+<div>
+<span class="kicker">How I work</span>
+<h2>How I work when the task changes.</h2>
+<p class="lede">My Psychology background adds a practical lens to communication, attention and decision-making. I pair that with hands-on e-commerce execution, organized follow-through and a willingness to troubleshoot until the work is actually finished.</p>
+<div class="feature-stack">
+<div class="feature-row"><strong>Clarity before decoration</strong><p>Pages and processes should make the next step obvious, not merely look impressive.</p></div>
+<div class="feature-row"><strong>Own the details</strong><p>I’m comfortable moving between design, admin, content, QA and troubleshooting instead of treating them as separate worlds.</p></div>
+<div class="feature-row"><strong>Test, verify, improve</strong><p>For theme edits and storefront fixes, I work carefully, review output and validate changes before considering them finished.</p></div>
+</div>
+</div>
+<div class="about-copy">
+<img alt="Joshua Paul Ersando" class="about-photo" decoding="async" loading="lazy" src="images/profile.webp"/>
+<span class="kicker">About Joshua</span>
+<h3>A generalist who is especially strong in Shopify.</h3>
+<p>I’m a Psychology graduate with hands-on experience across administrative support, personal assistance, research, e-commerce operations, web design, digital content and customer support.</p>
+<p>I’m most useful when a team needs a flexible support person who can understand the task quickly, communicate clearly and switch between administrative, technical, creative and operational work without losing organization.</p>
+<div class="education">
+<strong>Bachelor of Science in Psychology</strong>
+<span>Eulogio “Amang” Rodriguez Institute of Science and Technology (EARIST), Manila · 2021–2025</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-soft reveal" id="tools">
+<div class="container">
+<div class="section-head">
+<div><span class="kicker">Tools</span><h2>Tools I use to get the work done.</h2></div>
+<p>Grouped by function so the software supports the story instead of becoming the story.</p>
+</div>
+<div class="tool-groups">
+<div class="tool-group"><h3>Admin &amp; Operations</h3><div class="tool-list"><span class="tool">Google Workspace</span><span class="tool">Google Sheets</span><span class="tool">Excel</span><span class="tool">Research</span><span class="tool">Reporting</span></div></div>
+<div class="tool-group tool-group-shopify"><h3>Shopify &amp; Web</h3><div class="tool-list"><span class="tool">Shopify</span><span class="tool">Liquid</span><span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">JavaScript</span></div></div>
+<div class="tool-group"><h3>Creative &amp; Marketing</h3><div class="tool-list"><span class="tool">Canva</span><span class="tool">CapCut</span><span class="tool">Meta Ads Manager</span><span class="tool">HeyGen</span><span class="tool">ElevenLabs</span><span class="tool">Vmake</span></div></div>
+<div class="tool-group"><h3>AI &amp; Production</h3><div class="tool-list"><span class="tool">ChatGPT</span><span class="tool">Claude</span><span class="tool">Google Gemini</span><span class="tool">Google Flow</span><span class="tool">Grok</span></div></div>
+</div>
+</div>
+</section>
+<section class="section" id="contact">
+<div class="container">
+<div class="contact-wrap">
+<span class="kicker">Let’s work together</span>
+<h2>Looking for flexible support with real Shopify experience?</h2>
+<p>I’m open to virtual-assistant, executive-support, digital-operations, e-commerce and Shopify-focused opportunities.</p>
+<div class="contact-actions">
+<a class="btn btn-primary" href="mailto:joshua.ersando@gmail.com">Email me <span aria-hidden="true">→</span></a>
+<a class="btn btn-secondary" href="https://wa.me/639942508537?text=Hi%20Joshua%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." rel="noopener noreferrer" target="_blank">WhatsApp</a>
+</div><div class="contact-alt"><span>Prefer another channel?</span><a class="contact-alt-link" href="viber://chat?number=%2B639942508537">Viber</a></div>
+<div class="contact-note">joshua.ersando@gmail.com · +63 994 250 8537</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-inner">
+<span>© 2026 Joshua Paul Ersando</span>
+<span>Virtual Assistant · Digital Operations · Shopify &amp; E-commerce</span>
+</div>
+</footer>
+<div aria-hidden="true" aria-label="Portfolio screenshot viewer" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="Close" class="lightbox-btn lightbox-close" id="lightboxClose" type="button">×</button>
+<button aria-label="Previous image" class="lightbox-btn lightbox-prev" id="lightboxPrev" type="button">‹</button>
+<div class="lightbox-stage"><img alt="" id="lightboxImg"/></div>
+<button aria-label="Next image" class="lightbox-btn lightbox-next" id="lightboxNext" type="button">›</button>
+<div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+<script>
     const galleryData = {"work-gallery-1": [{"src": "images/sleevelle/homepage-desktop-01.webp", "alt": "Sleevelle homepage — desktop screenshot 1", "full": "images/sleevelle/homepage-desktop-01.webp", "title": "Homepage — Desktop — 1"}, {"src": "images/sleevelle/homepage-desktop-02.webp", "alt": "Sleevelle homepage — desktop screenshot 2", "full": "images/sleevelle/homepage-desktop-02.webp", "title": "Homepage — Desktop — 2"}, {"src": "images/sleevelle/homepage-desktop-03.webp", "alt": "Sleevelle homepage — desktop screenshot 3", "full": "images/sleevelle/homepage-desktop-03.webp", "title": "Homepage — Desktop — 3"}, {"src": "images/sleevelle/homepage-desktop-04.webp", "alt": "Sleevelle homepage — desktop screenshot 4", "full": "images/sleevelle/homepage-desktop-04.webp", "title": "Homepage — Desktop — 4"}, {"src": "images/sleevelle/homepage-desktop-05.webp", "alt": "Sleevelle homepage — desktop screenshot 5", "full": "images/sleevelle/homepage-desktop-05.webp", "title": "Homepage — Desktop — 5"}, {"src": "images/sleevelle/homepage-desktop-06.webp", "alt": "Sleevelle homepage — desktop screenshot 6", "full": "images/sleevelle/homepage-desktop-06.webp", "title": "Homepage — Desktop — 6"}, {"src": "images/sleevelle/homepage-desktop-07.webp", "alt": "Sleevelle homepage — desktop screenshot 7", "full": "images/sleevelle/homepage-desktop-07.webp", "title": "Homepage — Desktop — 7"}, {"src": "images/sleevelle/homepage-desktop-08.webp", "alt": "Sleevelle homepage — desktop screenshot 8", "full": "images/sleevelle/homepage-desktop-08.webp", "title": "Homepage — Desktop — 8"}], "work-gallery-2": [{"src": "images/sleevelle/homepage-mobile-01.webp", "alt": "Sleevelle homepage — mobile screenshot 1", "full": "images/sleevelle/homepage-mobile-01.webp", "title": "Homepage — Mobile — 1"}, {"src": "images/sleevelle/homepage-mobile-02.webp", "alt": "Sleevelle homepage — mobile screenshot 2", "full": "images/sleevelle/homepage-mobile-02.webp", "title": "Homepage — Mobile — 2"}, {"src": "images/sleevelle/homepage-mobile-03.webp", "alt": "Sleevelle homepage — mobile screenshot 3", "full": "images/sleevelle/homepage-mobile-03.webp", "title": "Homepage — Mobile — 3"}, {"src": "images/sleevelle/homepage-mobile-04.webp", "alt": "Sleevelle homepage — mobile screenshot 4", "full": "images/sleevelle/homepage-mobile-04.webp", "title": "Homepage — Mobile — 4"}, {"src": "images/sleevelle/homepage-mobile-05.webp", "alt": "Sleevelle homepage — mobile screenshot 5", "full": "images/sleevelle/homepage-mobile-05.webp", "title": "Homepage — Mobile — 5"}, {"src": "images/sleevelle/homepage-mobile-06.webp", "alt": "Sleevelle homepage — mobile screenshot 6", "full": "images/sleevelle/homepage-mobile-06.webp", "title": "Homepage — Mobile — 6"}, {"src": "images/sleevelle/homepage-mobile-07.webp", "alt": "Sleevelle homepage — mobile screenshot 7", "full": "images/sleevelle/homepage-mobile-07.webp", "title": "Homepage — Mobile — 7"}], "work-gallery-3": [{"src": "images/sleevelle/product-desktop-01.webp", "alt": "Sleevelle product page — desktop screenshot 1", "full": "images/sleevelle/product-desktop-01.webp", "title": "Product Page — Desktop — 1"}, {"src": "images/sleevelle/product-desktop-02.webp", "alt": "Sleevelle product page — desktop screenshot 2", "full": "images/sleevelle/product-desktop-02.webp", "title": "Product Page — Desktop — 2"}, {"src": "images/sleevelle/product-desktop-03.webp", "alt": "Sleevelle product page — desktop screenshot 3", "full": "images/sleevelle/product-desktop-03.webp", "title": "Product Page — Desktop — 3"}, {"src": "images/sleevelle/product-desktop-04.webp", "alt": "Sleevelle product page — desktop screenshot 4", "full": "images/sleevelle/product-desktop-04.webp", "title": "Product Page — Desktop — 4"}, {"src": "images/sleevelle/product-desktop-05.webp", "alt": "Sleevelle product page — desktop screenshot 5", "full": "images/sleevelle/product-desktop-05.webp", "title": "Product Page — Desktop — 5"}, {"src": "images/sleevelle/product-desktop-06.webp", "alt": "Sleevelle product page — desktop screenshot 6", "full": "images/sleevelle/product-desktop-06.webp", "title": "Product Page — Desktop — 6"}, {"src": "images/sleevelle/product-desktop-07.webp", "alt": "Sleevelle product page — desktop screenshot 7", "full": "images/sleevelle/product-desktop-07.webp", "title": "Product Page — Desktop — 7"}, {"src": "images/sleevelle/product-desktop-08.webp", "alt": "Sleevelle product page — desktop screenshot 8", "full": "images/sleevelle/product-desktop-08.webp", "title": "Product Page — Desktop — 8"}, {"src": "images/sleevelle/product-desktop-09.webp", "alt": "Sleevelle product page — desktop screenshot 9", "full": "images/sleevelle/product-desktop-09.webp", "title": "Product Page — Desktop — 9"}, {"src": "images/sleevelle/product-desktop-10.webp", "alt": "Sleevelle product page — desktop screenshot 10", "full": "images/sleevelle/product-desktop-10.webp", "title": "Product Page — Desktop — 10"}], "work-gallery-4": [{"src": "images/sleevelle/product-mobile-01.webp", "alt": "Sleevelle product page — mobile screenshot 1", "full": "images/sleevelle/product-mobile-01.webp", "title": "Product Page — Mobile — 1"}, {"src": "images/sleevelle/product-mobile-02.webp", "alt": "Sleevelle product page — mobile screenshot 2", "full": "images/sleevelle/product-mobile-02.webp", "title": "Product Page — Mobile — 2"}, {"src": "images/sleevelle/product-mobile-03.webp", "alt": "Sleevelle product page — mobile screenshot 3", "full": "images/sleevelle/product-mobile-03.webp", "title": "Product Page — Mobile — 3"}, {"src": "images/sleevelle/product-mobile-04.webp", "alt": "Sleevelle product page — mobile screenshot 4", "full": "images/sleevelle/product-mobile-04.webp", "title": "Product Page — Mobile — 4"}, {"src": "images/sleevelle/product-mobile-05.webp", "alt": "Sleevelle product page — mobile screenshot 5", "full": "images/sleevelle/product-mobile-05.webp", "title": "Product Page — Mobile — 5"}, {"src": "images/sleevelle/product-mobile-06.webp", "alt": "Sleevelle product page — mobile screenshot 6", "full": "images/sleevelle/product-mobile-06.webp", "title": "Product Page — Mobile — 6"}, {"src": "images/sleevelle/product-mobile-07.webp", "alt": "Sleevelle product page — mobile screenshot 7", "full": "images/sleevelle/product-mobile-07.webp", "title": "Product Page — Mobile — 7"}, {"src": "images/sleevelle/product-mobile-08.webp", "alt": "Sleevelle product page — mobile screenshot 8", "full": "images/sleevelle/product-mobile-08.webp", "title": "Product Page — Mobile — 8"}, {"src": "images/sleevelle/product-mobile-09.webp", "alt": "Sleevelle product page — mobile screenshot 9", "full": "images/sleevelle/product-mobile-09.webp", "title": "Product Page — Mobile — 9"}, {"src": "images/sleevelle/product-mobile-10.webp", "alt": "Sleevelle product page — mobile screenshot 10", "full": "images/sleevelle/product-mobile-10.webp", "title": "Product Page — Mobile — 10"}, {"src": "images/sleevelle/product-mobile-11.webp", "alt": "Sleevelle product page — mobile screenshot 11", "full": "images/sleevelle/product-mobile-11.webp", "title": "Product Page — Mobile — 11"}, {"src": "images/sleevelle/product-mobile-12.webp", "alt": "Sleevelle product page — mobile screenshot 12", "full": "images/sleevelle/product-mobile-12.webp", "title": "Product Page — Mobile — 12"}, {"src": "images/sleevelle/product-mobile-13.webp", "alt": "Sleevelle product page — mobile screenshot 13", "full": "images/sleevelle/product-mobile-13.webp", "title": "Product Page — Mobile — 13"}], "magnuslab-gallery-1": [{"src": "images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp", "alt": "MagnusLAB homepage — desktop screenshot 1", "full": "images/magnuslab_github_assets/magnuslab/homepage-desktop-01.webp", "title": "MagnusLAB — Homepage — Desktop — 1"}, {"src": "images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp", "alt": "MagnusLAB homepage — desktop screenshot 2", "full": "images/magnuslab_github_assets/magnuslab/homepage-desktop-02.webp", "title": "MagnusLAB — Homepage — Desktop — 2"}, {"src": "images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp", "alt": "MagnusLAB homepage — desktop screenshot 3", "full": "images/magnuslab_github_assets/magnuslab/homepage-desktop-03.webp", "title": "MagnusLAB — Homepage — Desktop — 3"}, {"src": "images/magnuslab_github_assets/magnuslab/homepage-desktop-04.webp", "alt": "MagnusLAB homepage — desktop screenshot 4", "full": "images/magnuslab_github_assets/magnuslab/homepage-desktop-04.webp", "title": "MagnusLAB — Homepage — Desktop — 4"}], "magnuslab-gallery-2": [{"src": "images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp", "alt": "MagnusLAB homepage — mobile screenshot 1", "full": "images/magnuslab_github_assets/magnuslab/homepage-mobile-01.webp", "title": "MagnusLAB — Homepage — Mobile — 1"}, {"src": "images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp", "alt": "MagnusLAB homepage — mobile screenshot 2", "full": "images/magnuslab_github_assets/magnuslab/homepage-mobile-02.webp", "title": "MagnusLAB — Homepage — Mobile — 2"}, {"src": "images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp", "alt": "MagnusLAB homepage — mobile screenshot 3", "full": "images/magnuslab_github_assets/magnuslab/homepage-mobile-03.webp", "title": "MagnusLAB — Homepage — Mobile — 3"}, {"src": "images/magnuslab_github_assets/magnuslab/homepage-mobile-04.webp", "alt": "MagnusLAB homepage — mobile screenshot 4", "full": "images/magnuslab_github_assets/magnuslab/homepage-mobile-04.webp", "title": "MagnusLAB — Homepage — Mobile — 4"}], "magnuslab-gallery-3": [{"src": "images/magnuslab_github_assets/magnuslab/product-desktop-01.webp", "alt": "MagnusLAB product page — desktop screenshot 1", "full": "images/magnuslab_github_assets/magnuslab/product-desktop-01.webp", "title": "MagnusLAB — Product Page — Desktop — 1"}, {"src": "images/magnuslab_github_assets/magnuslab/product-desktop-02.webp", "alt": "MagnusLAB product page — desktop screenshot 2", "full": "images/magnuslab_github_assets/magnuslab/product-desktop-02.webp", "title": "MagnusLAB — Product Page — Desktop — 2"}, {"src": "images/magnuslab_github_assets/magnuslab/product-desktop-03.webp", "alt": "MagnusLAB product page — desktop screenshot 3", "full": "images/magnuslab_github_assets/magnuslab/product-desktop-03.webp", "title": "MagnusLAB — Product Page — Desktop — 3"}, {"src": "images/magnuslab_github_assets/magnuslab/product-desktop-04.webp", "alt": "MagnusLAB product page — desktop screenshot 4", "full": "images/magnuslab_github_assets/magnuslab/product-desktop-04.webp", "title": "MagnusLAB — Product Page — Desktop — 4"}, {"src": "images/magnuslab_github_assets/magnuslab/product-desktop-05.webp", "alt": "MagnusLAB product page — desktop screenshot 5", "full": "images/magnuslab_github_assets/magnuslab/product-desktop-05.webp", "title": "MagnusLAB — Product Page — Desktop — 5"}, {"src": "images/magnuslab_github_assets/magnuslab/product-desktop-06.webp", "alt": "MagnusLAB product page — desktop screenshot 6", "full": "images/magnuslab_github_assets/magnuslab/product-desktop-06.webp", "title": "MagnusLAB — Product Page — Desktop — 6"}, {"src": "images/magnuslab_github_assets/magnuslab/product-desktop-07.webp", "alt": "MagnusLAB product page — desktop screenshot 7", "full": "images/magnuslab_github_assets/magnuslab/product-desktop-07.webp", "title": "MagnusLAB — Product Page — Desktop — 7"}], "magnuslab-gallery-4": [{"src": "images/magnuslab_github_assets/magnuslab/product-mobile-01.webp", "alt": "MagnusLAB product page — mobile screenshot 1", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-01.webp", "title": "MagnusLAB — Product Page — Mobile — 1"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-02.webp", "alt": "MagnusLAB product page — mobile screenshot 2", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-02.webp", "title": "MagnusLAB — Product Page — Mobile — 2"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-03.webp", "alt": "MagnusLAB product page — mobile screenshot 3", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-03.webp", "title": "MagnusLAB — Product Page — Mobile — 3"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-04.webp", "alt": "MagnusLAB product page — mobile screenshot 4", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-04.webp", "title": "MagnusLAB — Product Page — Mobile — 4"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-05.webp", "alt": "MagnusLAB product page — mobile screenshot 5", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-05.webp", "title": "MagnusLAB — Product Page — Mobile — 5"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-06.webp", "alt": "MagnusLAB product page — mobile screenshot 6", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-06.webp", "title": "MagnusLAB — Product Page — Mobile — 6"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-07.webp", "alt": "MagnusLAB product page — mobile screenshot 7", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-07.webp", "title": "MagnusLAB — Product Page — Mobile — 7"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-08.webp", "alt": "MagnusLAB product page — mobile screenshot 8", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-08.webp", "title": "MagnusLAB — Product Page — Mobile — 8"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-09.webp", "alt": "MagnusLAB product page — mobile screenshot 9", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-09.webp", "title": "MagnusLAB — Product Page — Mobile — 9"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-10.webp", "alt": "MagnusLAB product page — mobile screenshot 10", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-10.webp", "title": "MagnusLAB — Product Page — Mobile — 10"}, {"src": "images/magnuslab_github_assets/magnuslab/product-mobile-11.webp", "alt": "MagnusLAB product page — mobile screenshot 11", "full": "images/magnuslab_github_assets/magnuslab/product-mobile-11.webp", "title": "MagnusLAB — Product Page — Mobile — 11"}]};
 
     // Mobile navigation
@@ -882,18 +691,21 @@
     function setMenu(open) {
       menuToggle.setAttribute('aria-expanded', String(open));
       mobileMenu.classList.toggle('open', open);
+      mobileMenu.style.display = open ? 'block' : '';
       mobileMenu.setAttribute('aria-hidden', String(!open));
       document.body.classList.toggle('menu-open', open);
     }
     menuToggle.addEventListener('click', () => setMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    document.addEventListener('click', e => { if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) setMenu(false); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 860) setMenu(false); });
 
-    // Progressive gallery expansion
+    // Progressive gallery expansion: three previews first, full evidence on request.
+    function esc(value) { return String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
     function shotButtonMarkup(groupId, shot, index) {
       return `
-        <button class="shot" type="button" data-group="${groupId}" data-index="${index}" aria-label="Open ${shot.title.replace(/"/g,'&quot;')}">
-          <span class="shot-frame"><img loading="lazy" decoding="async" src="${shot.src}" alt="${shot.alt.replace(/"/g,'&quot;')}"></span>
+        <button class="shot" type="button" data-group="${esc(groupId)}" data-index="${index}" aria-label="Open ${esc(shot.title)}">
+          <span class="shot-frame"><img loading="lazy" decoding="async" src="${esc(shot.src)}" alt="${esc(shot.alt)}"></span>
           <span class="shot-meta"><span>${String(index + 1).padStart(2,'0')}</span><span>Open</span></span>
         </button>`;
     }
@@ -903,11 +715,9 @@
         const grid = document.getElementById(groupId);
         const all = galleryData[groupId] || [];
         const expanded = button.getAttribute('aria-expanded') === 'true';
-
         if (!expanded) {
-          if (grid.children.length < all.length) {
-            grid.insertAdjacentHTML('beforeend', all.slice(grid.children.length).map((shot, i) => shotButtonMarkup(groupId, shot, i + grid.children.length)).join(''));
-          }
+          const start = grid.children.length;
+          if (start < all.length) grid.insertAdjacentHTML('beforeend', all.slice(start).map((shot, offset) => shotButtonMarkup(groupId, shot, start + offset)).join(''));
           button.setAttribute('aria-expanded','true');
           button.textContent = 'Show fewer screenshots';
         } else {
@@ -919,19 +729,18 @@
       });
     });
 
-    // Lightbox, scoped to each gallery
+    // Accessible lightbox, scoped to each gallery.
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxCaption = document.getElementById('lightboxCaption');
-    let activeGroup = null;
-    let activeIndex = 0;
-    let lastFocused = null;
-
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    let activeGroup = null, activeIndex = 0, lastFocused = null;
     function showLightbox(groupId, index) {
       const data = galleryData[groupId];
       if (!data || !data[index]) return;
-      activeGroup = groupId;
-      activeIndex = index;
+      activeGroup = groupId; activeIndex = index;
       const shot = data[index];
       lightboxImg.src = shot.full;
       lightboxImg.alt = shot.alt || shot.title;
@@ -941,11 +750,13 @@
       lastFocused = trigger || document.activeElement;
       showLightbox(groupId, index);
       lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
       document.body.classList.add('modal-open');
-      document.getElementById('lightboxClose').focus();
+      lightboxClose.focus();
     }
     function closeLightbox() {
       lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
       document.body.classList.remove('modal-open');
       lightboxImg.src = '';
       if (lastFocused) lastFocused.focus();
@@ -956,32 +767,34 @@
       activeIndex = (activeIndex + delta + data.length) % data.length;
       showLightbox(activeGroup, activeIndex);
     }
-
     document.addEventListener('click', e => {
       const shot = e.target.closest('.shot');
       if (shot) openLightbox(shot.dataset.group, Number(shot.dataset.index), shot);
       if (e.target === lightbox) closeLightbox();
     });
-    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-    document.getElementById('lightboxPrev').addEventListener('click', () => moveLightbox(-1));
-    document.getElementById('lightboxNext').addEventListener('click', () => moveLightbox(1));
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', () => moveLightbox(-1));
+    lightboxNext.addEventListener('click', () => moveLightbox(1));
     document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
+      if (!lightbox.classList.contains('open')) { if (e.key === 'Escape') setMenu(false); return; }
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') moveLightbox(-1);
       if (e.key === 'ArrowRight') moveLightbox(1);
+      if (e.key === 'Tab') {
+        const focusables = [lightboxClose, lightboxPrev, lightboxNext].filter(Boolean);
+        const first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
 
-    // Subtle reveal; no pointer-follow glow or heavy scroll handler
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {threshold:.08});
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-  </script>
+    // Subtle reveal only; content remains visible without JS.
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
+      }, {threshold:.06});
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    } else { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); }
+</script>
 </body>
 </html>
