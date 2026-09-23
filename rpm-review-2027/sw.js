@@ -1,9 +1,9 @@
-const CACHE='rpm-2027-pages-v2';
+const CACHE='rpm-2027-pages-v3';
 const ASSETS=[
   './','./index.html','./manifest.webmanifest',
   './icons/icon-192.png','./icons/icon.svg',
   './payload/data-01.b64','./payload/data-02.b64','./payload/data-03.b64','./payload/data-04.b64','./payload/data-05.b64','./payload/data-06.b64','./payload/data-07.b64',
-  './payload/app-01.b64','./payload/app-02.b64','./payload/app-03.b64',
+  './payload/app-01.b64','./payload/app-02.b64','./payload/app-03.b64','./payload/app-04.b64',
   './payload/css-01.b64','./payload/css-02.b64'
 ];
 self.addEventListener('install',e=>{
